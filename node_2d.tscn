@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgaj74s30dcbi"]
+
+[ext_resource type="Script" uid="uid://d2xkoax2vxiki" path="res://character_body_2d.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
+[ext_resource type="Texture2D" uid="uid://unibssaanoh8" path="res://Sprite-0002.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://dc7xrtl0hlc4s" path="res://icon.svg" id="2_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dgaxlx1ghr8b1" path="res://villager.png" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://dyetfck7oyl7j" path="res://area_2d.gd" id="5_kdubu"]
+[ext_resource type="Texture2D" uid="uid://6h24wkjyrwmv" path="res://interact.png" id="7_d21ai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
+size = Vector2(278.757, 324.176)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kdubu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1680.0
+offset_top = -790.0
+offset_right = 1676.0
+offset_bottom = 734.0
+texture = ExtResource("1_wtcfe")
+stretch_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(2.2272, 2.50971)
+script = ExtResource("1_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(1.43051e-06, 0)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("2_0hol4")
+
+[node name="player Area" type="Area2D" parent="CharacterBody2D" groups=["talkandinteractNpc"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/player Area"]
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Villager" type="Sprite2D" parent="."]
+position = Vector2(-220, -135)
+scale = Vector2(0.265464, 0.271236)
+texture = ExtResource("4_q6r6c")
+
+[node name="GamblerNpc" type="Area2D" parent="Villager" groups=["talkandinteractNpc"]]
+script = ExtResource("5_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Villager/GamblerNpc"]
+position = Vector2(0, 0.132599)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -51.0
+offset_top = 47.0
+offset_right = 82.0
+offset_bottom = 116.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.977825, 1)
+
+[node name="interact" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-218, -129)
+scale = Vector2(0.239646, 0.257615)
+texture = ExtResource("7_d21ai")
+
+[connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]
