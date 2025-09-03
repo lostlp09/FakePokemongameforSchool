@@ -33,6 +33,7 @@ func ongambling() -> void:
 	
 func _ready() -> void:
 	pressforgambling.pressed.connect(ongambling)
+	
 
 
 	

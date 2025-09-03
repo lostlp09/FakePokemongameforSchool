@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgaj74s30dcbi"]
+[gd_scene load_steps=12 format=3 uid="uid://dgaj74s30dcbi"]
 
 [ext_resource type="Script" uid="uid://d2xkoax2vxiki" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dgaxlx1ghr8b1" path="res://villager.png" id="4_q6r6c"]
 [ext_resource type="Script" uid="uid://dyetfck7oyl7j" path="res://area_2d.gd" id="5_kdubu"]
 [ext_resource type="Texture2D" uid="uid://6h24wkjyrwmv" path="res://interact.png" id="7_d21ai"]
+[ext_resource type="Texture2D" uid="uid://dpy45tpwchxla" path="res://dialog/pixil-frame-0.png" id="8_rj586"]
+[ext_resource type="Texture2D" uid="uid://dk3whpjhipa6r" path="res://dialog/sr5zebf7fe8ddaaws3.png" id="9_4d7sh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 
@@ -52,6 +54,7 @@ script = ExtResource("5_kdubu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Villager/GamblerNpc"]
 position = Vector2(0, 0.132599)
+scale = Vector2(1.495, 1.495)
 shape = SubResource("RectangleShape2D_d21ai")
 
 [node name="Button" type="Button" parent="."]
@@ -68,6 +71,25 @@ visible = false
 position = Vector2(-218, -129)
 scale = Vector2(0.239646, 0.257615)
 texture = ExtResource("7_d21ai")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, 200)
+scale = Vector2(0.252803, 0.195)
+texture = ExtResource("8_rj586")
+
+[node name="Button" type="Button" parent="Pixil-frame-0"]
+offset_left = 1083.85
+offset_top = 235.898
+offset_right = 1712.85
+offset_bottom = 548.898
+
+[node name="Sr5Zebf7Fe8Ddaaws3" type="Sprite2D" parent="Pixil-frame-0/Button"]
+position = Vector2(316.452, 102.564)
+scale = Vector2(0.536745, 0.683198)
+texture = ExtResource("9_4d7sh")
 
 [connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]
