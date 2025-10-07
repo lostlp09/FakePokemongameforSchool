@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cntutuvlipsdm"]
+
+[ext_resource type="Script" uid="uid://dtbp63pqisq4d" path="res://node.gd" id="1_ta0y4"]
+[ext_resource type="Script" uid="uid://ldumuw0s7p8j" path="res://charaktere.gd" id="2_fot2q"]
+[ext_resource type="Script" uid="uid://bnpqxkotrsbs" path="res://attacken.gd" id="3_ngxsm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Kampf" type="Node" parent="."]
+script = ExtResource("1_ta0y4")
+
+[node name="Charaktere" type="Node" parent="Kampf"]
+script = ExtResource("2_fot2q")
+
+[node name="Attacken" type="Node" parent="Kampf/Charaktere"]
+script = ExtResource("3_ngxsm")
