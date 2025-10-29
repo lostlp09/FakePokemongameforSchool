@@ -48,6 +48,7 @@ shape = SubResource("RectangleShape2D_q6r6c")
 position = Vector2(-220, -135)
 scale = Vector2(0.265464, 0.271236)
 texture = ExtResource("4_q6r6c")
+metadata/npctext = "Hello mate,how are you?"
 
 [node name="GamblerNpc" type="Area2D" parent="Villager" groups=["talkandinteractNpc"]]
 script = ExtResource("5_kdubu")
@@ -75,7 +76,6 @@ texture = ExtResource("7_d21ai")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Pixil-frame-0" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-1, 200)
 scale = Vector2(0.252803, 0.195)
 texture = ExtResource("8_rj586")
@@ -90,6 +90,13 @@ offset_bottom = 548.898
 position = Vector2(316.452, 102.564)
 scale = Vector2(0.536745, 0.683198)
 texture = ExtResource("9_4d7sh")
+
+[node name="Label" type="Label" parent="Pixil-frame-0"]
+offset_left = -985.0
+offset_top = -200.0
+offset_right = 993.0
+offset_bottom = 487.0
+theme_override_font_sizes/font_size = 116
 
 [connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]

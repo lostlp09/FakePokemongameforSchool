@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var interact = $"../interact"
 var gamblernpc_interaction
 var allowwalking = true	
+var Npc = null
 @onready var  skipbutton = $"../Pixil-frame-0/Button"
 func textbotchanged() -> void:
 	if textbox.visible == true:
@@ -45,9 +46,10 @@ func _physics_process(delta: float) -> void:
 		print("hello")
 		textbox.visible = true
 		skipbutton.disabled = false
-		
 		textbox.position = Vector2(self.position.x,self.position.y + 199)
 		gamblernpc_interaction = false
+		textbox.get_node("Label").text = Npc.get_meta("npctext")
+
 		
 	move_and_slide()
 	
@@ -60,12 +62,13 @@ func _on_player_area_area_exited(area: Area2D) -> void:
 		
 	
 func _on_player_area_area_entered(area: Area2D) -> void:
-
 	if area.is_in_group("talkandinteractNpc"):
-		var npcname = area.get_parent()
+
+		Npc = area.get_parent()
 		interact.visible = true
 		gamblernpc_interaction = true
-		interact.position = npcname.position
+		interact.position = Npc.position
+		
 
 
 
