@@ -6,6 +6,7 @@ extends CharacterBody2D
 var gamblernpc_interaction
 var allowwalking = true	
 var Npc = null
+var fishing = false
 @onready var  skipbutton = $"../Pixil-frame-0/Button"
 func textbotchanged() -> void:
 	if textbox.visible == true:
@@ -15,23 +16,17 @@ func textbotchanged() -> void:
 func skipbuttonreleased() -> void:
 	print("hallo")
 	textbox.visible = false
-	
-
-
 func _ready() -> void:
 	textbox.visibility_changed.connect(textbotchanged)
 	skipbutton.pressed.connect(skipbuttonreleased)
 	
-	
-
 func _physics_process(delta: float) -> void:
+	
 	velocity.x = 0
 	velocity.y = 0
 	
 	if Input.is_action_pressed("forward") && allowwalking:
 		self.velocity.y  = -20000 * delta
-
-	
 	if Input.is_action_pressed("bachward") && allowwalking:
 		self.velocity.y =  20000 *  delta
 
@@ -44,14 +39,19 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("interact") && gamblernpc_interaction == true:
 		print("hello")
+		textbox.get_node("Label").text = ""
 		textbox.visible = true
 		skipbutton.disabled = false
 		textbox.position = Vector2(self.position.x,self.position.y + 199)
 		gamblernpc_interaction = false
-		textbox.get_node("Label").text = Npc.get_meta("npctext")
-
+		var text =Npc.get_meta("npctext")
+		for i in text:
+			textbox.get_node("Label").text = textbox.get_node("Label").text + i
+			await get_tree().create_timer(0.01).timeout
 		
 	move_and_slide()
+	if fishing == true:
+		interact.position  = self.position
 	
 	camera.position = self.position
 func _on_player_area_area_exited(area: Area2D) -> void:
@@ -59,16 +59,22 @@ func _on_player_area_area_exited(area: Area2D) -> void:
 	if area.is_in_group("talkandinteractNpc"):
 		interact.visible = false
 		gamblernpc_interaction = false
+	if area.get_parent().is_in_group("fishing"):
+		interact.visible = false
+		fishing = false
 		
 	
 func _on_player_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("talkandinteractNpc"):
-
 		Npc = area.get_parent()
 		interact.visible = true
 		gamblernpc_interaction = true
 		interact.position = Npc.position
-		
+	if area.get_parent().is_in_group("fishing"):
+		interact.visible = true
+		interact.position =self.position
+		fishing = true
+
 
 
 
