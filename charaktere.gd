@@ -4,18 +4,29 @@ class_name character
 var hp: float
 var Name: String
 var poisoned: bool = false
-var damadge1: float 
+var actual_damage: float
+var damage1: float 
+var damage2: float
+var damage3: float
 var poison1: bool = false
-var damadge2: float
 var poison2: bool = false
+var poison3: bool = false
+var gamble1: bool = false
+var gamble2: bool = false
+var gamble3: bool = false
+
 
 #(prüfen, ob attacke ok ist)
-func _init(_hp: float, _damadge1: float, _damadge2: float, _Name: String, _poison2 = false) ->void:
-	damadge1 = _damadge1
-	damadge2 = _damadge2
+func _init(_hp: float, _damage1: float, _damage2: float, _damage3:float, _Name: String, optional := {"poison1" : false , "poison2" : false, "poison3" : false, "gamble1" : false, "gamble2" : false, "gamble3" : false}) ->void:
+	damage1 = _damage1
+	damage2 = _damage2
+	damage3 = _damage3
 	hp = _hp
 	Name = _Name
-	poison2 = _poison2
+	for key in optional:
+		if key in self:
+			set(key, optional[key])
+
 	
 	#ist func_ref ein Callable?
 	#assert(func_ref is Callable, "übergebener Parameter ist kein Callable")
@@ -39,21 +50,50 @@ func attack1(target: character)-> void:
 	if target == self:
 		print("cannot attack yourself")
 	else:
-		target.hp -= self.damadge1
+		if gamble1 == false:
+			target.hp -= self.damage1
+			self.actual_damage = self.damage1
+		if gamble1:
+			target.hp -= self.damage1 * randf()
+			self.actual_damage = self.damage1 * randf()
 		if poison1:
 			target.poisoned = true
-			print(target.Name,)
-		print(self.Name," is attacking ", target.Name, " for ", self.damadge1, " damadge")
+			print(target.Name, " is now poisoned")
+		print(self.Name," is attacking ", target.Name, " for ", self.actual_damage, " damage")
 		print(target.Name, " has ", target.hp, " hp left ")
+		
 func attack2(target: character)-> void:
 	if target == self:
 		print("cannot attack yourself")
 	else:
-		target.hp -= self.damadge2
+		if gamble2 == false:
+			target.hp -= self.damage2
+			self.actual_damage = self.damage2
+		if gamble2:
+			target.hp -= self.damage2 * randf()
+			self.actual_damage = self.damage2 * randf()
 		if poison2:
 			target.poisoned = true
-		print(self.Name, " is attacking ", target.name, " for ", self.damadge2, " damadge")
-		print(target.name, " has ", target,hp, " hp left")
+			print(target.name, " is now poisoned")
+		print(self.Name, " is attacking ", target.name, " for ", self.actual_damage, " damage")
+		print(target.Name, " has ", target.hp, " hp left")
+		
+func attack3(target: character)-> void:
+	if target == self:
+		print("cannot attack yourself")
+	else:
+		if gamble3 == false:
+			target.hp -= self.damage3
+			self.actual_damage = self.damage3
+		if gamble3:
+			target.hp -= self.damage3 * randf()
+			self.actual_damage = self.damage3 * randf()
+		if poison3:
+			target.poisoned = true
+			print(target.name, " is now poisoned")
+		print(self.Name, " is attacking ", target.name, " for ", self.actual_damage, " damage")
+		print(target.Name, " has ", target.hp, " hp left")
+
 	
 	
 	
