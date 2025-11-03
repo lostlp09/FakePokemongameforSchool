@@ -8,6 +8,7 @@ var allowwalking = true
 var Npc = null
 var fishing = false
 var isfishing = false
+var fishui = preload("res://fishing.tscn")
 @onready var  skipbutton = $"../Pixil-frame-0/Button"
 func textbotchanged() -> void:
 	if textbox.visible == true:
@@ -23,7 +24,6 @@ func _ready() -> void:
 	skipbutton.pressed.connect(skipbuttonreleased)
 	
 func _physics_process(delta: float) -> void:
-	
 	velocity.x = 0
 	velocity.y = 0
 	
@@ -52,12 +52,13 @@ func _physics_process(delta: float) -> void:
 				textbox.get_node("Label").text = textbox.get_node("Label").text + i
 				await get_tree().create_timer(0.01).timeout
 		elif fishing == true:
-			pass
+			var fishstart = fishui.instantiate()
+			fishstart.position = Vector2(self.position.x  ,self.position.y)
+			self.get_parent().add_child(fishstart)
 			
 			
-			
-			
-		
+			isfishing = true
+			allowwalking = false
 	move_and_slide()
 	if fishing == true:
 		interact.position  = self.position

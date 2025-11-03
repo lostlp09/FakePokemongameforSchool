@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgucyhn6r5b6m"]
+
+[ext_resource type="Script" uid="uid://d33a8fhxni8y" path="res://fishing.gd" id="1_vc7xe"]
+[ext_resource type="Script" uid="uid://dylxyhladxjem" path="res://fish.gd" id="2_8x31n"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hqns4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x0ka3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
+size = Vector2(3.603297, 40.397728)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
+size = Vector2(0.19187403, 40.39775)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
+size = Vector2(3.549747, 40.77916)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d2bti"]
+
+[node name="fishing" type="TextureRect"]
+offset_left = 162.99998
+offset_top = 339.0
+offset_right = 202.99998
+offset_bottom = 379.0
+scale = Vector2(10.423294, 0.5198312)
+texture = SubResource("CanvasTexture_hqns4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(15.542113, 21.160717)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_vc7xe")
+
+[node name="TextureRect3" type="TextureRect" parent="CharacterBody2D"]
+modulate = Color(0, 0.8279712, 0.2777219, 1)
+offset_left = -1.9187788
+offset_top = -21.160717
+offset_right = 38.081223
+offset_bottom = 18.839283
+scale = Vector2(0.09, 1)
+texture = SubResource("CanvasTexture_x0ka3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.21306992, -0.961853)
+shape = SubResource("RectangleShape2D_x0ka3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visibility_layer = 3
+position = Vector2(-0.09594345, 20.199036)
+shape = SubResource("RectangleShape2D_0h7mo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visibility_layer = 3
+position = Vector2(39.995, 20.199)
+shape = SubResource("RectangleShape2D_0h7mo")
+
+[node name="fish" type="CharacterBody2D" parent="."]
+position = Vector2(18.037, 18.867)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_8x31n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish"]
+position = Vector2(0.8149986, 0.74005127)
+shape = SubResource("RectangleShape2D_nr8wp")
+
+[node name="TextureRect3" type="TextureRect" parent="fish"]
+modulate = Color(0.35043603, 0.24465269, 0.39358276, 1)
+offset_left = -1.3436184
+offset_top = -18.866987
+offset_right = 38.65638
+offset_bottom = 21.133013
+scale = Vector2(0.09, 1)
+texture = SubResource("CanvasTexture_d2bti")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0.043137256, 0.23921569, 1, 1)
+layout_mode = 0
+offset_top = -51.93994
+offset_right = 410.865
+offset_bottom = -13.749943
+scale = Vector2(0.0974298, 1.3300204)
+value = 50.0

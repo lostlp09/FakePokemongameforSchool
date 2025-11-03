@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dgaj74s30dcbi"]
+[gd_scene load_steps=15 format=3 uid="uid://dgaj74s30dcbi"]
 
 [ext_resource type="Script" uid="uid://d2xkoax2vxiki" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dpy45tpwchxla" path="res://dialog/pixil-frame-0.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://dk3whpjhipa6r" path="res://dialog/sr5zebf7fe8ddaaws3.png" id="9_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://b1b3p6jui2oh3" path="res://1000_F_443693248_FFOUon01HIYUVLVPFIyhrzDlbmWN8XKq.jpg" id="10_ir8iy"]
-[ext_resource type="Script" uid="uid://d33a8fhxni8y" path="res://fishing.gd" id="11_hqns4"]
-[ext_resource type="Script" uid="uid://dylxyhladxjem" path="res://fish.gd" id="12_x0ka3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 
@@ -23,21 +21,6 @@ size = Vector2(631.216, 20.252)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
 size = Vector2(631.216, 50.0928)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_hqns4"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_x0ka3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
-size = Vector2(3.560913, 40.779205)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
-size = Vector2(2.861023e-06, 40.39775)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
-size = Vector2(3.5720882, 40.77916)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_d2bti"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kdubu")
@@ -51,7 +34,7 @@ texture = ExtResource("1_wtcfe")
 stretch_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-1, 1)
+position = Vector2(-16, 612)
 scale = Vector2(2.2272, 2.50971)
 script = ExtResource("1_epypp")
 
@@ -140,73 +123,6 @@ shape = SubResource("RectangleShape2D_ir8iy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fishingarea/Area2D"]
 position = Vector2(168.112, -272.036)
 shape = SubResource("RectangleShape2D_hqns4")
-
-[node name="fishing" type="TextureRect" parent="."]
-offset_left = -186.00002
-offset_top = 207.0
-offset_right = -146.00002
-offset_bottom = 247.0
-scale = Vector2(10.423294, 0.5198312)
-texture = SubResource("CanvasTexture_hqns4")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="fishing"]
-position = Vector2(18.036526, 19.237015)
-script = ExtResource("11_hqns4")
-
-[node name="TextureRect3" type="TextureRect" parent="fishing/CharacterBody2D"]
-modulate = Color(0, 0.8279712, 0.2777219, 1)
-offset_left = -1.9187788
-offset_top = -21.160717
-offset_right = 38.081223
-offset_bottom = 18.839283
-scale = Vector2(0.09, 1)
-texture = SubResource("CanvasTexture_x0ka3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fishing/CharacterBody2D"]
-position = Vector2(-0.19187783, -9.298325e-06)
-shape = SubResource("RectangleShape2D_x0ka3")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="fishing"]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fishing/StaticBody2D"]
-visibility_layer = 3
-position = Vector2(-1.9073486e-06, 20.198975)
-shape = SubResource("RectangleShape2D_0h7mo")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="fishing/StaticBody2D"]
-visibility_layer = 3
-position = Vector2(39.995, 20.199)
-shape = SubResource("RectangleShape2D_0h7mo")
-
-[node name="fish" type="CharacterBody2D" parent="fishing"]
-position = Vector2(18.036528, 19.237015)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("12_x0ka3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fishing/fish"]
-position = Vector2(-0.19187939, -7.4505806e-06)
-shape = SubResource("RectangleShape2D_nr8wp")
-
-[node name="TextureRect3" type="TextureRect" parent="fishing/fish"]
-modulate = Color(0.35043603, 0.24465269, 0.39358276, 1)
-offset_left = -2.014717
-offset_top = -19.237015
-offset_right = 37.985283
-offset_bottom = 20.762985
-scale = Vector2(0.09, 1)
-texture = SubResource("CanvasTexture_d2bti")
-metadata/_edit_use_anchors_ = true
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-modulate = Color(0.043137256, 0.23921569, 1, 1)
-offset_left = -186.0
-offset_top = 180.0
-offset_right = 232.0
-offset_bottom = 207.0
-value = 50.0
 
 [connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]

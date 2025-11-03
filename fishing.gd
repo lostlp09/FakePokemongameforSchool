@@ -4,31 +4,28 @@ var acc = 0.5
 var clicked = false
 var timer = 0
 var addtime = 0
-@onready var prog = $"../../ProgressBar"
+@onready var prog = $"../ProgressBar"
 @onready var fish = $"../fish"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if prog.value >= 100:
-		queue_free()
+		ongambling()
+		
+		self.get_parent().queue_free()
 	var distance =  self.position.distance_to(fish.position)
-	if distance >= 3.5:
+	if distance >= 4:
 		addtime = 0
 		if timer >= 0.3:
 			prog.value -=2
 			
 			timer = 0
 	else:
-		
 		timer = 0
 		addtime += delta
 		if addtime >= 0.3:
 			prog.value +=2
-			
-			
 			addtime = 0
-		
-		
 	print (distance)
 	timer += delta
 	if Input.is_action_pressed("mousekey"):
@@ -49,5 +46,26 @@ func _process(delta: float) -> void:
 	else:
 		self.velocity.x +=   3 * acc
 	move_and_slide()
-
-		
+var characterlistcommon  = ["Dog","cat","hamster"]
+var characterlistuncomon = ["elephant","Giraffe","zebra"]
+var characterlistrare = ["crocodile","eagle","tiger"]
+var characterlistepic = ["aligator","lion"]
+var characterlistlegendary = ["Dinosour","Cheetah"]
+func ongambling() -> void:
+	var result = randi_range(0,100)
+	
+	if  result <= 50:
+		var value = characterlistcommon.pick_random()
+		print("you got a " + value)
+	elif   result <=75:
+		var value = characterlistuncomon.pick_random()
+		print("you got a " + value)
+	elif  result <= 90:
+		var value = characterlistrare.pick_random()
+		print("you got a " + value)
+	elif  result <= 99:
+		var value = characterlistepic.pick_random()
+		print("you got a " + value)
+	elif result <= 100:
+		var value = characterlistlegendary.pick_random()
+		print("you got a " + value)		
