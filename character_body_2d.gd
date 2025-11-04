@@ -7,6 +7,10 @@ var gamblernpc_interaction
 var allowwalking = true	
 var Npc = null
 var fishing = false
+var isfishing = false
+var fishuiisactive= null
+signal  fishing1
+var fishui = preload("res://fishing.tscn")
 @onready var  skipbutton = $"../Pixil-frame-0/Button"
 func textbotchanged() -> void:
 	if textbox.visible == true:
@@ -16,12 +20,13 @@ func textbotchanged() -> void:
 func skipbuttonreleased() -> void:
 	print("hallo")
 	textbox.visible = false
+	
 func _ready() -> void:
+	fishing1.connect(whileisifishing)
 	textbox.visibility_changed.connect(textbotchanged)
 	skipbutton.pressed.connect(skipbuttonreleased)
 	
 func _physics_process(delta: float) -> void:
-	
 	velocity.x = 0
 	velocity.y = 0
 	
@@ -37,18 +42,29 @@ func _physics_process(delta: float) -> void:
 	
 		self.velocity.x = 20000* delta
 		
-	if Input.is_action_just_pressed("interact") && gamblernpc_interaction == true:
-		print("hello")
-		textbox.get_node("Label").text = ""
-		textbox.visible = true
-		skipbutton.disabled = false
-		textbox.position = Vector2(self.position.x,self.position.y + 199)
-		gamblernpc_interaction = false
-		var text =Npc.get_meta("npctext")
-		for i in text:
-			textbox.get_node("Label").text = textbox.get_node("Label").text + i
-			await get_tree().create_timer(0.01).timeout
-		
+	if Input.is_action_just_pressed("interact") :
+		if gamblernpc_interaction == true:
+			print("hello")
+			textbox.get_node("Label").text = ""
+			textbox.visible = true
+			skipbutton.disabled = false
+			textbox.position = Vector2(self.position.x,self.position.y + 199)
+			gamblernpc_interaction = false
+			var text =Npc.get_meta("npctext")
+			
+			for i in text:
+				textbox.get_node("Label").text = textbox.get_node("Label").text + i
+				await get_tree().create_timer(0.01).timeout
+		elif fishing == true and fishuiisactive == null:
+			var fishstart = fishui.instantiate()
+			fishuiisactive = fishstart
+			fishstart.position = Vector2(self.position.x -320  ,self.position.y + 200)
+			self.get_parent().add_child(fishstart)
+			fishing1.emit()
+			
+			
+			isfishing = true
+			allowwalking = false
 	move_and_slide()
 	if fishing == true:
 		interact.position  = self.position
@@ -77,7 +93,17 @@ func _on_player_area_area_entered(area: Area2D) -> void:
 
 
 
-
+func whileisifishing()->void:
+	while true:
+		if fishuiisactive == null:
+			allowwalking = true
+			break
+	
+		
+		
+		await  get_tree().create_timer(0.1).timeout
+	
+	
 	
 		
 		
