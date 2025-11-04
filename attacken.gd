@@ -1,4 +1,4 @@
-extends Node
-class_name attacks
-func hit ()->void :
-	print("hit")
+#extends Node
+#class_name attacks
+#func hit ():
+#	pass

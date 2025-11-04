@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgaj74s30dcbi"]
+[gd_scene load_steps=15 format=3 uid="uid://dgaj74s30dcbi"]
 
 [ext_resource type="Script" uid="uid://d2xkoax2vxiki" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
@@ -9,11 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://6h24wkjyrwmv" path="res://interact.png" id="7_d21ai"]
 [ext_resource type="Texture2D" uid="uid://dpy45tpwchxla" path="res://dialog/pixil-frame-0.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://dk3whpjhipa6r" path="res://dialog/sr5zebf7fe8ddaaws3.png" id="9_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://b1b3p6jui2oh3" path="res://1000_F_443693248_FFOUon01HIYUVLVPFIyhrzDlbmWN8XKq.jpg" id="10_ir8iy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
 size = Vector2(278.757, 324.176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
+size = Vector2(631.216, 20.252)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
+size = Vector2(631.216, 50.0928)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kdubu")
@@ -48,6 +55,7 @@ shape = SubResource("RectangleShape2D_q6r6c")
 position = Vector2(-220, -135)
 scale = Vector2(0.265464, 0.271236)
 texture = ExtResource("4_q6r6c")
+metadata/npctext = "hello mate ,how is your life idk its alright"
 
 [node name="GamblerNpc" type="Area2D" parent="Villager" groups=["talkandinteractNpc"]]
 script = ExtResource("5_kdubu")
@@ -58,10 +66,10 @@ scale = Vector2(1.495, 1.495)
 shape = SubResource("RectangleShape2D_d21ai")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -51.0
-offset_top = 47.0
-offset_right = 82.0
-offset_bottom = 116.0
+offset_left = 249.0
+offset_top = -44.0
+offset_right = 382.0
+offset_bottom = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.977825, 1)
@@ -90,6 +98,31 @@ offset_bottom = 548.898
 position = Vector2(316.452, 102.564)
 scale = Vector2(0.536745, 0.683198)
 texture = ExtResource("9_4d7sh")
+
+[node name="Label" type="Label" parent="Pixil-frame-0"]
+offset_left = -985.0
+offset_top = -200.0
+offset_right = 993.0
+offset_bottom = 487.0
+theme_override_font_sizes/font_size = 116
+autowrap_mode = 1
+
+[node name="fishingarea" type="Sprite2D" parent="." groups=["fishing"]]
+position = Vector2(-890, 1107)
+scale = Vector2(5.344, 1.508)
+texture = ExtResource("10_ir8iy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="fishingarea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fishingarea/StaticBody2D"]
+position = Vector2(168.112, -257.115)
+shape = SubResource("RectangleShape2D_ir8iy")
+
+[node name="Area2D" type="Area2D" parent="fishingarea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fishingarea/Area2D"]
+position = Vector2(168.112, -272.036)
+shape = SubResource("RectangleShape2D_hqns4")
 
 [connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]
