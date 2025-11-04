@@ -2,32 +2,32 @@
 
 [ext_resource type="Script" uid="uid://d33a8fhxni8y" path="res://fishing.gd" id="1_vc7xe"]
 [ext_resource type="Script" uid="uid://dylxyhladxjem" path="res://fish.gd" id="2_8x31n"]
+[ext_resource type="Texture2D" uid="uid://ce7rfrj8vtuja" path="res://ChatGPT Image Nov 4, 2025, 02_52_25 PM.png" id="3_8x31n"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hqns4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_x0ka3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
-size = Vector2(3.6033, 40.3977)
+size = Vector2(7.86739, 40.3977)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
 size = Vector2(0.191874, 40.3978)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
-size = Vector2(3.54975, 40.7792)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_d2bti"]
+size = Vector2(7.897936, 40.7792)
 
 [node name="fishing" type="TextureRect"]
-offset_left = 163.0
-offset_top = 339.0
-offset_right = 203.0
-offset_bottom = 379.0
-scale = Vector2(10.4233, 0.519831)
+offset_left = 280.0
+offset_top = 362.00003
+offset_right = 331.88876
+offset_bottom = 402.00003
+scale = Vector2(13.710431, 1.7218257)
 texture = SubResource("CanvasTexture_hqns4")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(15.5421, 21.1607)
+z_index = 2
+position = Vector2(19.091843, 21.1607)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_vc7xe")
@@ -36,13 +36,14 @@ script = ExtResource("1_vc7xe")
 modulate = Color(0, 0.827971, 0.277722, 1)
 offset_left = -1.91878
 offset_top = -21.1607
-offset_right = 38.0812
+offset_right = 86.0515
 offset_bottom = 18.8393
 scale = Vector2(0.09, 1)
 texture = SubResource("CanvasTexture_x0ka3")
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-0.21307, -0.961853)
+position = Vector2(1.9189777, -0.961853)
 shape = SubResource("RectangleShape2D_x0ka3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -56,34 +57,32 @@ shape = SubResource("RectangleShape2D_0h7mo")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 visibility_layer = 3
-position = Vector2(39.995, 20.199)
+position = Vector2(51.931263, 20.32725)
 shape = SubResource("RectangleShape2D_0h7mo")
 
 [node name="fish" type="CharacterBody2D" parent="."]
-position = Vector2(18.037, 18.867)
+z_index = 5
+position = Vector2(12.663936, 19.23703)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_8x31n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fish"]
-position = Vector2(0.814999, 0.740051)
+position = Vector2(0.46475458, 1.0902405)
 shape = SubResource("RectangleShape2D_nr8wp")
 
-[node name="TextureRect3" type="TextureRect" parent="fish"]
-modulate = Color(0.350436, 0.244653, 0.393583, 1)
-offset_left = -1.34362
-offset_top = -18.867
-offset_right = 38.6564
-offset_bottom = 21.133
-scale = Vector2(0.09, 1)
-texture = SubResource("CanvasTexture_d2bti")
-metadata/_edit_use_anchors_ = true
+[node name="Sprite2D" type="Sprite2D" parent="fish"]
+position = Vector2(0.4647536, 1.0902171)
+scale = Vector2(0.0076213637, 0.03800018)
+texture = ExtResource("3_8x31n")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(0.0431373, 0.239216, 1, 1)
 layout_mode = 0
-offset_top = -51.9399
-offset_right = 410.865
-offset_bottom = -13.7499
-scale = Vector2(0.0974298, 1.33002)
+offset_left = -0.43762302
+offset_top = -24.392717
+offset_right = 527.54553
+offset_bottom = 38.40342
+scale = Vector2(0.098357804, 0.37764832)
 value = 50.0
+show_percentage = false

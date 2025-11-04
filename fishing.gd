@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 		
 		self.get_parent().queue_free()
 	var distance =  self.position.distance_to(fish.position)
-	if distance >= 4:
+	if distance >= 7:
 		addtime = 0
 		if timer >= 0.3:
 			prog.value -=2
@@ -24,9 +24,9 @@ func _process(delta: float) -> void:
 		timer = 0
 		addtime += delta
 		if addtime >= 0.3:
-			prog.value +=2
+			prog.value +=3
 			addtime = 0
-	print (distance)
+
 	timer += delta
 	if Input.is_action_pressed("mousekey"):
 	

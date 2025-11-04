@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 2500
-const JUMP_VELOCITY = -400.0
+const SPEED = 4000
 var left = -1
 
 func _ready() -> void: 
@@ -19,8 +18,11 @@ func funcrandom()->void:
 		var random = randi_range(0,1)
 		if random == 0:
 			left = -1
+			self.get_node("Sprite2D").flip_h = false
 		else:
 			left = 1
-		await get_tree().create_timer(1).timeout
+			
+			self.get_node("Sprite2D").flip_h = true
+		await get_tree().create_timer(2).timeout
 	
 	

@@ -60,10 +60,6 @@ func game_sequence()->void:
 		if p2.poisoned:
 			p2.hp -= poison_damage
 			print(p2.Name, " takes ", poison_damage, " damage through poison and has now ", p2.hp, " hp left")		
-
-	
-	
-
 func p1_turn()->void:
 	print("spieler 1 zieht")
 	await attack 

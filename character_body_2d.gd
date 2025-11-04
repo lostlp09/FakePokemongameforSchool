@@ -51,15 +51,16 @@ func _physics_process(delta: float) -> void:
 			textbox.position = Vector2(self.position.x,self.position.y + 199)
 			gamblernpc_interaction = false
 			var text =Npc.get_meta("npctext")
-			fishing1.emit()
+			
 			for i in text:
 				textbox.get_node("Label").text = textbox.get_node("Label").text + i
 				await get_tree().create_timer(0.01).timeout
-		elif fishing == true and fishing1 == null:
+		elif fishing == true and fishuiisactive == null:
 			var fishstart = fishui.instantiate()
 			fishuiisactive = fishstart
-			fishstart.position = Vector2(self.position.x  ,self.position.y)
+			fishstart.position = Vector2(self.position.x -320  ,self.position.y + 200)
 			self.get_parent().add_child(fishstart)
+			fishing1.emit()
 			
 			
 			isfishing = true
@@ -94,9 +95,10 @@ func _on_player_area_area_entered(area: Area2D) -> void:
 
 func whileisifishing()->void:
 	while true:
-		if fishui == null:
-			break
+		if fishuiisactive == null:
 			allowwalking = true
+			break
+	
 		
 		
 		await  get_tree().create_timer(0.1).timeout
