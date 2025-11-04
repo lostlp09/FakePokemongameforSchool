@@ -42,9 +42,9 @@ func _process(delta: float) -> void:
 			clicked = false
 		acc += 0.05 * delta	
 	if clicked == false:
-		self.velocity.x -=   3 * acc
+		self.velocity.x -=   600* acc * delta
 	else:
-		self.velocity.x +=   3 * acc
+		self.velocity.x +=   600 * acc * delta
 	move_and_slide()
 var characterlistcommon  = ["Dog","cat","hamster"]
 var characterlistuncomon = ["elephant","Giraffe","zebra"]
