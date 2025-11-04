@@ -13,7 +13,8 @@ var p2: character
 var fighting: bool
 var turn: int = 1
 var which_attack: String
-var poison_damage: int = 5
+var poison_damage: float = 0.05
+var burn_damage: int = 5
 
 func _ready() ->void:
 	p1 = Monkey
@@ -54,13 +55,15 @@ func game_sequence()->void:
 			p2_turn()
 			
 		if p1.poisoned:
-			p1.hp -= poison_damage
-			print(p1.Name, " takes ", poison_damage, " damage through poison and has now ", p1.hp, " hp left")
-			
+			p1.hp -= poison_damage * p1.maxhp
+			print(p1.Name, " takes ", poison_damage * p1.maxhp, " damage through poison and has now ", p1.hp, " hp left")
+		if p1.burned:
+			p1.hp -= burn_damage
+			print(p1.Name, " takes ", burn_damage, " damage through burn")	
 		if p2.poisoned:
-			p2.hp -= poison_damage
-			print(p2.Name, " takes ", poison_damage, " damage through poison and has now ", p2.hp, " hp left")		
-
+			p2.hp -= poison_damage * p1.maxhp
+			print(p2.Name, " takes ", poison_damage * p1.maxhp, " damage through poison and has now ", p2.hp, " hp left")		
+		
 	
 	
 
@@ -88,13 +91,7 @@ func p2_turn()->void:
 	turn = 1
 	game_sequence()
 		
-func _input(_i):
-	if Input.is_action_just_pressed("first attack"):
-		keypress.emit()
 
-func playerswitch()->void:
-	game_sequence[current_event].call()
-	current_event += 1
-	if current_event > len(game_sequence)-1:
-		current_event = 0
+
+
 	
