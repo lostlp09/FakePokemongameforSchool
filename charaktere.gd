@@ -2,26 +2,36 @@ extends Node
 class_name character
 #var attack: Callable
 var maxhp: float
-var hp: float
 var Name: String
-var poisoned: bool = false
-var burned: bool = false
-var actual_damage: float
 var damage1: float 
 var damage2: float
-var damage3: float
+var damage3: float 
+
+var hp: float
+var actual_damage: float
+var shield: float = 0
+var poisoned: bool = false
+var burned: bool = false
+
 var poison1: bool = false
 var poison2: bool = false
 var poison3: bool = false
+
 var burn1: bool = false
 var burn2: bool = false
 var burn3: bool = false
+
 var gamble1: bool = false
 var gamble2: bool = false
 var gamble3: bool = false
+
 var lifesteal1: int = 0 
 var lifesteal2: int = 0 
 var lifesteal3: int = 0 
+
+var shield1: int = 0
+var shield2: int = 0
+var shield3: int = 0
 
 
 #(prüfen, ob attacke ok ist)
@@ -42,8 +52,10 @@ func _init(_maxhp: float,
  "gamble3" : false,
  "lifesteal1" : 0,
  "lifesteal2" : 0,
- "lifesteal3" : 0}
-) ->void:
+ "lifesteal3" : 0,
+ "shield1" : 0,
+ "shield2" : 0,
+ "shield3" : 0}) ->void:
 	damage1 = _damage1
 	damage2 = _damage2
 	damage3 = _damage3
@@ -77,14 +89,23 @@ func attack1(target: character)-> void:
 	if target == self:
 		print("cannot attack yourself")
 	else:
-		if gamble1 == false:
-			target.hp -= self.damage1
-			self.actual_damage = self.damage1
+		self.actual_damage = self.damage1
 		if gamble1:
-			target.hp -= self.damage1 * randf()
 			self.actual_damage = self.damage1 * randf()
-		if (lifesteal1 == 0) == false:
-			self.hp += actual_damage * lifesteal1
+		if shield1 != 0:
+			self.shield += self.shield1
+			print(self.Name, " gained a shield of ", self.shield1)
+		if target.shield > 0:
+			if actual_damage >= target.shield:
+				self.actual_damage -= target.shield
+				target.shield = 0
+			else:
+				target.shield -= self.actual_damage
+				actual_damage = 0
+			
+		target.hp -= self.actual_damage
+		if lifesteal1 != 0:
+			self.hp += actual_damage * lifesteal1	
 		if poison1:
 			target.poisoned = true
 			print(target.Name, " is now poisoned")
@@ -93,18 +114,27 @@ func attack1(target: character)-> void:
 			print(target.Name, "is now poisoned")
 		print(self.Name," is attacking ", target.Name, " for ", self.actual_damage, " damage")
 		print(target.Name, " has ", target.hp, " hp left ")
+		print("p1 shield: ", self.shield)
 		
 func attack2(target: character)-> void:
 	if target == self:
 		print("cannot attack yourself")
 	else:
-		if gamble2 == false:
-			target.hp -= self.damage2
-			self.actual_damage = self.damage2
+		self.actual_damage = self.damage2
 		if gamble2:
-			target.hp -= self.damage2 * randf()
 			self.actual_damage = self.damage2 * randf()
-		if (lifesteal2 == 0) == false:
+		if shield2 != 0:
+			self.shield += self.shield2
+			print(self.Name, " gained a shield of ", self.shield1)
+		if target.shield > 0:
+			if actual_damage >= target.shield:
+				self.actual_damage -= target.shield
+				target.shield = 0
+			else:
+				target.shield -= self.actual_damage
+				actual_damage = 0
+		target.hp -= self.actual_damage
+		if lifesteal2 != 0:
 			self.hp += actual_damage * lifesteal2
 		if poison2:
 			target.poisoned = true
@@ -119,13 +149,21 @@ func attack3(target: character)-> void:
 	if target == self:
 		print("cannot attack yourself")
 	else:
-		if gamble3 == false:
-			target.hp -= self.damage3
-			self.actual_damage = self.damage3
+		self.actual_damage = self.damage3
 		if gamble3:
-			target.hp -= self.damage3 * randf()
 			self.actual_damage = self.damage3 * randf()
-		if (lifesteal3 == 0) == false:
+		if shield3 != 0:
+			self.shield += self.shield3
+			print(self.Name, " gained a shield of ", self.shield1)
+		if target.shield > 0:
+			if actual_damage >= target.shield:
+				self.actual_damage -= target.shield
+				target.shield = 0
+			else:
+				target.shield -= self.actual_damage
+				actual_damage = 0
+		target.hp -= self.actual_damage
+		if lifesteal3 != 0:
 			self.hp += actual_damage * lifesteal3
 		if poison3:
 			target.poisoned = true
