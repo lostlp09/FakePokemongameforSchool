@@ -1,5 +1,6 @@
 extends Node
 signal attack
+signal button_1_pressed
 
 
 #var event_p1_turn: Callable = p1_turn
@@ -17,8 +18,8 @@ var poison_damage: float = 0.05
 var burn_damage: int = 5
 
 func _ready() ->void:
-	p1 = Monkey
-	p2 = Gambler
+	p1 = Character.p1
+	p2 = Character.p2
 	fighting = true
 	game_sequence()
 	#var attacks_beispiel = attacks.new()
@@ -92,6 +93,16 @@ func p2_turn()->void:
 	game_sequence()
 		
 
-
-
+func _on_attack_1_pressed() -> void:
+	which_attack = "first attack"
+	attack.emit()
 	
+
+func _on_attack_2_pressed() -> void:
+	which_attack = "second attack"
+	attack.emit()
+
+
+func _on_attack_3_pressed() -> void:
+	which_attack = "third attack"
+	attack.emit()
