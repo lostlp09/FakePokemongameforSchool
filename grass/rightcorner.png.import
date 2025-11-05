@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://unibssaanoh8"
-path="res://.godot/imported/Sprite-0002.png-be2d0c11222c1eca468919d34832f25a.ctex"
+uid="uid://na4pjbiawbxq"
+path="res://.godot/imported/rightcorner.png-0173e1c69c1919d8bb226983c866d538.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite-0002.png"
-dest_files=["res://.godot/imported/Sprite-0002.png-be2d0c11222c1eca468919d34832f25a.ctex"]
+source_file="res://grass/rightcorner.png"
+dest_files=["res://.godot/imported/rightcorner.png-0173e1c69c1919d8bb226983c866d538.ctex"]
 
 [params]
 

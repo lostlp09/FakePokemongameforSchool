@@ -1,6 +1,10 @@
 extends Node
+
 class_name character
+
+
 #var attack: Callable
+var optional1 = {}
 var maxhp: float
 var hp: float
 var Name: String
@@ -50,6 +54,8 @@ func _init(_maxhp: float,
 	maxhp = _maxhp
 	Name = _Name
 	hp = maxhp
+	optional1 = optional 
+	
 	for key in optional:
 		if key in self:
 			set(key, optional[key])

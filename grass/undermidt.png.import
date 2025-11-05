@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk3whpjhipa6r"
-path="res://.godot/imported/sr5zebf7fe8ddaaws3.png-e4e1710ed76a7da61ed11aa86ead78eb.ctex"
+uid="uid://cs5gqosnfgq8b"
+path="res://.godot/imported/undermidt.png-ae8f06c080aafc9f8dd0287c4151688f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dialog/sr5zebf7fe8ddaaws3.png"
-dest_files=["res://.godot/imported/sr5zebf7fe8ddaaws3.png-e4e1710ed76a7da61ed11aa86ead78eb.ctex"]
+source_file="res://grass/undermidt.png"
+dest_files=["res://.godot/imported/undermidt.png-ae8f06c080aafc9f8dd0287c4151688f.ctex"]
 
 [params]
 

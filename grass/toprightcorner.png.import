@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk3whpjhipa6r"
-path="res://.godot/imported/sr5zebf7fe8ddaaws3.png-e4e1710ed76a7da61ed11aa86ead78eb.ctex"
+uid="uid://b38efnj8wlufl"
+path="res://.godot/imported/toprightcorner.png-0ce01ea7614aa9d8a5500ca957306b69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dialog/sr5zebf7fe8ddaaws3.png"
-dest_files=["res://.godot/imported/sr5zebf7fe8ddaaws3.png-e4e1710ed76a7da61ed11aa86ead78eb.ctex"]
+source_file="res://grass/toprightcorner.png"
+dest_files=["res://.godot/imported/toprightcorner.png-0ce01ea7614aa9d8a5500ca957306b69.ctex"]
 
 [params]
 
