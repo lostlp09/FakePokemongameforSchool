@@ -54,6 +54,10 @@ offset_top = 600.0
 offset_right = 194.336
 offset_bottom = 610.32
 
+[node name="p1_animation" type="AnimatedSprite2D" parent="Kampf"]
+
+[node name="p2_animation" type="AnimatedSprite2D" parent="Kampf"]
+
 [node name="Node" type="Node" parent="."]
 script = ExtResource("3_ta0y4")
 
