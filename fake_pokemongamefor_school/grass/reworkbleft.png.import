@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drqefebphwk68"
-path="res://.godot/imported/reworklefundert.png-5fd1e7efd9224520f00511471c1a020a.ctex"
+uid="uid://tdba107nponq"
+path="res://.godot/imported/reworkbleft.png-023c29284fdb0fe1378e8ef4512b29be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grass/reworklefundert.png"
-dest_files=["res://.godot/imported/reworklefundert.png-5fd1e7efd9224520f00511471c1a020a.ctex"]
+source_file="res://grass/reworkbleft.png"
+dest_files=["res://.godot/imported/reworkbleft.png-023c29284fdb0fe1378e8ef4512b29be.ctex"]
 
 [params]
 
