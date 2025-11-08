@@ -39,6 +39,21 @@ offset_top = 17.0
 offset_right = 567.0
 offset_bottom = 50.0
 
+[node name="player1_hp" type="Label" parent="Kampf"]
+offset_left = 920.0
+offset_top = 600.0
+offset_right = 1112.0
+offset_bottom = 638.0
+
+[node name="player2_hp" type="Label" parent="Kampf"]
+anchors_preset = -1
+anchor_right = 0.057
+anchor_bottom = 0.035
+offset_left = 40.0
+offset_top = 600.0
+offset_right = 194.336
+offset_bottom = 610.32
+
 [node name="Node" type="Node" parent="."]
 script = ExtResource("3_ta0y4")
 

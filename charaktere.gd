@@ -1,6 +1,5 @@
 extends Node
 class_name character
-@export 
 #var attack: Callable
 var maxhp: float
 var Name: String
@@ -8,11 +7,14 @@ var damage1: float
 var damage2: float
 var damage3: float 
 
+var optional_ = {}
 var hp: float
 var actual_damage: float
 var shield: float = 0
 var poisoned: bool = false
 var burned: bool = false
+var lvl: int = 1
+var lvl_mult : float 
 
 var poison1: bool = false
 var poison2: bool = false
@@ -29,7 +31,6 @@ var gamble3: bool = false
 var lifesteal1: int = 0 
 var lifesteal2: int = 0 
 var lifesteal3: int = 0 
-@export var optional_ = {"ff": "test"}
 
 var shield1: int = 0
 var shield2: int = 0
@@ -65,6 +66,7 @@ func _init(_maxhp: float,
 	Name = _Name
 	hp = maxhp
 	optional_ = optional 
+	lvl_mult = 1 * pow(1.1, lvl - 1)
 	for key in optional:
 		if key in self:
 			set(key, optional[key])
@@ -92,9 +94,9 @@ func attack1(target: character)-> void:
 	if target == self:
 		print("cannot attack yourself")
 	else:
-		self.actual_damage = self.damage1
+		self.actual_damage = self.damage1 * lvl_mult
 		if gamble1:
-			self.actual_damage = self.damage1 * randf()
+			self.actual_damage = self.damage1 * randf() * lvl_mult
 		if shield1 != 0:
 			self.shield += self.shield1
 			print(self.Name, " gained a shield of ", self.shield1)
@@ -123,9 +125,9 @@ func attack2(target: character)-> void:
 	if target == self:
 		print("cannot attack yourself")
 	else:
-		self.actual_damage = self.damage2
+		self.actual_damage = self.damage2 * lvl_mult
 		if gamble2:
-			self.actual_damage = self.damage2 * randf()
+			self.actual_damage = self.damage2 * randf() * lvl_mult
 		if shield2 != 0:
 			self.shield += self.shield2
 			print(self.Name, " gained a shield of ", self.shield1)
@@ -152,9 +154,9 @@ func attack3(target: character)-> void:
 	if target == self:
 		print("cannot attack yourself")
 	else:
-		self.actual_damage = self.damage3
+		self.actual_damage = self.damage3 * lvl_mult
 		if gamble3:
-			self.actual_damage = self.damage3 * randf()
+			self.actual_damage = self.damage3 * randf() * lvl_mult
 		if shield3 != 0:
 			self.shield += self.shield3
 			print(self.Name, " gained a shield of ", self.shield1)

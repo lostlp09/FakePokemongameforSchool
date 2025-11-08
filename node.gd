@@ -26,8 +26,7 @@ func _ready() ->void:
 	game_sequence()
 	#var attacks_beispiel = attacks.new()
 	#var icon = character.new( Callable(attacks_beispiel, "hit"),float(2.3))
-func _process(delta) ->void:
-	$"attack1 label".text 
+
 	
 		
 func _input(_attack)->void:
