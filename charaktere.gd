@@ -12,6 +12,7 @@ var attack3_element: Callable
 var element: String
 
 var optional_ = {}
+var alive: bool = true
 var hp: float
 var actual_damage: float
 var calculation_damage: float
@@ -46,11 +47,11 @@ var shield3: int = 0
 func _init(_maxhp: float,
  _element: String,
  _damage1: float,
- _attack1_element: Callable,
+ _attack1_element: String,
  _damage2: float,
- _attack2_element: Callable,
+ _attack2_element: String,
  _damage3:float,
- _attack3_element: Callable,
+ _attack3_element: String,
  _Name: String,
  optional := {
  "poison1" : false, 
@@ -70,11 +71,29 @@ func _init(_maxhp: float,
  "shield3" : 0}) ->void:
 	element = _element
 	damage1 = _damage1
-	attack1_element = _attack1_element
+	match _attack1_element:
+		"fire": attack1_element = fire
+		"water": attack1_element = water
+		"wind": attack1_element = wind
+		"ice": attack1_element = ice
+		"plant": attack1_element = plant
+		"neutral": attack1_element = neutral
 	damage2 = _damage2
-	attack2_element = _attack2_element
+	match _attack2_element:
+		"fire": attack2_element = fire
+		"water": attack2_element = water
+		"wind": attack2_element = wind
+		"ice": attack2_element = ice
+		"plant": attack2_element = plant
+		"neutral": attack2_element = neutral
 	damage3 = _damage3
-	attack3_element = _attack3_element
+	match _attack3_element:
+		"fire": attack3_element = fire
+		"water": attack3_element = water
+		"wind": attack3_element = wind
+		"ice": attack3_element = ice
+		"plant": attack3_element = plant
+		"neutral": attack3_element = neutral
 	maxhp = _maxhp
 	Name = _Name
 	hp = maxhp
@@ -84,23 +103,6 @@ func _init(_maxhp: float,
 		if key in self:
 			set(key, optional[key])
 
-	
-	#ist func_ref ein Callable?
-	#assert(func_ref is Callable, "übergebener Parameter ist kein Callable")
-	
-	#existiert func_ref?
-	#assert(func_ref.is_valid, "Callable ist ungültig, verweist auf nicht existente Methode")
-	
-	#ist func_ref func_ref in attacks
-	#var obj = func_ref.get_object()
-	#assert(obj is attacks, "Callable keine Funktion von attacks")
-	
-	#ist HP float?
-	#assert(HP is float, "HP muss float sein")
-	
-	#alles stimmt
-	#attack = func_ref
-	#print("charakter erfolgreich erstellt")
 func fire (target_element: String):
 	if target_element == "water" or "wind" or "fire":
 		return(false)
@@ -130,6 +132,9 @@ func wind (target_element: String):
 		return(false)
 	if target_element == "water" or "fire":
 		return(true)
+
+func neutral (target_element: String):
+	pass
 
 
 func attack1(target: character)-> void:
@@ -257,14 +262,4 @@ func attack3(target: character)-> void:
 			print(target.Name, "is now burned")
 			
 		print(self.Name, " is attacking ", target.name, " for ", self.actual_damage, " damage")
-		print(target.Name, " has ", target.hp, " hp left")
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		print(target.Name, " has ", target.hp, " hp left")	
