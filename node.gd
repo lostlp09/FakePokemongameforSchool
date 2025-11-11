@@ -1,5 +1,6 @@
 extends Node
 signal attack
+signal attacked 
 signal button_1_pressed
 
 #Variablen
@@ -12,6 +13,7 @@ var poison_damage: float = 0.05
 var burn_damage: int = 5
 var current_player: Array
 var current_attacker: character
+var attacked_char: character
 
 func _ready() ->void:
 	p1 = Character.p1
@@ -30,7 +32,18 @@ func _on_attack_2_pressed() -> void:
 func _on_attack_3_pressed() -> void:
 	which_attack = "third attack"
 	attack.emit()
-	
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("first enemy"):
+		attacked_char = p2[0]
+		attacked.emit()
+	if Input.is_action_just_pressed("second enemy"):
+		attacked_char = p2[1]
+		attacked.emit()
+	if Input.is_action_just_pressed("third enemy"):
+		attacked_char = p2[2]
+		attacked.emit()
+
 func game_sequence()->void:
 	await get_tree().process_frame
 	for char_dead in p1:
@@ -55,16 +68,18 @@ func game_sequence()->void:
 			current_player = p2
 			p2_turn()
 
-func p1_turn()->void:
+func p1_turn()->void:     
 	for x in p1:
 		current_attacker = x
 		await attack 
-		if which_attack == "first attack":
-			x.attack1(p2[0])
-		if which_attack == "second attack":
-			x.attack2(p2[0])
-		if which_attack == "third attack":
-			x.attack3(p2[0])
+		await attacked
+		match which_attack:
+			"first attack":
+				x.attack1(attacked_char)
+			"second attack":
+				x.attack2(attacked_char)
+			"third attack":
+				x.attack3(attacked_char)
 	for x in p2:
 		if x.poisoned:
 			x.hp -= poison_damage * x.maxhp
@@ -78,12 +93,14 @@ func p2_turn()->void:
 	for x in p2:
 		current_attacker = x
 		await attack 
-		if which_attack == "first attack":
-			x.attack1(p1[0])
-		if which_attack == "second attack":
-			x.attack2(p1[0])
-		if which_attack == "third attack":
-			x.attack3(p1[0])
+		await attacked
+		match which_attack:
+			"first attack":
+				x.attack1(attacked_char)
+			"second attack":
+				x.attack2(attacked_char)
+			"third attack":
+				x.attack3(attacked_char)
 	for x in p1:
 		if x.poisoned:
 			print(x)

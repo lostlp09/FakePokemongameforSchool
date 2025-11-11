@@ -40,7 +40,7 @@ offset_right = 567.0
 offset_bottom = 50.0
 
 [node name="player1_hp" type="Label" parent="Kampf"]
-offset_left = 920.0
+offset_left = 779.0
 offset_top = 600.0
 offset_right = 1112.0
 offset_bottom = 638.0

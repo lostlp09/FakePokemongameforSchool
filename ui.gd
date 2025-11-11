@@ -31,7 +31,6 @@ func _process(delta) -> void:
 	"
 	for key in init_dic:
 		if init_dic[key]:
-			print(init_dic)
 			effect_number = key.substr(key.length() - 1, 1)
 			effect_name = key.substr(0, key.length() - 1)
 			attack_buttons[effect_number].text += effect_name + "
