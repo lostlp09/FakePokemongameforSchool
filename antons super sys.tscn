@@ -1,10 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://cntutuvlipsdm"]
+[gd_scene load_steps=14 format=3 uid="uid://cntutuvlipsdm"]
 
 [ext_resource type="Script" uid="uid://dtbp63pqisq4d" path="res://node.gd" id="1_ta0y4"]
 [ext_resource type="Script" uid="uid://ldumuw0s7p8j" path="res://charaktere.gd" id="2_fot2q"]
-[ext_resource type="Script" uid="uid://mlw1aha8md5d" path="res://ui.gd" id="3_ta0y4"]
+[ext_resource type="Texture2D" uid="uid://en0dmnsdh5lk" path="res://Screenshot 2025-11-12 182556(4).png" id="3_ta0y4"]
+[ext_resource type="Script" uid="uid://mlw1aha8md5d" path="res://ui.gd" id="4_v0j1c"]
+[ext_resource type="Texture2D" uid="uid://cqb0x23ub8pws" path="res://button sprite.png" id="5_g6yn2"]
+[ext_resource type="Texture2D" uid="uid://b4a5o6ecoj1xg" path="res://fire animation.png" id="6_7vej1"]
+[ext_resource type="Texture2D" uid="uid://dopnasdqx0gd7" path="res://water.png" id="7_prdrf"]
+[ext_resource type="Texture2D" uid="uid://ciylx5i2drm4" path="res://ice  icon.png" id="8_c0xd8"]
+[ext_resource type="Texture2D" uid="uid://d5yrcimjen6k" path="res://wind icon.png" id="9_57tx2"]
+[ext_resource type="Texture2D" uid="uid://bjbfxgrsm4ph3" path="res://blatt icon.png" id="10_3iops"]
+[ext_resource type="Texture2D" uid="uid://c3wg5rahxj05y" path="res://outline.png" id="11_mtcdw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djvsa"]
+atlas = ExtResource("6_7vej1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b2at4"]
+animations = [{
+"frames": [{
+"duration": 1e+06,
+"texture": null
+}, {
+"duration": 1e+06,
+"texture": SubResource("AtlasTexture_djvsa")
+}, {
+"duration": 1e+06,
+"texture": ExtResource("7_prdrf")
+}, {
+"duration": 1e+06,
+"texture": ExtResource("8_c0xd8")
+}, {
+"duration": 1e+06,
+"texture": ExtResource("9_57tx2")
+}, {
+"duration": 1e+06,
+"texture": ExtResource("10_3iops")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(35, 39)
+rotation = 2.61799
 
 [node name="Kampf" type="Node" parent="."]
 script = ExtResource("1_ta0y4")
@@ -12,55 +52,155 @@ script = ExtResource("1_ta0y4")
 [node name="Charaktere" type="Node" parent="Kampf"]
 script = ExtResource("2_fot2q")
 
-[node name="attack 1" type="Button" parent="Kampf"]
-offset_left = 61.0
-offset_top = 45.0
-offset_right = 149.0
-offset_bottom = 95.0
-text = "attack 1"
+[node name="background" type="TextureRect" parent="Kampf"]
+texture_filter = 1
+offset_left = -10.0
+offset_top = -109.0
+offset_right = 378.0
+offset_bottom = 147.0
+scale = Vector2(3, 3)
+texture = ExtResource("3_ta0y4")
+stretch_mode = 1
 
-[node name="attack 2" type="Button" parent="Kampf"]
-offset_left = 63.0
-offset_top = 132.0
-offset_right = 155.0
-offset_bottom = 179.0
+[node name="player container" type="Node2D" parent="Kampf"]
+
+[node name="player 1" type="AnimatedSprite2D" parent="Kampf/player container"]
+
+[node name="player 2" type="AnimatedSprite2D" parent="Kampf/player container"]
+
+[node name="player 3" type="AnimatedSprite2D" parent="Kampf/player container"]
+
+[node name="enemy container" type="Node2D" parent="Kampf"]
+
+[node name="enemy 1" type="Area2D" parent="Kampf/enemy container"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 1"]
+
+[node name="enemy 2" type="Area2D" parent="Kampf/enemy container"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 2"]
+
+[node name="enemy 3" type="Area2D" parent="Kampf/enemy container"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 3"]
+
+[node name="UI" type="CanvasLayer" parent="Kampf"]
+script = ExtResource("4_v0j1c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Kampf/UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="turn" type="Label" parent="Kampf/UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="attack 1" type="Button" parent="Kampf/UI"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 100.0
+text = "attack 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="button1 design" type="Sprite2D" parent="Kampf/UI/attack 1"]
+texture_filter = 1
+position = Vector2(50, 25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_g6yn2")
+
+[node name="button1 icons" type="AnimatedSprite2D" parent="Kampf/UI/attack 1"]
+texture_filter = 1
+position = Vector2(80, 25)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_b2at4")
+frame = 5
+speed_scale = 0.0
+
+[node name="button1 text" type="Label" parent="Kampf/UI/attack 1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="button1 outline" type="Sprite2D" parent="Kampf/UI/attack 1"]
+visible = false
+texture_filter = 1
+position = Vector2(50, 25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_mtcdw")
+
+[node name="attack 2" type="Button" parent="Kampf/UI"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 200.0
+offset_bottom = 200.0
 text = "attack 2"
 
-[node name="attack 3" type="Button" parent="Kampf"]
-offset_left = 64.0
-offset_top = 221.0
-offset_right = 163.0
-offset_bottom = 270.0
+[node name="button2 design" type="Sprite2D" parent="Kampf/UI/attack 2"]
+texture_filter = 1
+position = Vector2(50, 25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_g6yn2")
+
+[node name="button2 icons" type="AnimatedSprite2D" parent="Kampf/UI/attack 2"]
+texture_filter = 1
+position = Vector2(80, 25)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_b2at4")
+frame = 1
+speed_scale = 0.0
+
+[node name="button2 text" type="Label" parent="Kampf/UI/attack 2"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="button2 outline" type="Sprite2D" parent="Kampf/UI/attack 2"]
+visible = false
+texture_filter = 1
+position = Vector2(50, 25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_mtcdw")
+
+[node name="attack 3" type="Button" parent="Kampf/UI"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 100.0
+offset_top = 250.0
+offset_right = 200.0
+offset_bottom = 300.0
 text = "attack 3"
 
-[node name="player_turn" type="Label" parent="Kampf"]
-offset_left = 355.0
-offset_top = 17.0
-offset_right = 567.0
-offset_bottom = 50.0
+[node name="button3 design" type="Sprite2D" parent="Kampf/UI/attack 3"]
+texture_filter = 1
+position = Vector2(50, 25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_g6yn2")
 
-[node name="player1_hp" type="Label" parent="Kampf"]
-offset_left = 779.0
-offset_top = 600.0
-offset_right = 1112.0
-offset_bottom = 638.0
+[node name="button3 icons" type="AnimatedSprite2D" parent="Kampf/UI/attack 3"]
+texture_filter = 1
+position = Vector2(80, 25)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_b2at4")
+frame = 3
+speed_scale = 0.0
 
-[node name="player2_hp" type="Label" parent="Kampf"]
-anchors_preset = -1
-anchor_right = 0.057
-anchor_bottom = 0.035
-offset_left = 40.0
-offset_top = 600.0
-offset_right = 194.336
-offset_bottom = 610.32
+[node name="button3 text" type="Label" parent="Kampf/UI/attack 3"]
+offset_right = 40.0
+offset_bottom = 23.0
 
-[node name="p1_animation" type="AnimatedSprite2D" parent="Kampf"]
+[node name="button3 outline" type="Sprite2D" parent="Kampf/UI/attack 3"]
+visible = false
+texture_filter = 1
+position = Vector2(50, 25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_mtcdw")
 
-[node name="p2_animation" type="AnimatedSprite2D" parent="Kampf"]
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("3_ta0y4")
-
-[connection signal="pressed" from="Kampf/attack 1" to="Kampf" method="_on_attack_1_pressed"]
-[connection signal="pressed" from="Kampf/attack 2" to="Kampf" method="_on_attack_2_pressed"]
-[connection signal="pressed" from="Kampf/attack 3" to="Kampf" method="_on_attack_3_pressed"]
+[connection signal="pressed" from="Kampf/UI/attack 1" to="Kampf" method="_on_attack_1_pressed"]
+[connection signal="pressed" from="Kampf/UI/attack 2" to="Kampf" method="_on_attack_2_pressed"]
+[connection signal="pressed" from="Kampf/UI/attack 3" to="Kampf" method="_on_attack_3_pressed"]

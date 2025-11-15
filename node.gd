@@ -24,6 +24,7 @@ func _ready() ->void:
 func _on_attack_1_pressed() -> void:
 	which_attack = "first attack"
 	attack.emit()
+	print("v")
 
 func _on_attack_2_pressed() -> void:
 	which_attack = "second attack"
@@ -110,3 +111,4 @@ func p2_turn()->void:
 			x.hp -= burn_damage
 	turn = 1
 	game_sequence()
+	
