@@ -1,20 +1,27 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgaj74s30dcbi"]
+[gd_scene load_steps=24 format=3 uid="uid://djj7jeo07d8dh"]
 
-[ext_resource type="Script" uid="uid://d2xkoax2vxiki" path="res://character_body_2d.gd" id="1_epypp"]
-[ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
-[ext_resource type="Texture2D" uid="uid://unibssaanoh8" path="res://Sprite-0002.png" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://dc7xrtl0hlc4s" path="res://icon.svg" id="2_0hol4"]
-[ext_resource type="Texture2D" uid="uid://dgaxlx1ghr8b1" path="res://villager.png" id="4_q6r6c"]
-[ext_resource type="Script" uid="uid://dyetfck7oyl7j" path="res://area_2d.gd" id="5_kdubu"]
-[ext_resource type="Texture2D" uid="uid://6h24wkjyrwmv" path="res://interact.png" id="7_d21ai"]
-[ext_resource type="Texture2D" uid="uid://dpy45tpwchxla" path="res://dialog/pixil-frame-0.png" id="8_rj586"]
-[ext_resource type="Texture2D" uid="uid://dk3whpjhipa6r" path="res://dialog/sr5zebf7fe8ddaaws3.png" id="9_4d7sh"]
-[ext_resource type="Texture2D" uid="uid://b1b3p6jui2oh3" path="res://1000_F_443693248_FFOUon01HIYUVLVPFIyhrzDlbmWN8XKq.jpg" id="10_ir8iy"]
+[ext_resource type="Script" uid="uid://bcex40y51jw6j" path="res://character_body_2d.gd" id="1_epypp"]
+[ext_resource type="Script" path="res://node_2d.gd" id="1_kdubu"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="2_0hol4"]
+[ext_resource type="Texture2D" path="res://villager.png" id="4_q6r6c"]
+[ext_resource type="Script" path="res://area_2d.gd" id="5_kdubu"]
+[ext_resource type="Texture2D" path="res://interact.png" id="7_d21ai"]
+[ext_resource type="Texture2D" path="res://dialog/pixil-frame-0.png" id="8_rj586"]
+[ext_resource type="Texture2D" path="res://dialog/sr5zebf7fe8ddaaws3.png" id="9_4d7sh"]
+[ext_resource type="Texture2D" path="res://1000_F_443693248_FFOUon01HIYUVLVPFIyhrzDlbmWN8XKq.jpg" id="10_ir8iy"]
+[ext_resource type="Script" path="res://scroll_container.gd" id="11_hqns4"]
+[ext_resource type="PackedScene" path="res://map.tscn" id="12_0h7mo"]
+[ext_resource type="Texture2D" path="res://ChatGPT Image Nov 8, 2025, 03_15_47 PM.png" id="12_x0ka3"]
+[ext_resource type="Texture2D" path="res://tree.png" id="13_0h7mo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqns4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
 size = Vector2(278.757, 324.176)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ir8iy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
 size = Vector2(631.216, 20.252)
@@ -22,15 +29,31 @@ size = Vector2(631.216, 20.252)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
 size = Vector2(631.216, 50.0928)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
+size = Vector2(1662.5, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
+size = Vector2(1003.5, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
+size = Vector2(167.75, 431)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+size = Vector2(167.75, 755)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kdubu")
 
+[node name="Map" parent="." instance=ExtResource("12_0h7mo")]
+position = Vector2(-2206, -804)
+scale = Vector2(2.61, 2.61)
+
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -1680.0
-offset_top = -790.0
-offset_right = 1676.0
-offset_bottom = 734.0
-texture = ExtResource("1_wtcfe")
+offset_left = -1934.0
+offset_top = -660.0
+offset_right = 1422.0
+offset_bottom = 864.0
+texture = SubResource("CompressedTexture2D_hqns4")
 stretch_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -70,9 +93,28 @@ offset_left = 249.0
 offset_top = -44.0
 offset_right = 382.0
 offset_bottom = 25.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.977825, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Camera2D"]
+visible = false
+offset_left = -415.207
+offset_top = -266.0
+offset_right = -107.207
+offset_bottom = -127.0
+scale = Vector2(2.84, 3.03698)
+horizontal_scroll_mode = 0
+script = ExtResource("11_hqns4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/ScrollContainer"]
+layout_mode = 2
+
+[node name="Inven" type="TextureRect" parent="Camera2D/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture = SubResource("CanvasTexture_ir8iy")
 
 [node name="interact" type="Sprite2D" parent="."]
 visible = false
@@ -123,6 +165,69 @@ shape = SubResource("RectangleShape2D_ir8iy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fishingarea/Area2D"]
 position = Vector2(168.112, -272.036)
 shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="Storage" type="Node2D" parent="."]
+visible = false
+
+[node name="pokemonbild" type="Sprite2D" parent="Storage"]
+position = Vector2(-472, 126)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0hol4")
+
+[node name="Name" type="Label" parent="Storage/pokemonbild"]
+offset_left = -46.6667
+offset_top = 63.3333
+offset_right = 40.3333
+offset_bottom = 86.3333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "edadadada"
+
+[node name="Hp" type="Label" parent="Storage/pokemonbild"]
+offset_left = -30.0
+offset_top = 36.6667
+offset_right = 10.0
+offset_bottom = 59.6667
+text = "hp:100"
+
+[node name="ChatGptImageNov8,2025,031547Pm2" type="Sprite2D" parent="."]
+position = Vector2(136, -168)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("12_x0ka3")
+
+[node name="ChatGptImageNov8,2025,031547Pm3" type="Sprite2D" parent="."]
+position = Vector2(276, -169)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("12_x0ka3")
+
+[node name="ChatGptImageNov8,2025,031547Pm4" type="Sprite2D" parent="."]
+position = Vector2(410, -166)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("12_x0ka3")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -1257.0
+offset_top = -169.0
+offset_right = -1158.0
+offset_bottom = 15.0
+texture = ExtResource("13_0h7mo")
+
+[node name="Bushes" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bushes"]
+position = Vector2(-93.25, 322)
+shape = SubResource("RectangleShape2D_0h7mo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bushes"]
+position = Vector2(-1531.75, 238)
+shape = SubResource("RectangleShape2D_nr8wp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bushes"]
+position = Vector2(-1871.88, -496.5)
+shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bushes"]
+position = Vector2(-620, -933.5)
+shape = SubResource("RectangleShape2D_ta5nu")
 
 [connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]

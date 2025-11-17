@@ -9,6 +9,7 @@ var Npc = null
 var fishing = false
 var isfishing = false
 var fishuiisactive= null
+var skipped = null
 signal  fishing1
 var fishui = preload("res://fishing.tscn")
 @onready var  skipbutton = $"../Pixil-frame-0/Button"
@@ -20,6 +21,9 @@ func textbotchanged() -> void:
 func skipbuttonreleased() -> void:
 	print("hallo")
 	textbox.visible = false
+	gamblernpc_interaction = true
+	textbox.get_node("Label").text = ""
+	skipped = true
 	
 func _ready() -> void:
 	fishing1.connect(whileisifishing)
@@ -43,7 +47,8 @@ func _physics_process(delta: float) -> void:
 		self.velocity.x = 20000* delta
 		
 	if Input.is_action_just_pressed("interact") :
-		if gamblernpc_interaction == true:
+		if gamblernpc_interaction == true and (skipped== true or skipped == null):
+			skipped = false
 			print("hello")
 			textbox.get_node("Label").text = ""
 			textbox.visible = true
@@ -53,8 +58,12 @@ func _physics_process(delta: float) -> void:
 			var text =Npc.get_meta("npctext")
 			
 			for i in text:
-				textbox.get_node("Label").text = textbox.get_node("Label").text + i
-				await get_tree().create_timer(0.01).timeout
+				if skipped == false:
+					textbox.get_node("Label").text = textbox.get_node("Label").text + i
+					await get_tree().create_timer(0.01).timeout
+				else:
+					textbox.get_node("Label").text = ""
+					break
 		elif fishing == true and fishuiisactive == null:
 			var fishstart = fishui.instantiate()
 			fishuiisactive = fishstart
