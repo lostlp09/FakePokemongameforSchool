@@ -1,0 +1,1496 @@
+[gd_scene load_steps=12 format=3 uid="uid://gr3i8xkga8rd"]
+
+[ext_resource type="Texture2D" path="res://grass/dirt.png" id="1_oysan"]
+[ext_resource type="Texture2D" path="res://grass/midright.png" id="2_sb2pt"]
+[ext_resource type="Texture2D" path="res://grass/rightcorner.png" id="3_0t07s"]
+[ext_resource type="Texture2D" path="res://grass/topmidt.png" id="4_6qsgm"]
+[ext_resource type="Texture2D" path="res://grass/toplefttcorner.png" id="5_ooc2g"]
+[ext_resource type="Texture2D" path="res://grass/midleft.png" id="6_2wwcf"]
+[ext_resource type="Texture2D" path="res://grass/leftcorner.png" id="7_wbpbn"]
+[ext_resource type="Texture2D" path="res://grass/toprightcorner.png" id="8_a6rn7"]
+[ext_resource type="Texture2D" path="res://grass/Sprite-0004.png" id="9_4on3e"]
+[ext_resource type="Texture2D" path="res://grass/undermidt.png" id="10_bssq0"]
+[ext_resource type="Texture2D" path="res://grass/bush1.png" id="11_sb2pt"]
+
+[node name="Map" type="Node2D"]
+z_index = -3
+
+[node name="TextureRect26" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 656.0
+offset_top = 152.0
+offset_right = 696.0
+offset_bottom = 320.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 176.0
+offset_top = 152.0
+offset_right = 208.0
+offset_bottom = 352.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Rightcorner" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(160, 208)
+texture = ExtResource("3_0t07s")
+
+[node name="Dirt" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(160, 240)
+texture = ExtResource("1_oysan")
+
+[node name="Topmidt" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(128, 272)
+texture = ExtResource("4_6qsgm")
+
+[node name="Topmidt4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(128, 32)
+texture = ExtResource("4_6qsgm")
+
+[node name="Toplefttcorner" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(96, 272)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toplefttcorner12" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(96, 32)
+texture = ExtResource("5_ooc2g")
+
+[node name="Leftcorner2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(224, 304)
+texture = ExtResource("7_wbpbn")
+
+[node name="Leftcorner4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(64, 432)
+texture = ExtResource("7_wbpbn")
+
+[node name="Toprightcorner" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(160, 272)
+texture = ExtResource("8_a6rn7")
+
+[node name="Toprightcorner14" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(160, 32)
+texture = ExtResource("8_a6rn7")
+
+[node name="Midright2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(160, 304)
+texture = ExtResource("2_sb2pt")
+
+[node name="Sprite-0004" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(128, 304)
+texture = ExtResource("9_4on3e")
+
+[node name="Midleft" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(96, 304)
+texture = ExtResource("6_2wwcf")
+
+[node name="Undermidt" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(128, 336)
+texture = ExtResource("10_bssq0")
+
+[node name="Leftcorner3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(96, 336)
+texture = ExtResource("7_wbpbn")
+
+[node name="Leftcorner11" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(96, 208)
+texture = ExtResource("7_wbpbn")
+
+[node name="Rightcorner2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(160, 336)
+texture = ExtResource("3_0t07s")
+
+[node name="Topmidt2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(472, -8)
+texture = ExtResource("4_6qsgm")
+
+[node name="Topmidt5" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(472, -8)
+texture = ExtResource("4_6qsgm")
+
+[node name="Toplefttcorner10" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(440, -8)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toplefttcorner13" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(320, -8)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toprightcorner12" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(504, -8)
+texture = ExtResource("8_a6rn7")
+
+[node name="Midright4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(504, 24)
+texture = ExtResource("2_sb2pt")
+
+[node name="Sprite-0005" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(472, 24)
+texture = ExtResource("9_4on3e")
+
+[node name="Midleft2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(440, 24)
+texture = ExtResource("6_2wwcf")
+
+[node name="Undermidt3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(472, 56)
+texture = ExtResource("10_bssq0")
+
+[node name="Leftcorner9" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(440, 56)
+texture = ExtResource("7_wbpbn")
+
+[node name="Leftcorner12" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(320, 72)
+texture = ExtResource("7_wbpbn")
+
+[node name="Rightcorner10" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(504, 56)
+texture = ExtResource("3_0t07s")
+
+[node name="Rightcorner12" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(384, 72)
+texture = ExtResource("3_0t07s")
+
+[node name="Topmidt3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(120, -64)
+texture = ExtResource("4_6qsgm")
+
+[node name="Toplefttcorner11" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(88, -64)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toprightcorner13" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(152, -64)
+texture = ExtResource("8_a6rn7")
+
+[node name="Midright5" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(152, -32)
+texture = ExtResource("2_sb2pt")
+
+[node name="Sprite-0006" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(120, -32)
+texture = ExtResource("9_4on3e")
+
+[node name="Midleft3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(88, -32)
+texture = ExtResource("6_2wwcf")
+
+[node name="Undermidt4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(120, 0)
+texture = ExtResource("10_bssq0")
+
+[node name="Leftcorner10" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(88, 0)
+texture = ExtResource("7_wbpbn")
+
+[node name="Rightcorner11" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(152, 0)
+texture = ExtResource("3_0t07s")
+
+[node name="Dirt4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(224, 336)
+texture = ExtResource("1_oysan")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 240.0
+offset_top = 288.0
+offset_right = 624.0
+offset_bottom = 320.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect24" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 728.0
+offset_top = 320.0
+offset_right = 1112.0
+offset_bottom = 352.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect104" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 496.0
+offset_top = 448.0
+offset_right = 1112.0
+offset_bottom = 480.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect38" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 856.0
+offset_top = 56.0
+offset_right = 1240.0
+offset_bottom = 88.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect52" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 728.0
+offset_top = 56.0
+offset_right = 792.0
+offset_bottom = 88.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 240.0
+offset_top = 320.0
+offset_right = 696.0
+offset_bottom = 352.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect25" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 464.0
+offset_top = 352.0
+offset_right = 1112.0
+offset_bottom = 384.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 80.0
+offset_top = 352.0
+offset_right = 432.0
+offset_bottom = 384.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toplefttcorner2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(64, 368)
+texture = ExtResource("5_ooc2g")
+
+[node name="Midright3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(448, 400)
+texture = ExtResource("2_sb2pt")
+
+[node name="Toprightcorner2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(448, 368)
+texture = ExtResource("8_a6rn7")
+
+[node name="Rightcorner3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(448, 432)
+texture = ExtResource("3_0t07s")
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 80.0
+offset_top = 416.0
+offset_right = 432.0
+offset_bottom = 448.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 80.0
+offset_top = 384.0
+offset_right = 432.0
+offset_bottom = 416.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 240.0
+offset_top = 152.0
+offset_right = 624.0
+offset_bottom = 288.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect60" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 336.0
+offset_top = 8.0
+offset_right = 368.0
+offset_bottom = 56.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect47" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 592.0
+offset_top = -192.0
+offset_right = 624.0
+offset_bottom = 88.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect50" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 728.0
+offset_top = -288.0
+offset_right = 792.0
+offset_bottom = 56.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect23" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 728.0
+offset_top = 152.0
+offset_right = 1112.0
+offset_bottom = 320.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect103" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 496.0
+offset_top = 416.0
+offset_right = 1112.0
+offset_bottom = 448.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 64.0
+offset_top = 352.0
+offset_right = 448.0
+offset_bottom = 384.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect10" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 64.0
+offset_top = 360.0
+offset_right = 448.0
+offset_bottom = 392.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect71" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 64.0
+offset_top = 360.0
+offset_right = 448.0
+offset_bottom = 392.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect12" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 64.0
+offset_top = 376.0
+offset_right = 448.0
+offset_bottom = 408.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect16" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 112.0
+offset_top = 48.0
+offset_right = 144.0
+offset_bottom = 192.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect13" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 64.0
+offset_top = 392.0
+offset_right = 448.0
+offset_bottom = 424.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect14" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 64.0
+offset_top = 400.0
+offset_right = 448.0
+offset_bottom = 432.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect11" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 496.0
+offset_top = 384.0
+offset_right = 1112.0
+offset_bottom = 416.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toplefttcorner3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(480, 400)
+texture = ExtResource("5_ooc2g")
+
+[node name="Rightcorner4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(640, 304)
+texture = ExtResource("3_0t07s")
+
+[node name="TextureRect15" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 624.0
+offset_top = 152.0
+offset_right = 656.0
+offset_bottom = 288.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect31" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1112.0
+offset_top = 152.0
+offset_right = 1144.0
+offset_bottom = 320.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect46" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 624.0
+offset_top = -192.0
+offset_right = 656.0
+offset_bottom = 88.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect57" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 144.0
+offset_top = 48.0
+offset_right = 176.0
+offset_bottom = 192.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect51" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 792.0
+offset_top = -288.0
+offset_right = 824.0
+offset_bottom = 56.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect17" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 696.0
+offset_top = 152.0
+offset_right = 728.0
+offset_bottom = 320.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect48" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 560.0
+offset_top = -192.0
+offset_right = 592.0
+offset_bottom = 88.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect67" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 304.0
+offset_top = 8.0
+offset_right = 336.0
+offset_bottom = 56.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 208.0
+offset_top = 152.0
+offset_right = 240.0
+offset_bottom = 288.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect58" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 80.0
+offset_top = 48.0
+offset_right = 112.0
+offset_bottom = 192.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect45" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 696.0
+offset_top = -288.0
+offset_right = 728.0
+offset_bottom = 56.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect18" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 48.0
+offset_top = 384.0
+offset_right = 80.0
+offset_bottom = 416.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect19" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 48.0
+offset_top = 224.0
+offset_right = 144.0
+offset_bottom = 256.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect20" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 48.0
+offset_top = 256.0
+offset_right = 80.0
+offset_bottom = 352.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect21" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 464.0
+offset_top = 416.0
+offset_right = 496.0
+offset_bottom = 448.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect22" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 112.0
+offset_top = 192.0
+offset_right = 144.0
+offset_bottom = 224.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Leftcorner" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(712, 336)
+texture = ExtResource("7_wbpbn")
+
+[node name="Leftcorner5" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(840, 72)
+texture = ExtResource("7_wbpbn")
+
+[node name="TextureRect27" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 656.0
+offset_top = -192.0
+offset_right = 696.0
+offset_bottom = 320.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect55" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 520.0
+offset_top = -312.0
+offset_right = 560.0
+offset_bottom = 120.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect56" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 168.0
+offset_top = -80.0
+offset_right = 520.0
+offset_bottom = -24.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect59" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 168.0
+offset_top = -80.0
+offset_right = 520.0
+offset_bottom = -24.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect61" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 168.0
+offset_top = -80.0
+offset_right = 520.0
+offset_bottom = -24.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect65" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 208.0
+offset_top = -24.0
+offset_right = 304.0
+offset_bottom = 120.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect69" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 400.0
+offset_top = 72.0
+offset_right = 520.0
+offset_bottom = 120.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect70" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 304.0
+offset_top = 88.0
+offset_right = 400.0
+offset_bottom = 120.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect64" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 400.0
+offset_top = -24.0
+offset_right = 432.0
+offset_bottom = 72.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect62" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 168.0
+offset_top = -24.0
+offset_right = 208.0
+offset_bottom = 152.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect29" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 696.0
+offset_top = 88.0
+offset_right = 1144.0
+offset_bottom = 120.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect28" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 240.0
+offset_top = 120.0
+offset_right = 624.0
+offset_bottom = 152.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect49" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 592.0
+offset_top = -224.0
+offset_right = 624.0
+offset_bottom = -192.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect53" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 592.0
+offset_top = -224.0
+offset_right = 624.0
+offset_bottom = -192.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect68" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 336.0
+offset_top = -24.0
+offset_right = 368.0
+offset_bottom = 8.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect54" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 728.0
+offset_top = -320.0
+offset_right = 792.0
+offset_bottom = -288.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect30" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 728.0
+offset_top = 120.0
+offset_right = 1112.0
+offset_bottom = 152.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toplefttcorner4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(712, 136)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toplefttcorner5" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(224, 136)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toplefttcorner8" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(576, -208)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toplefttcorner9" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(712, -304)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toprightcorner3" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(640, 136)
+texture = ExtResource("8_a6rn7")
+
+[node name="Toprightcorner10" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(640, -208)
+texture = ExtResource("8_a6rn7")
+
+[node name="Toprightcorner11" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(808, -304)
+texture = ExtResource("8_a6rn7")
+
+[node name="Toprightcorner4" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1128, 136)
+texture = ExtResource("8_a6rn7")
+
+[node name="TextureRect32" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 728.0
+offset_top = 120.0
+offset_right = 1112.0
+offset_bottom = 152.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toprightcorner5" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1128, 136)
+texture = ExtResource("8_a6rn7")
+
+[node name="TextureRect33" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 856.0
+offset_top = -112.0
+offset_right = 1240.0
+offset_bottom = 56.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect34" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1240.0
+offset_top = -112.0
+offset_right = 1272.0
+offset_bottom = 56.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect35" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 824.0
+offset_top = -112.0
+offset_right = 856.0
+offset_bottom = 56.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect36" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 856.0
+offset_top = -144.0
+offset_right = 1240.0
+offset_bottom = -112.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toplefttcorner6" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(840, -128)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toprightcorner6" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1256, -128)
+texture = ExtResource("8_a6rn7")
+
+[node name="TextureRect37" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 856.0
+offset_top = -144.0
+offset_right = 1240.0
+offset_bottom = -112.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toprightcorner7" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1256, -128)
+texture = ExtResource("8_a6rn7")
+
+[node name="Rightcorner5" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1128, 336)
+texture = ExtResource("3_0t07s")
+
+[node name="Rightcorner6" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1256, 72)
+texture = ExtResource("3_0t07s")
+
+[node name="TextureRect39" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 104.0
+offset_top = -112.0
+offset_right = 488.0
+offset_bottom = -80.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect66" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 336.0
+offset_top = 56.0
+offset_right = 368.0
+offset_bottom = 88.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Leftcorner6" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(88, -96)
+texture = ExtResource("7_wbpbn")
+
+[node name="TextureRect40" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 104.0
+offset_top = -280.0
+offset_right = 488.0
+offset_bottom = -112.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect41" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 488.0
+offset_top = -280.0
+offset_right = 520.0
+offset_bottom = -112.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect63" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 368.0
+offset_top = 8.0
+offset_right = 400.0
+offset_bottom = 56.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect42" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 72.0
+offset_top = -280.0
+offset_right = 104.0
+offset_bottom = -112.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect43" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 104.0
+offset_top = -312.0
+offset_right = 488.0
+offset_bottom = -280.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toplefttcorner7" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(88, -296)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toprightcorner8" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(504, -296)
+texture = ExtResource("8_a6rn7")
+
+[node name="TextureRect44" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 104.0
+offset_top = -312.0
+offset_right = 488.0
+offset_bottom = -280.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toprightcorner9" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(448, -480)
+texture = ExtResource("8_a6rn7")
+
+[node name="Rightcorner7" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(504, -96)
+texture = ExtResource("3_0t07s")
+
+[node name="Rightcorner8" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(640, 104)
+texture = ExtResource("3_0t07s")
+
+[node name="Rightcorner9" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(808, 72)
+texture = ExtResource("3_0t07s")
+
+[node name="Leftcorner7" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(576, 104)
+texture = ExtResource("7_wbpbn")
+
+[node name="Leftcorner8" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(712, 72)
+texture = ExtResource("7_wbpbn")
+
+[node name="Undermidt2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(608, 104)
+texture = ExtResource("10_bssq0")
+
+[node name="Toprightcorner15" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(384, -8)
+texture = ExtResource("8_a6rn7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -1288.0
+offset_right = 882.0
+offset_bottom = -700.0
+theme_override_font_sizes/font_size = 431
+text = "Dorf"
+
+[node name="TextureRect73" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 24.0
+offset_right = 160.0
+offset_bottom = 56.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect74" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 72.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect75" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 56.0
+offset_right = 160.0
+offset_bottom = 88.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect76" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 72.0
+offset_right = 160.0
+offset_bottom = 104.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect77" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 88.0
+offset_right = 160.0
+offset_bottom = 120.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect78" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 104.0
+offset_right = 160.0
+offset_bottom = 136.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect79" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 120.0
+offset_right = 160.0
+offset_bottom = 152.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect80" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 120.0
+offset_right = 160.0
+offset_bottom = 152.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect81" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 136.0
+offset_right = 160.0
+offset_bottom = 168.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect82" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 152.0
+offset_right = 160.0
+offset_bottom = 184.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect83" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 96.0
+offset_top = 168.0
+offset_right = 160.0
+offset_bottom = 200.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect84" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -208.0
+offset_right = 640.0
+offset_bottom = -176.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect85" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -192.0
+offset_right = 640.0
+offset_bottom = -160.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect86" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -176.0
+offset_right = 640.0
+offset_bottom = -144.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect87" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -160.0
+offset_right = 640.0
+offset_bottom = -128.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect88" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -144.0
+offset_right = 640.0
+offset_bottom = -112.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect89" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -128.0
+offset_right = 640.0
+offset_bottom = -96.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect90" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -112.0
+offset_right = 640.0
+offset_bottom = -80.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect91" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -96.0
+offset_right = 640.0
+offset_bottom = -64.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect92" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -80.0
+offset_right = 640.0
+offset_bottom = -48.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect93" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -64.0
+offset_right = 640.0
+offset_bottom = -32.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect94" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -48.0
+offset_right = 640.0
+offset_bottom = -16.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect95" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -32.0
+offset_right = 640.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect96" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = -16.0
+offset_right = 640.0
+offset_bottom = 16.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect97" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_right = 640.0
+offset_bottom = 32.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect98" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = 16.0
+offset_right = 640.0
+offset_bottom = 48.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect99" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = 32.0
+offset_right = 640.0
+offset_bottom = 64.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect100" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 72.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect101" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = 56.0
+offset_right = 640.0
+offset_bottom = 88.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect102" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 96.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Toprightcorner16" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1128, 400)
+texture = ExtResource("8_a6rn7")
+
+[node name="Rightcorner13" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1128, 464)
+texture = ExtResource("3_0t07s")
+
+[node name="Midright" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1128, 432)
+texture = ExtResource("2_sb2pt")
+
+[node name="Leftcorner13" type="Sprite2D" parent="."]
+position = Vector2(480, 464)
+texture = ExtResource("7_wbpbn")
+
+[node name="TextureRect72" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 488.0
+offset_top = 384.0
+offset_right = 1128.0
+offset_bottom = 416.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect105" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 488.0
+offset_top = 392.0
+offset_right = 1128.0
+offset_bottom = 424.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect106" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 488.0
+offset_top = 400.0
+offset_right = 1128.0
+offset_bottom = 432.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect107" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 488.0
+offset_top = 408.0
+offset_right = 1128.0
+offset_bottom = 440.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect108" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 488.0
+offset_top = 416.0
+offset_right = 1128.0
+offset_bottom = 448.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect109" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 488.0
+offset_top = 432.0
+offset_right = 1128.0
+offset_bottom = 464.0
+texture = ExtResource("11_sb2pt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
