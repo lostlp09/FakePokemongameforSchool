@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://2ptnjlsa1h2g"]
+
+[ext_resource type="Script" uid="uid://d33a8fhxni8y" path="res://fishing.gd" id="1_6uqi0"]
+[ext_resource type="Script" uid="uid://dylxyhladxjem" path="res://fish.gd" id="2_ppyta"]
+[ext_resource type="Texture2D" uid="uid://ce7rfrj8vtuja" path="res://ChatGPT Image Nov 4, 2025, 02_52_25 PM.png" id="3_ykrsh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykrsh"]
+size = Vector2(0.976016, 74.0994)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_37kl0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8uh7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uqi0"]
+size = Vector2(7.84236, 44.715)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppyta"]
+size = Vector2(94, 70.3896)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6uqi0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-531, -511)
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visibility_layer = 3
+position = Vector2(234.488, 509.95)
+shape = SubResource("RectangleShape2D_ykrsh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visibility_layer = 3
+position = Vector2(836, 510)
+shape = SubResource("RectangleShape2D_ykrsh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -296.0
+offset_top = -37.0
+offset_right = 304.0
+offset_bottom = 33.0
+texture = SubResource("CanvasTexture_37kl0")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="TextureRect"]
+z_index = 2
+position = Vector2(291, 35)
+scale = Vector2(1.55, 1.55)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_6uqi0")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect/CharacterBody2D"]
+modulate = Color(0, 0.827971, 0.277722, 1)
+offset_left = -45.0
+offset_top = -22.5
+offset_right = 45.575
+offset_bottom = 22.045
+texture = SubResource("CanvasTexture_8uh7m")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/CharacterBody2D"]
+scale = Vector2(11.435, 1)
+shape = SubResource("RectangleShape2D_6uqi0")
+
+[node name="fish" type="CharacterBody2D" parent="TextureRect"]
+z_index = 5
+position = Vector2(289, 35)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_ppyta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/fish"]
+position = Vector2(0, 0.325226)
+shape = SubResource("RectangleShape2D_ppyta")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/fish"]
+modulate = Color(0, 0.615686, 0.898039, 0.423529)
+offset_left = -48.0
+offset_top = -34.48
+offset_right = 47.0
+offset_bottom = 35.52
+texture = SubResource("CanvasTexture_6uqi0")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect/fish"]
+position = Vector2(-4.76837e-07, 1)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("3_ykrsh")
+
+[node name="ProgressBar" type="ProgressBar" parent="TextureRect"]
+modulate = Color(0.0431373, 0.239216, 1, 1)
+layout_mode = 0
+offset_top = -40.0
+offset_right = 600.0
+value = 50.0
+show_percentage = false

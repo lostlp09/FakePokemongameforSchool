@@ -9,12 +9,13 @@ var addtime = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print(self.position.distance_to(fish.position))
 	if prog.value >= 100:
 		ongambling()
 		
-		self.get_parent().queue_free()
+		self.get_parent().get_parent().queue_free()
 	var distance =  self.position.distance_to(fish.position)
-	if distance >= 7:
+	if distance >= 120:
 		addtime = 0
 		if timer >= 0.3:
 			prog.value -=2
