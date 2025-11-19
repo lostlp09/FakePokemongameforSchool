@@ -47,6 +47,7 @@ func ifis_on() ->void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("tab"):
+		print("yo")
 		if is_on == false:
 			self.visible = true
 			is_on = true
