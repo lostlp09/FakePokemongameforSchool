@@ -12,7 +12,7 @@ var which_attack: String
 var poison_damage: float = 0.05
 var burn_damage: int = 5
 var current_player: Array
-var current_attacker: character
+@export var  current_attacker: character
 var attacked_char: character
 
 func _ready() ->void:

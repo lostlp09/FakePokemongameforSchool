@@ -6,20 +6,32 @@ extends Node
 @onready var icon1 = $"attack 1/button1 icons"
 @onready var icon2 = $"attack 2/button2 icons"
 @onready var icon3 = $"attack 3/button3 icons"
-@onready var current_attacker = $"..".current_attacker
-var texts : Array = [text1, text2, text3]
-var icons : Array = [icon1, icon2, icon3]
+var current_attacker
+var elements
+var texts : Array
+var icons : Array
 func _ready():
-	print(current_attacker)
-#@onready var elements : Dictionary = {"icon1" : current_attacker._attack1_element, "icon2" : current_attacker._attack2_element, "icon3" : current_attacker._attack3_element}
-#func _process(delta)->void:
-#	for icon in icons:
-#		for element in elements:
-#			match element:
-#				"neutral" : 0
-#				"fire" : 1
-#				"water" : 2
-#				"ice" : 3
-#				"wind" : 4
-#				"plant" : 5
+	texts = [text1, text2, text3]
+	icons = [icon1, icon2, icon3]
+	print(text1)
+	while not $"..".current_attacker:
+		await get_tree().process_frame
+	current_attacker = $"..".current_attacker
+	elements = {"icon1" : current_attacker.attack1_element,
+	 "icon2" : current_attacker.attack2_element,
+	 "icon3" : current_attacker.attack3_element}
+func _process(delta)->void:
+	if elements:
+		for icon in icons:
+			for element in elements:
+				var x
+				match element:
+					"neutral" : x = 0
+					"fire" : x = 1
+					"water" : x = 2
+					"ice" : x = 3
+					"wind" : x = 4
+					"plant" : x = 5
+				icon.frame = x
+				
 			
