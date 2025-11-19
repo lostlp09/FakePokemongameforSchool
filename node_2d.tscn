@@ -43,7 +43,7 @@ size = Vector2(167.75, 755)
 script = ExtResource("1_kdubu")
 
 [node name="Map" parent="." instance=ExtResource("12_0h7mo")]
-position = Vector2(-2206, -804)
+position = Vector2(-2091, -799)
 scale = Vector2(2.61, 2.61)
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -53,6 +53,7 @@ offset_right = 1422.0
 offset_bottom = 864.0
 texture = SubResource("CompressedTexture2D_hqns4")
 stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-1, 1)
@@ -148,7 +149,7 @@ theme_override_font_sizes/font_size = 116
 autowrap_mode = 1
 
 [node name="fishingarea" type="Sprite2D" parent="." groups=["fishing"]]
-position = Vector2(-890, 1107)
+position = Vector2(-7229, 4634)
 scale = Vector2(5.344, 1.508)
 texture = ExtResource("10_ir8iy")
 
@@ -204,6 +205,7 @@ offset_left = -1257.0
 offset_top = -169.0
 offset_right = -1158.0
 offset_bottom = 15.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Bushes" type="Area2D" parent="."]
 

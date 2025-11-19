@@ -18,10 +18,10 @@ size = Vector2(0.191874, 40.3978)
 size = Vector2(7.89794, 40.7792)
 
 [node name="fishing" type="TextureRect"]
-offset_left = 280.0
-offset_top = 362.0
-offset_right = 331.889
-offset_bottom = 402.0
+offset_left = 230.0
+offset_top = 478.0
+offset_right = 281.889
+offset_bottom = 518.0
 scale = Vector2(13.7104, 1.72183)
 texture = SubResource("CanvasTexture_hqns4")
 
