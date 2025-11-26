@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://djj7jeo07d8dh"]
+[gd_scene load_steps=26 format=3 uid="uid://djj7jeo07d8dh"]
 
 [ext_resource type="Script" uid="uid://bcex40y51jw6j" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://6h24wkjyrwmv" path="res://interact.png" id="7_d21ai"]
 [ext_resource type="Script" uid="uid://dcc2aods856wu" path="res://scroll_container.gd" id="7_hqns4"]
 [ext_resource type="Texture2D" uid="uid://dpy45tpwchxla" path="res://dialog/pixil-frame-0.png" id="8_rj586"]
+[ext_resource type="Texture2D" uid="uid://v3lmdbvn4wsr" path="res://pixil-frame-0(2).png" id="9_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://dk3whpjhipa6r" path="res://dialog/sr5zebf7fe8ddaaws3.png" id="9_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://b1b3p6jui2oh3" path="res://1000_F_443693248_FFOUon01HIYUVLVPFIyhrzDlbmWN8XKq.jpg" id="10_ir8iy"]
 [ext_resource type="PackedScene" uid="uid://gr3i8xkga8rd" path="res://map.tscn" id="12_0h7mo"]
+[ext_resource type="Script" uid="uid://di7v6dqe8lrq4" path="res://money.gd" id="12_x0ka3"]
+[ext_resource type="Script" uid="uid://c7vvagngiaod1" path="res://eggscript.gd" id="13_nr8wp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqns4"]
 
@@ -38,6 +41,9 @@ size = Vector2(167.75, 431)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
 size = Vector2(167.75, 755)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(34.4444, 46.4226)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kdubu")
@@ -87,6 +93,20 @@ position = Vector2(0, 0.132599)
 scale = Vector2(1.495, 1.495)
 shape = SubResource("RectangleShape2D_d21ai")
 
+[node name="Villager2" type="Sprite2D" parent="."]
+position = Vector2(79, -433)
+scale = Vector2(0.265464, 0.271236)
+texture = ExtResource("4_q6r6c")
+metadata/npctext = "yo whats up"
+
+[node name="GamblerNpc" type="Area2D" parent="Villager2" groups=["talkandinteractNpc"]]
+script = ExtResource("5_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Villager2/GamblerNpc"]
+position = Vector2(0, 0.132599)
+scale = Vector2(1.495, 1.495)
+shape = SubResource("RectangleShape2D_d21ai")
+
 [node name="Button" type="Button" parent="."]
 offset_left = 249.0
 offset_top = -44.0
@@ -114,6 +134,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 texture = SubResource("CanvasTexture_ir8iy")
+
+[node name="Money" type="Label" parent="Camera2D"]
+offset_left = -567.586
+offset_top = -328.0
+offset_right = -524.586
+offset_bottom = -305.0
+text = "Coins"
+script = ExtResource("12_x0ka3")
 
 [node name="interact" type="Sprite2D" parent="."]
 visible = false
@@ -149,7 +177,7 @@ theme_override_font_sizes/font_size = 116
 autowrap_mode = 1
 
 [node name="fishingarea" type="Sprite2D" parent="." groups=["fishing"]]
-position = Vector2(-7229, 4634)
+position = Vector2(-945, 1264)
 scale = Vector2(5.344, 1.508)
 texture = ExtResource("10_ir8iy")
 
@@ -225,5 +253,25 @@ shape = SubResource("RectangleShape2D_d2bti")
 position = Vector2(-620, -933.5)
 shape = SubResource("RectangleShape2D_ta5nu")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(164, -157)
+scale = Vector2(2.32258, 2.21875)
+script = ExtResource("13_nr8wp")
+
+[node name="egg" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("9_0h7mo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.83582e-05, -0.450652)
+shape = SubResource("RectangleShape2D_flf07")
+
 [connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]

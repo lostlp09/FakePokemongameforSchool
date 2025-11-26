@@ -51,22 +51,20 @@ var characterlistcommon  = ["Dog","cat","hamster"]
 var characterlistuncomon = ["elephant","Giraffe","zebra"]
 var characterlistrare = ["crocodile","eagle","tiger"]
 var characterlistepic = ["aligator","lion"]
-var characterlistlegendary = ["Dinosour","Cheetah"]
+var characterlistlegendary = ["Dinosaur","Cheetah"]
 func ongambling() -> void:
 	var result = randi_range(0,100)
-	
 	if  result <= 50:
-		var value = characterlistcommon.pick_random()
-		print("you got a " + value)
+		Savestats.Coins += 20
+		result = null
 	elif   result <=75:
-		var value = characterlistuncomon.pick_random()
-		print("you got a " + value)
+		result = Character.Giraffe
+
 	elif  result <= 90:
-		var value = characterlistrare.pick_random()
-		print("you got a " + value)
+		result = Character.Gambler
 	elif  result <= 99:
-		var value = characterlistepic.pick_random()
-		print("you got a " + value)
+		result =  Character.Gambler2
 	elif result <= 100:
-		var value = characterlistlegendary.pick_random()
-		print("you got a " + value)		
+		result = Character.Gambler3
+	if result !=null:
+		Savestats.pokemons.append(result)
