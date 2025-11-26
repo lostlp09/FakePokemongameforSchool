@@ -11,7 +11,7 @@ var isfishing = false
 var fishuiisactive= null
 var skipped = null
 signal  fishing1
-var fishui = preload("res://fishing.tscn")
+var fishui = preload("res://test.tscn")
 @onready var  skipbutton = $"../Pixil-frame-0/Button"
 func textbotchanged() -> void:
 	if textbox.visible == true:
@@ -67,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		elif fishing == true and fishuiisactive == null:
 			var fishstart = fishui.instantiate()
 			fishuiisactive = fishstart
-			fishstart.position = Vector2(self.position.x -320  ,self.position.y + 200)
+			fishstart.position = Vector2(self.position.x  ,self.position.y )
 			self.get_parent().add_child(fishstart)
 			fishing1.emit()
 			
@@ -104,6 +104,7 @@ func _on_player_area_area_entered(area: Area2D) -> void:
 
 func whileisifishing()->void:
 	while true:
+		print(fishui)
 		if fishuiisactive == null:
 			allowwalking = true
 			break

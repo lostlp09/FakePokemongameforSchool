@@ -1,16 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://gr3i8xkga8rd"]
+[gd_scene load_steps=16 format=3 uid="uid://gr3i8xkga8rd"]
 
-[ext_resource type="Texture2D" path="res://grass/dirt.png" id="1_oysan"]
-[ext_resource type="Texture2D" path="res://grass/midright.png" id="2_sb2pt"]
-[ext_resource type="Texture2D" path="res://grass/rightcorner.png" id="3_0t07s"]
-[ext_resource type="Texture2D" path="res://grass/topmidt.png" id="4_6qsgm"]
-[ext_resource type="Texture2D" path="res://grass/toplefttcorner.png" id="5_ooc2g"]
-[ext_resource type="Texture2D" path="res://grass/midleft.png" id="6_2wwcf"]
-[ext_resource type="Texture2D" path="res://grass/leftcorner.png" id="7_wbpbn"]
-[ext_resource type="Texture2D" path="res://grass/toprightcorner.png" id="8_a6rn7"]
-[ext_resource type="Texture2D" path="res://grass/Sprite-0004.png" id="9_4on3e"]
-[ext_resource type="Texture2D" path="res://grass/undermidt.png" id="10_bssq0"]
-[ext_resource type="Texture2D" path="res://grass/bush1.png" id="11_sb2pt"]
+[ext_resource type="Texture2D" uid="uid://eh4nlretw5hk" path="res://grass/dirt.png" id="1_oysan"]
+[ext_resource type="Texture2D" uid="uid://dhbtmglfahs0w" path="res://grass/midright.png" id="2_sb2pt"]
+[ext_resource type="Texture2D" uid="uid://na4pjbiawbxq" path="res://grass/rightcorner.png" id="3_0t07s"]
+[ext_resource type="Texture2D" uid="uid://bhnomocnt8va6" path="res://grass/topmidt.png" id="4_6qsgm"]
+[ext_resource type="Texture2D" uid="uid://oko7bjfkk3uj" path="res://grass/toplefttcorner.png" id="5_ooc2g"]
+[ext_resource type="Texture2D" uid="uid://b3cq4xpg0714t" path="res://grass/midleft.png" id="6_2wwcf"]
+[ext_resource type="Texture2D" uid="uid://ha0ory7e8peb" path="res://grass/leftcorner.png" id="7_wbpbn"]
+[ext_resource type="Texture2D" uid="uid://b38efnj8wlufl" path="res://grass/toprightcorner.png" id="8_a6rn7"]
+[ext_resource type="Texture2D" uid="uid://dxyvf0o6wo8n8" path="res://grass/Sprite-0004.png" id="9_4on3e"]
+[ext_resource type="Texture2D" uid="uid://cs5gqosnfgq8b" path="res://grass/undermidt.png" id="10_bssq0"]
+[ext_resource type="Texture2D" uid="uid://b0gh5f4cgcd7v" path="res://grass/bush1.png" id="11_sb2pt"]
+[ext_resource type="Texture2D" uid="uid://ch6jrdrbmf6lt" path="res://grass/reworktopleft.png" id="12_2wwcf"]
+[ext_resource type="Texture2D" uid="uid://br55ys7p3evs4" path="res://grass/reworkbright.png" id="13_wbpbn"]
+[ext_resource type="Texture2D" uid="uid://dkeoody8rtfrh" path="res://grass/reworktopright.png" id="14_a6rn7"]
+[ext_resource type="Texture2D" uid="uid://tdba107nponq" path="res://grass/reworkbleft.png" id="15_4on3e"]
 
 [node name="Map" type="Node2D"]
 z_index = -3
@@ -23,7 +27,6 @@ offset_right = 696.0
 offset_bottom = 320.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -3
@@ -33,7 +36,6 @@ offset_right = 208.0
 offset_bottom = 352.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Rightcorner" type="Sprite2D" parent="."]
 z_index = -3
@@ -73,6 +75,11 @@ texture = ExtResource("7_wbpbn")
 [node name="Leftcorner4" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(64, 432)
+texture = ExtResource("7_wbpbn")
+
+[node name="Leftcorner16" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-584, 1632)
 texture = ExtResource("7_wbpbn")
 
 [node name="Toprightcorner" type="Sprite2D" parent="."]
@@ -118,6 +125,11 @@ texture = ExtResource("7_wbpbn")
 [node name="Rightcorner2" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(160, 336)
+texture = ExtResource("3_0t07s")
+
+[node name="Rightcorner15" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-648, 1632)
 texture = ExtResource("3_0t07s")
 
 [node name="Topmidt2" type="Sprite2D" parent="."]
@@ -243,7 +255,6 @@ offset_right = 624.0
 offset_bottom = 320.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect24" type="TextureRect" parent="."]
 z_index = -3
@@ -253,7 +264,15 @@ offset_right = 1112.0
 offset_bottom = 352.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect115" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1208.0
+offset_top = 320.0
+offset_right = 1240.0
+offset_bottom = 352.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
 
 [node name="TextureRect104" type="TextureRect" parent="."]
 z_index = -3
@@ -263,7 +282,6 @@ offset_right = 1112.0
 offset_bottom = 480.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect38" type="TextureRect" parent="."]
 z_index = -3
@@ -273,7 +291,42 @@ offset_right = 1240.0
 offset_bottom = 88.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect117" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 856.0
+offset_top = -176.0
+offset_right = 2176.0
+offset_bottom = -144.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+
+[node name="TextureRect135" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1216.0
+offset_top = 736.0
+offset_right = 1744.0
+offset_bottom = 768.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+
+[node name="TextureRect136" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1272.0
+offset_top = 56.0
+offset_right = 1808.0
+offset_bottom = 88.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
+
+[node name="TextureRect132" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -568.0
+offset_top = 1616.0
+offset_right = 1184.0
+offset_bottom = 1648.0
+texture = ExtResource("10_bssq0")
+stretch_mode = 1
 
 [node name="TextureRect52" type="TextureRect" parent="."]
 z_index = -3
@@ -283,7 +336,6 @@ offset_right = 792.0
 offset_bottom = 88.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect5" type="TextureRect" parent="."]
 z_index = -3
@@ -293,17 +345,15 @@ offset_right = 696.0
 offset_bottom = 352.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect25" type="TextureRect" parent="."]
 z_index = -3
 offset_left = 464.0
 offset_top = 352.0
-offset_right = 1112.0
+offset_right = 1144.0
 offset_bottom = 384.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 z_index = -3
@@ -313,7 +363,6 @@ offset_right = 432.0
 offset_bottom = 384.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Toplefttcorner2" type="Sprite2D" parent="."]
 z_index = -3
@@ -343,7 +392,6 @@ offset_right = 432.0
 offset_bottom = 448.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 z_index = -3
@@ -353,7 +401,6 @@ offset_right = 432.0
 offset_bottom = 416.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect9" type="TextureRect" parent="."]
 z_index = -3
@@ -363,7 +410,6 @@ offset_right = 624.0
 offset_bottom = 288.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect60" type="TextureRect" parent="."]
 z_index = -3
@@ -373,7 +419,6 @@ offset_right = 368.0
 offset_bottom = 56.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect47" type="TextureRect" parent="."]
 z_index = -3
@@ -383,7 +428,6 @@ offset_right = 624.0
 offset_bottom = 88.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect50" type="TextureRect" parent="."]
 z_index = -3
@@ -393,7 +437,6 @@ offset_right = 792.0
 offset_bottom = 56.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect23" type="TextureRect" parent="."]
 z_index = -3
@@ -403,7 +446,15 @@ offset_right = 1112.0
 offset_bottom = 320.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect112" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1208.0
+offset_top = 152.0
+offset_right = 1240.0
+offset_bottom = 320.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
 
 [node name="TextureRect103" type="TextureRect" parent="."]
 z_index = -3
@@ -413,7 +464,6 @@ offset_right = 1112.0
 offset_bottom = 448.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect7" type="TextureRect" parent="."]
 z_index = -3
@@ -423,7 +473,6 @@ offset_right = 448.0
 offset_bottom = 384.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect10" type="TextureRect" parent="."]
 z_index = -3
@@ -433,7 +482,6 @@ offset_right = 448.0
 offset_bottom = 392.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect71" type="TextureRect" parent="."]
 z_index = -3
@@ -443,7 +491,6 @@ offset_right = 448.0
 offset_bottom = 392.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect12" type="TextureRect" parent="."]
 z_index = -3
@@ -453,7 +500,6 @@ offset_right = 448.0
 offset_bottom = 408.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect16" type="TextureRect" parent="."]
 z_index = -3
@@ -463,7 +509,6 @@ offset_right = 144.0
 offset_bottom = 192.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect13" type="TextureRect" parent="."]
 z_index = -3
@@ -473,7 +518,6 @@ offset_right = 448.0
 offset_bottom = 424.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect14" type="TextureRect" parent="."]
 z_index = -3
@@ -483,7 +527,6 @@ offset_right = 448.0
 offset_bottom = 432.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect11" type="TextureRect" parent="."]
 z_index = -3
@@ -493,7 +536,6 @@ offset_right = 1112.0
 offset_bottom = 416.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Toplefttcorner3" type="Sprite2D" parent="."]
 z_index = -3
@@ -513,7 +555,6 @@ offset_right = 656.0
 offset_bottom = 288.0
 texture = ExtResource("2_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect31" type="TextureRect" parent="."]
 z_index = -3
@@ -523,7 +564,15 @@ offset_right = 1144.0
 offset_bottom = 320.0
 texture = ExtResource("2_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect113" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1240.0
+offset_top = 152.0
+offset_right = 1272.0
+offset_bottom = 320.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
 
 [node name="TextureRect46" type="TextureRect" parent="."]
 z_index = -3
@@ -533,7 +582,6 @@ offset_right = 656.0
 offset_bottom = 88.0
 texture = ExtResource("2_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect57" type="TextureRect" parent="."]
 z_index = -3
@@ -543,7 +591,6 @@ offset_right = 176.0
 offset_bottom = 192.0
 texture = ExtResource("2_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect51" type="TextureRect" parent="."]
 z_index = -3
@@ -553,7 +600,6 @@ offset_right = 824.0
 offset_bottom = 56.0
 texture = ExtResource("2_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect17" type="TextureRect" parent="."]
 z_index = -3
@@ -563,7 +609,51 @@ offset_right = 728.0
 offset_bottom = 320.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect129" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1248.0
+offset_top = 832.0
+offset_right = 1280.0
+offset_bottom = 1680.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+
+[node name="TextureRect130" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1808.0
+offset_top = 88.0
+offset_right = 1840.0
+offset_bottom = 800.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+
+[node name="TextureRect114" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1176.0
+offset_top = 152.0
+offset_right = 1208.0
+offset_bottom = 320.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+
+[node name="TextureRect138" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1272.0
+offset_top = 152.0
+offset_right = 1304.0
+offset_bottom = 352.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
+
+[node name="TextureRect140" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1144.0
+offset_top = 384.0
+offset_right = 1176.0
+offset_bottom = 480.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
 
 [node name="TextureRect48" type="TextureRect" parent="."]
 z_index = -3
@@ -573,7 +663,6 @@ offset_right = 592.0
 offset_bottom = 88.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect67" type="TextureRect" parent="."]
 z_index = -3
@@ -583,7 +672,6 @@ offset_right = 336.0
 offset_bottom = 56.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 z_index = -3
@@ -593,7 +681,15 @@ offset_right = 240.0
 offset_bottom = 288.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect133" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -600.0
+offset_top = 1712.0
+offset_right = -568.0
+offset_bottom = 1848.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
 
 [node name="TextureRect58" type="TextureRect" parent="."]
 z_index = -3
@@ -603,7 +699,6 @@ offset_right = 112.0
 offset_bottom = 192.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect45" type="TextureRect" parent="."]
 z_index = -3
@@ -613,7 +708,15 @@ offset_right = 728.0
 offset_bottom = 56.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect148" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -600.0
+offset_top = 480.0
+offset_right = -568.0
+offset_bottom = 1616.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
 
 [node name="TextureRect18" type="TextureRect" parent="."]
 z_index = -3
@@ -623,7 +726,6 @@ offset_right = 80.0
 offset_bottom = 416.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect19" type="TextureRect" parent="."]
 z_index = -3
@@ -633,7 +735,6 @@ offset_right = 144.0
 offset_bottom = 256.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect20" type="TextureRect" parent="."]
 z_index = -3
@@ -643,7 +744,6 @@ offset_right = 80.0
 offset_bottom = 352.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect21" type="TextureRect" parent="."]
 z_index = -3
@@ -653,7 +753,6 @@ offset_right = 496.0
 offset_bottom = 448.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect22" type="TextureRect" parent="."]
 z_index = -3
@@ -663,16 +762,25 @@ offset_right = 144.0
 offset_bottom = 224.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Leftcorner" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(712, 336)
 texture = ExtResource("7_wbpbn")
 
+[node name="Leftcorner14" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1192, 336)
+texture = ExtResource("7_wbpbn")
+
 [node name="Leftcorner5" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(840, 72)
+texture = ExtResource("7_wbpbn")
+
+[node name="Leftcorner15" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(840, -160)
 texture = ExtResource("7_wbpbn")
 
 [node name="TextureRect27" type="TextureRect" parent="."]
@@ -683,7 +791,6 @@ offset_right = 696.0
 offset_bottom = 320.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect55" type="TextureRect" parent="."]
 z_index = -3
@@ -693,7 +800,6 @@ offset_right = 560.0
 offset_bottom = 120.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect56" type="TextureRect" parent="."]
 z_index = -3
@@ -703,7 +809,6 @@ offset_right = 520.0
 offset_bottom = -24.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect59" type="TextureRect" parent="."]
 z_index = -3
@@ -713,7 +818,6 @@ offset_right = 520.0
 offset_bottom = -24.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect61" type="TextureRect" parent="."]
 z_index = -3
@@ -723,7 +827,6 @@ offset_right = 520.0
 offset_bottom = -24.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect65" type="TextureRect" parent="."]
 z_index = -3
@@ -733,7 +836,6 @@ offset_right = 304.0
 offset_bottom = 120.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect69" type="TextureRect" parent="."]
 z_index = -3
@@ -743,7 +845,6 @@ offset_right = 520.0
 offset_bottom = 120.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect70" type="TextureRect" parent="."]
 z_index = -3
@@ -753,7 +854,6 @@ offset_right = 400.0
 offset_bottom = 120.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect64" type="TextureRect" parent="."]
 z_index = -3
@@ -763,7 +863,6 @@ offset_right = 432.0
 offset_bottom = 72.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect62" type="TextureRect" parent="."]
 z_index = -3
@@ -773,17 +872,78 @@ offset_right = 208.0
 offset_bottom = 152.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect29" type="TextureRect" parent="."]
 z_index = -3
 offset_left = 696.0
 offset_top = 88.0
-offset_right = 1144.0
+offset_right = 1776.0
 offset_bottom = 120.0
 texture = ExtResource("1_oysan")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect120" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1776.0
+offset_top = 88.0
+offset_right = 1808.0
+offset_bottom = 768.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+
+[node name="TextureRect121" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1216.0
+offset_top = 768.0
+offset_right = 1808.0
+offset_bottom = 800.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+
+[node name="TextureRect122" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1216.0
+offset_top = 800.0
+offset_right = 1248.0
+offset_bottom = 1704.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+
+[node name="TextureRect123" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -1032.0
+offset_top = 1648.0
+offset_right = 1216.0
+offset_bottom = 1680.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+
+[node name="TextureRect124" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -632.0
+offset_top = 1328.0
+offset_right = -600.0
+offset_bottom = 1920.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+
+[node name="TextureRect116" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1144.0
+offset_top = 120.0
+offset_right = 1176.0
+offset_bottom = 352.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
+
+[node name="TextureRect110" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1272.0
+offset_top = -144.0
+offset_right = 1304.0
+offset_bottom = -112.0
+texture = ExtResource("1_oysan")
+stretch_mode = 1
 
 [node name="TextureRect28" type="TextureRect" parent="."]
 z_index = -3
@@ -793,7 +953,15 @@ offset_right = 624.0
 offset_bottom = 152.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect142" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -568.0
+offset_top = 448.0
+offset_right = 464.0
+offset_bottom = 480.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
 
 [node name="TextureRect49" type="TextureRect" parent="."]
 z_index = -3
@@ -803,7 +971,6 @@ offset_right = 624.0
 offset_bottom = -192.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect53" type="TextureRect" parent="."]
 z_index = -3
@@ -813,7 +980,6 @@ offset_right = 624.0
 offset_bottom = -192.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect68" type="TextureRect" parent="."]
 z_index = -3
@@ -823,7 +989,6 @@ offset_right = 368.0
 offset_bottom = 8.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect54" type="TextureRect" parent="."]
 z_index = -3
@@ -833,7 +998,6 @@ offset_right = 792.0
 offset_bottom = -288.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect30" type="TextureRect" parent="."]
 z_index = -3
@@ -843,7 +1007,6 @@ offset_right = 1112.0
 offset_bottom = 152.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Toplefttcorner4" type="Sprite2D" parent="."]
 z_index = -3
@@ -853,6 +1016,11 @@ texture = ExtResource("5_ooc2g")
 [node name="Toplefttcorner5" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(224, 136)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toplefttcorner15" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-584, 1696)
 texture = ExtResource("5_ooc2g")
 
 [node name="Toplefttcorner8" type="Sprite2D" parent="."]
@@ -868,6 +1036,11 @@ texture = ExtResource("5_ooc2g")
 [node name="Toprightcorner3" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(640, 136)
+texture = ExtResource("8_a6rn7")
+
+[node name="Toprightcorner18" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(-648, 1696)
 texture = ExtResource("8_a6rn7")
 
 [node name="Toprightcorner10" type="Sprite2D" parent="."]
@@ -893,11 +1066,69 @@ offset_right = 1112.0
 offset_bottom = 152.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect139" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1176.0
+offset_top = 352.0
+offset_right = 1272.0
+offset_bottom = 384.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+
+[node name="TextureRect141" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 464.0
+offset_top = 480.0
+offset_right = 1144.0
+offset_bottom = 512.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+
+[node name="TextureRect125" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -568.0
+offset_top = 1680.0
+offset_right = 1248.0
+offset_bottom = 1712.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+
+[node name="TextureRect128" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1280.0
+offset_top = 800.0
+offset_right = 1808.0
+offset_bottom = 832.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+
+[node name="TextureRect131" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1304.0
+offset_top = 120.0
+offset_right = 1744.0
+offset_bottom = 152.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
+
+[node name="TextureRect111" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1208.0
+offset_top = 120.0
+offset_right = 1240.0
+offset_bottom = 152.0
+texture = ExtResource("4_6qsgm")
+stretch_mode = 1
 
 [node name="Toprightcorner5" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(1128, 136)
+texture = ExtResource("8_a6rn7")
+
+[node name="Toprightcorner17" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1256, 136)
 texture = ExtResource("8_a6rn7")
 
 [node name="TextureRect33" type="TextureRect" parent="."]
@@ -908,7 +1139,78 @@ offset_right = 1240.0
 offset_bottom = 56.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect137" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1304.0
+offset_top = 152.0
+offset_right = 1744.0
+offset_bottom = 736.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+
+[node name="TextureRect147" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1280.0
+offset_top = 832.0
+offset_right = 1848.0
+offset_bottom = 1744.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+
+[node name="TextureRect146" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -568.0
+offset_top = 480.0
+offset_right = 432.0
+offset_bottom = 1616.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+
+[node name="TextureRect143" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 432.0
+offset_top = 736.0
+offset_right = 1184.0
+offset_bottom = 1624.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+
+[node name="TextureRect144" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 432.0
+offset_top = 512.0
+offset_right = 1304.0
+offset_bottom = 736.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+
+[node name="TextureRect145" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1176.0
+offset_top = 384.0
+offset_right = 1304.0
+offset_bottom = 512.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+
+[node name="TextureRect118" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 856.0
+offset_top = -616.0
+offset_right = 2176.0
+offset_bottom = -176.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
+
+[node name="TextureRect134" type="TextureRect" parent="."]
+z_index = -3
+offset_left = -568.0
+offset_top = 1712.0
+offset_right = 1280.0
+offset_bottom = 1744.0
+texture = ExtResource("9_4on3e")
+stretch_mode = 1
 
 [node name="TextureRect34" type="TextureRect" parent="."]
 z_index = -3
@@ -918,7 +1220,24 @@ offset_right = 1272.0
 offset_bottom = 56.0
 texture = ExtResource("2_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect126" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1184.0
+offset_top = 768.0
+offset_right = 1216.0
+offset_bottom = 1616.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
+
+[node name="TextureRect127" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 1744.0
+offset_top = 152.0
+offset_right = 1776.0
+offset_bottom = 736.0
+texture = ExtResource("2_sb2pt")
+stretch_mode = 1
 
 [node name="TextureRect35" type="TextureRect" parent="."]
 z_index = -3
@@ -928,7 +1247,15 @@ offset_right = 856.0
 offset_bottom = 56.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect119" type="TextureRect" parent="."]
+z_index = -3
+offset_left = 824.0
+offset_top = -616.0
+offset_right = 856.0
+offset_bottom = -176.0
+texture = ExtResource("6_2wwcf")
+stretch_mode = 1
 
 [node name="TextureRect36" type="TextureRect" parent="."]
 z_index = -3
@@ -938,11 +1265,15 @@ offset_right = 1240.0
 offset_bottom = -112.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Toplefttcorner6" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(840, -128)
+texture = ExtResource("5_ooc2g")
+
+[node name="Toplefttcorner14" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1192, 136)
 texture = ExtResource("5_ooc2g")
 
 [node name="Toprightcorner6" type="Sprite2D" parent="."]
@@ -958,16 +1289,25 @@ offset_right = 1240.0
 offset_bottom = -112.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Toprightcorner7" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(1256, -128)
 texture = ExtResource("8_a6rn7")
 
+[node name="Toprightcorner19" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1760, 136)
+texture = ExtResource("8_a6rn7")
+
 [node name="Rightcorner5" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(1128, 336)
+texture = ExtResource("3_0t07s")
+
+[node name="Rightcorner14" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1256, 336)
 texture = ExtResource("3_0t07s")
 
 [node name="Rightcorner6" type="Sprite2D" parent="."]
@@ -983,7 +1323,6 @@ offset_right = 488.0
 offset_bottom = -80.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect66" type="TextureRect" parent="."]
 z_index = -3
@@ -993,7 +1332,6 @@ offset_right = 368.0
 offset_bottom = 88.0
 texture = ExtResource("10_bssq0")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Leftcorner6" type="Sprite2D" parent="."]
 z_index = -3
@@ -1008,7 +1346,6 @@ offset_right = 488.0
 offset_bottom = -112.0
 texture = ExtResource("9_4on3e")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect41" type="TextureRect" parent="."]
 z_index = -3
@@ -1018,7 +1355,6 @@ offset_right = 520.0
 offset_bottom = -112.0
 texture = ExtResource("2_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect63" type="TextureRect" parent="."]
 z_index = -3
@@ -1028,7 +1364,6 @@ offset_right = 400.0
 offset_bottom = 56.0
 texture = ExtResource("2_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect42" type="TextureRect" parent="."]
 z_index = -3
@@ -1038,7 +1373,6 @@ offset_right = 104.0
 offset_bottom = -112.0
 texture = ExtResource("6_2wwcf")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect43" type="TextureRect" parent="."]
 z_index = -3
@@ -1048,7 +1382,6 @@ offset_right = 488.0
 offset_bottom = -280.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Toplefttcorner7" type="Sprite2D" parent="."]
 z_index = -3
@@ -1068,7 +1401,6 @@ offset_right = 488.0
 offset_bottom = -280.0
 texture = ExtResource("4_6qsgm")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Toprightcorner9" type="Sprite2D" parent="."]
 visible = false
@@ -1126,7 +1458,6 @@ offset_right = 160.0
 offset_bottom = 56.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect74" type="TextureRect" parent="."]
 z_index = -3
@@ -1136,7 +1467,6 @@ offset_right = 160.0
 offset_bottom = 72.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect75" type="TextureRect" parent="."]
 z_index = -3
@@ -1146,7 +1476,6 @@ offset_right = 160.0
 offset_bottom = 88.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect76" type="TextureRect" parent="."]
 z_index = -3
@@ -1156,7 +1485,6 @@ offset_right = 160.0
 offset_bottom = 104.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect77" type="TextureRect" parent="."]
 z_index = -3
@@ -1166,7 +1494,6 @@ offset_right = 160.0
 offset_bottom = 120.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect78" type="TextureRect" parent="."]
 z_index = -3
@@ -1176,7 +1503,6 @@ offset_right = 160.0
 offset_bottom = 136.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect79" type="TextureRect" parent="."]
 z_index = -3
@@ -1186,7 +1512,6 @@ offset_right = 160.0
 offset_bottom = 152.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect80" type="TextureRect" parent="."]
 z_index = -3
@@ -1196,7 +1521,6 @@ offset_right = 160.0
 offset_bottom = 152.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect81" type="TextureRect" parent="."]
 z_index = -3
@@ -1206,7 +1530,6 @@ offset_right = 160.0
 offset_bottom = 168.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect82" type="TextureRect" parent="."]
 z_index = -3
@@ -1216,7 +1539,6 @@ offset_right = 160.0
 offset_bottom = 184.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect83" type="TextureRect" parent="."]
 z_index = -3
@@ -1226,7 +1548,6 @@ offset_right = 160.0
 offset_bottom = 200.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect84" type="TextureRect" parent="."]
 z_index = -3
@@ -1236,7 +1557,6 @@ offset_right = 640.0
 offset_bottom = -176.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect85" type="TextureRect" parent="."]
 z_index = -3
@@ -1246,7 +1566,6 @@ offset_right = 640.0
 offset_bottom = -160.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect86" type="TextureRect" parent="."]
 z_index = -3
@@ -1256,7 +1575,6 @@ offset_right = 640.0
 offset_bottom = -144.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect87" type="TextureRect" parent="."]
 z_index = -3
@@ -1266,7 +1584,6 @@ offset_right = 640.0
 offset_bottom = -128.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect88" type="TextureRect" parent="."]
 z_index = -3
@@ -1276,7 +1593,6 @@ offset_right = 640.0
 offset_bottom = -112.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect89" type="TextureRect" parent="."]
 z_index = -3
@@ -1286,7 +1602,6 @@ offset_right = 640.0
 offset_bottom = -96.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect90" type="TextureRect" parent="."]
 z_index = -3
@@ -1296,7 +1611,6 @@ offset_right = 640.0
 offset_bottom = -80.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect91" type="TextureRect" parent="."]
 z_index = -3
@@ -1306,7 +1620,6 @@ offset_right = 640.0
 offset_bottom = -64.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect92" type="TextureRect" parent="."]
 z_index = -3
@@ -1316,7 +1629,6 @@ offset_right = 640.0
 offset_bottom = -48.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect93" type="TextureRect" parent="."]
 z_index = -3
@@ -1326,7 +1638,6 @@ offset_right = 640.0
 offset_bottom = -32.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect94" type="TextureRect" parent="."]
 z_index = -3
@@ -1336,7 +1647,6 @@ offset_right = 640.0
 offset_bottom = -16.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect95" type="TextureRect" parent="."]
 z_index = -3
@@ -1345,7 +1655,6 @@ offset_top = -32.0
 offset_right = 640.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect96" type="TextureRect" parent="."]
 z_index = -3
@@ -1355,7 +1664,6 @@ offset_right = 640.0
 offset_bottom = 16.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect97" type="TextureRect" parent="."]
 z_index = -3
@@ -1364,7 +1672,6 @@ offset_right = 640.0
 offset_bottom = 32.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect98" type="TextureRect" parent="."]
 z_index = -3
@@ -1374,7 +1681,6 @@ offset_right = 640.0
 offset_bottom = 48.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect99" type="TextureRect" parent="."]
 z_index = -3
@@ -1384,7 +1690,6 @@ offset_right = 640.0
 offset_bottom = 64.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect100" type="TextureRect" parent="."]
 z_index = -3
@@ -1394,7 +1699,6 @@ offset_right = 640.0
 offset_bottom = 72.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect101" type="TextureRect" parent="."]
 z_index = -3
@@ -1404,7 +1708,6 @@ offset_right = 640.0
 offset_bottom = 88.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect102" type="TextureRect" parent="."]
 z_index = -3
@@ -1414,7 +1717,6 @@ offset_right = 640.0
 offset_bottom = 96.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Toprightcorner16" type="Sprite2D" parent="."]
 z_index = -3
@@ -1443,7 +1745,6 @@ offset_right = 1128.0
 offset_bottom = 416.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect105" type="TextureRect" parent="."]
 z_index = -3
@@ -1453,7 +1754,6 @@ offset_right = 1128.0
 offset_bottom = 424.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect106" type="TextureRect" parent="."]
 z_index = -3
@@ -1463,7 +1763,6 @@ offset_right = 1128.0
 offset_bottom = 432.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect107" type="TextureRect" parent="."]
 z_index = -3
@@ -1473,7 +1772,6 @@ offset_right = 1128.0
 offset_bottom = 440.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect108" type="TextureRect" parent="."]
 z_index = -3
@@ -1483,7 +1781,6 @@ offset_right = 1128.0
 offset_bottom = 448.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect109" type="TextureRect" parent="."]
 z_index = -3
@@ -1493,4 +1790,63 @@ offset_right = 1128.0
 offset_bottom = 464.0
 texture = ExtResource("11_sb2pt")
 stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="Reworktopleft" type="Sprite2D" parent="."]
+position = Vector2(1200, 752)
+texture = ExtResource("12_2wwcf")
+
+[node name="Reworkbright" type="Sprite2D" parent="."]
+position = Vector2(1824, 816)
+texture = ExtResource("13_wbpbn")
+
+[node name="Reworkbright2" type="Sprite2D" parent="."]
+position = Vector2(1824, 816)
+texture = ExtResource("13_wbpbn")
+
+[node name="Rightcorner16" type="Sprite2D" parent="."]
+position = Vector2(1760, 752)
+texture = ExtResource("3_0t07s")
+
+[node name="Toplefttcorner16" type="Sprite2D" parent="."]
+position = Vector2(1264, 816)
+texture = ExtResource("5_ooc2g")
+
+[node name="Reworkbright3" type="Sprite2D" parent="."]
+position = Vector2(1264, 1696)
+texture = ExtResource("13_wbpbn")
+
+[node name="Rightcorner17" type="Sprite2D" parent="."]
+position = Vector2(1200, 1632)
+texture = ExtResource("3_0t07s")
+
+[node name="Reworktopright" type="Sprite2D" parent="."]
+position = Vector2(1824, 72)
+texture = ExtResource("14_a6rn7")
+
+[node name="Toplefttcorner17" type="Sprite2D" parent="."]
+position = Vector2(1288, 136)
+texture = ExtResource("5_ooc2g")
+
+[node name="Reworkbright4" type="Sprite2D" parent="."]
+position = Vector2(1288, 368)
+texture = ExtResource("13_wbpbn")
+
+[node name="Reworkbright5" type="Sprite2D" parent="."]
+position = Vector2(1160, 496)
+texture = ExtResource("13_wbpbn")
+
+[node name="Toplefttcorner18" type="Sprite2D" parent="."]
+position = Vector2(1160, 368)
+texture = ExtResource("5_ooc2g")
+
+[node name="Reworkbleft" type="Sprite2D" parent="."]
+position = Vector2(448, 496)
+texture = ExtResource("15_4on3e")
+
+[node name="Toprightcorner20" type="Sprite2D" parent="."]
+position = Vector2(448, 464)
+texture = ExtResource("8_a6rn7")
+
+[node name="Toplefttcorner19" type="Sprite2D" parent="."]
+position = Vector2(-584, 464)
+texture = ExtResource("5_ooc2g")

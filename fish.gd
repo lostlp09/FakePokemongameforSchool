@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	
 	self.velocity.x = left * delta * SPEED 
 	
 	move_and_slide()
@@ -24,5 +25,3 @@ func funcrandom()->void:
 			
 			self.get_node("Sprite2D").flip_h = true
 		await get_tree().create_timer(1).timeout
-	
-	
