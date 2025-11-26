@@ -52,7 +52,7 @@ func game_sequence()->void:
 	for char_dead in p2:
 		if char_dead.hp <= 0:
 			char_dead.alive = false
-	print(p1)
+
 	if p1[0].alive and p1[1].alive and p1[2].alive == false:
 		fighting = false
 		print("p2 won")

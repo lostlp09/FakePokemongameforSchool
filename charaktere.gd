@@ -5,11 +5,15 @@ var maxhp: float
 var Name: String
 var damage1: float 
 var attack1_element: Callable
+var n_attack1_element: String
 var damage2: float
 var attack2_element: Callable
+var n_attack2_element: String
 var damage3: float 
 var attack3_element: Callable
+var n_attack3_element: String
 var element: String
+var texture: SpriteFrames
 
 var optional_ = {}
 var alive: bool = true
@@ -53,6 +57,7 @@ func _init(_maxhp: float,
  _damage3:float,
  _attack3_element: String,
  _Name: String,
+_texture: SpriteFrames,
  optional := {
  "poison1" : false, 
  "poison2" : false,
@@ -69,8 +74,12 @@ func _init(_maxhp: float,
  "shield1" : 0,
  "shield2" : 0,
  "shield3" : 0}) ->void:
+	n_attack1_element = _attack1_element
+	n_attack2_element = _attack2_element
+	n_attack3_element = _attack3_element
 	element = _element
 	damage1 = _damage1
+	texture = _texture
 	match _attack1_element:
 		"fire": attack1_element = fire
 		"water": attack1_element = water

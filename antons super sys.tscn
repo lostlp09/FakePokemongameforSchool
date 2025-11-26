@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cntutuvlipsdm"]
+[gd_scene load_steps=15 format=3 uid="uid://cntutuvlipsdm"]
 
 [ext_resource type="Script" uid="uid://dtbp63pqisq4d" path="res://node.gd" id="1_ta0y4"]
 [ext_resource type="Script" uid="uid://ldumuw0s7p8j" path="res://charaktere.gd" id="2_fot2q"]
 [ext_resource type="Texture2D" uid="uid://en0dmnsdh5lk" path="res://Screenshot 2025-11-12 182556(4).png" id="3_ta0y4"]
+[ext_resource type="SpriteFrames" uid="uid://c7g03rngwdpdt" path="res://blob.tres" id="4_g6yn2"]
 [ext_resource type="Script" uid="uid://mlw1aha8md5d" path="res://ui.gd" id="4_v0j1c"]
 [ext_resource type="Texture2D" uid="uid://cqb0x23ub8pws" path="res://button sprite.png" id="5_g6yn2"]
 [ext_resource type="Texture2D" uid="uid://b4a5o6ecoj1xg" path="res://fire animation.png" id="6_7vej1"]
@@ -75,6 +76,8 @@ stretch_mode = 1
 [node name="enemy 1" type="Area2D" parent="Kampf/enemy container"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 1"]
+texture_filter = 1
+sprite_frames = ExtResource("4_g6yn2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 1"]
 
