@@ -18,5 +18,6 @@ func _on_area_exited(area: Area2D) -> void:
 		$"../interact".visible = false
 		isinarea = false
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and isinarea:
 		self.queue_free()
+		Savestats.inventory.append($"../Storage/gachaegg".duplicate())
