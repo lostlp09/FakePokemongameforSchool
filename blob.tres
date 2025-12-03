@@ -2,24 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://dhcdnkwwpn86x" path="res://blob_char.png" id="1_k0fn2"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0fn2"]
+atlas = ExtResource("1_k0fn2")
+region = Rect2(0, 1, 64, 31)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pr5r8"]
 atlas = ExtResource("1_k0fn2")
-region = Rect2(0, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ajbta"]
-atlas = ExtResource("1_k0fn2")
-region = Rect2(64, 0, 64, 32)
+region = Rect2(64, 1, 64, 31)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pr5r8")
+"texture": SubResource("AtlasTexture_k0fn2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ajbta")
+"texture": SubResource("AtlasTexture_pr5r8")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]

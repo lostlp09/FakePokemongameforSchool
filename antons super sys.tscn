@@ -66,28 +66,42 @@ stretch_mode = 1
 [node name="player container" type="Node2D" parent="Kampf"]
 
 [node name="player 1" type="AnimatedSprite2D" parent="Kampf/player container"]
+position = Vector2(150, 550)
+scale = Vector2(2, 2)
 
 [node name="player 2" type="AnimatedSprite2D" parent="Kampf/player container"]
+position = Vector2(300, 550)
+scale = Vector2(2, 2)
 
 [node name="player 3" type="AnimatedSprite2D" parent="Kampf/player container"]
+position = Vector2(450, 550)
+scale = Vector2(2, 2)
 
 [node name="enemy container" type="Node2D" parent="Kampf"]
 
 [node name="enemy 1" type="Area2D" parent="Kampf/enemy container"]
+position = Vector2(750, 550)
+scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 1"]
 texture_filter = 1
+position = Vector2(-42, 2)
 sprite_frames = ExtResource("4_g6yn2")
+frame_progress = 0.318186
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 1"]
 
 [node name="enemy 2" type="Area2D" parent="Kampf/enemy container"]
+position = Vector2(900, 550)
+scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 2"]
 
 [node name="enemy 3" type="Area2D" parent="Kampf/enemy container"]
+position = Vector2(1050, 550)
+scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 3"]
 
@@ -97,8 +111,10 @@ sprite_frames = ExtResource("4_g6yn2")
 script = ExtResource("4_v0j1c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Kampf/UI"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_top = 16.0
+offset_right = 39.0
+offset_bottom = 56.0
 
 [node name="turn" type="Label" parent="Kampf/UI/VBoxContainer"]
 layout_mode = 2
