@@ -9,20 +9,18 @@ var elements
 var texts : Array
 var icons : Array
 func _ready():
-	texts = [text1, text2, text3]
 	icons = [$"attack 1/button1 icons", $"attack 2/button2 icons", $"attack 3/button3 icons"]
 	while not $"..".current_attacker:
 		await get_tree().process_frame
-	current_attacker = $"..".current_attacker
-
-	elements = [current_attacker.n_attack1_element,
-	 current_attacker.n_attack2_element,
-	 current_attacker.n_attack3_element]
 func _process(delta)->void:
-	text1 = "attack 1"
-	text2 = "attack 2"
-	text3 = "attack 3"
+	text1.text = "attack 1"
+	text2.text = "attack 2"
+	text3.text = "attack 3"
 	if elements:
+		current_attacker = $"..".current_attacker
+		elements = [current_attacker.n_attack1_element,
+	 	current_attacker.n_attack2_element,
+	 	current_attacker.n_attack3_element]
 		for i in range(0,3):
 			var icon = icons[i]
 			var element = elements[i]
@@ -35,5 +33,5 @@ func _process(delta)->void:
 				"wind" : x = 4
 				"plant" : x = 5
 			icon.frame = x
-	
+		
 		

@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=22 format=3 uid="uid://djj7jeo07d8dh"]
+=======
+[gd_scene load_steps=21 format=3 uid="uid://djj7jeo07d8dh"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://bcex40y51jw6j" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
@@ -6,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dgaxlx1ghr8b1" path="res://villager.png" id="4_q6r6c"]
 [ext_resource type="Script" uid="uid://dyetfck7oyl7j" path="res://area_2d.gd" id="5_kdubu"]
 [ext_resource type="Texture2D" uid="uid://6h24wkjyrwmv" path="res://interact.png" id="7_d21ai"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dcc2aods856wu" path="res://scroll_container.gd" id="7_hqns4"]
+=======
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dpy45tpwchxla" path="res://dialog/pixil-frame-0.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://dk3whpjhipa6r" path="res://dialog/sr5zebf7fe8ddaaws3.png" id="9_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://b1b3p6jui2oh3" path="res://1000_F_443693248_FFOUon01HIYUVLVPFIyhrzDlbmWN8XKq.jpg" id="10_ir8iy"]
@@ -105,7 +112,10 @@ offset_right = -107.207
 offset_bottom = -127.0
 scale = Vector2(2.84, 3.03698)
 horizontal_scroll_mode = 0
+<<<<<<< Updated upstream
 script = ExtResource("7_hqns4")
+=======
+>>>>>>> Stashed changes
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/ScrollContainer"]
 layout_mode = 2
@@ -205,7 +215,10 @@ offset_left = -1257.0
 offset_top = -169.0
 offset_right = -1158.0
 offset_bottom = 15.0
+<<<<<<< Updated upstream
 metadata/_edit_use_anchors_ = true
+=======
+>>>>>>> Stashed changes
 
 [node name="Bushes" type="Area2D" parent="."]
 

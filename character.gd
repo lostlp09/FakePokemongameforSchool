@@ -10,4 +10,4 @@ var Gambler2: character = character.new(500, "ice", 0, "water", 0, "wind", 20, "
 var Gambler3: character = character.new(500, "ice", 0, "water", 0, "wind", 20, "ice", "Gambler3", preload("res://blob.tres"), {"gamble3" = true})
 func _ready() ->void:
 	p1 = [Monkey, Giraffe, Gambler2]
-	p2 = [Gambler, bastard,Gambler3]
+	p2 = [Gambler, bastard, Gambler3]

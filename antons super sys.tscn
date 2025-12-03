@@ -128,8 +128,10 @@ speed_scale = 0.0
 
 [node name="button1 text" type="Label" parent="Kampf/UI/attack 1"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 10.0
+offset_top = 12.5
+offset_right = 70.0
+offset_bottom = 37.5
 
 [node name="button1 outline" type="Sprite2D" parent="Kampf/UI/attack 1"]
 visible = false
@@ -162,8 +164,10 @@ speed_scale = 0.0
 
 [node name="button2 text" type="Label" parent="Kampf/UI/attack 2"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 10.0
+offset_top = 12.5
+offset_right = 70.0
+offset_bottom = 37.5
 
 [node name="button2 outline" type="Sprite2D" parent="Kampf/UI/attack 2"]
 visible = false
@@ -196,8 +200,10 @@ speed_scale = 0.0
 
 [node name="button3 text" type="Label" parent="Kampf/UI/attack 3"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 10.0
+offset_top = 12.5
+offset_right = 70.0
+offset_bottom = 37.5
 
 [node name="button3 outline" type="Sprite2D" parent="Kampf/UI/attack 3"]
 visible = false

@@ -12,6 +12,7 @@ var which_attack: String
 var poison_damage: float = 0.05
 var burn_damage: int = 5
 var current_player: Array
+var passive_player : Array
 @export var  current_attacker: character
 var attacked_char: character
 
@@ -35,17 +36,18 @@ func _on_attack_3_pressed() -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("first enemy"):
-		attacked_char = p2[0]
+		attacked_char = passive_player[0]
 		attacked.emit()
 	if Input.is_action_just_pressed("second enemy"):
-		attacked_char = p2[1]
+		attacked_char = passive_player[1]
 		attacked.emit()
 	if Input.is_action_just_pressed("third enemy"):
-		attacked_char = p2[2]
+		attacked_char = passive_player[2]
 		attacked.emit()
 
 func game_sequence()->void:
 	await get_tree().process_frame
+	print("game_sequence")
 	for char_dead in p1:
 		if char_dead.hp  <= 0:
 			char_dead.alive = false
@@ -62,13 +64,16 @@ func game_sequence()->void:
 	if fighting:
 		if turn == 1:
 			current_player = p1
+			passive_player = p2
 			p1_turn()
 			
 		if turn == 2:
 			current_player = p2
+			passive_player = p1
 			p2_turn()
 
-func p1_turn()->void:     
+func p1_turn()->void:   
+	print("p1_turn")  
 	for x in p1:
 		current_attacker = x
 		await attack 
@@ -90,6 +95,7 @@ func p1_turn()->void:
 	game_sequence()
 	 
 func p2_turn()->void:
+	print("p2_turn")
 	for x in p2:
 		current_attacker = x
 		await attack 
