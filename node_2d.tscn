@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://djj7jeo07d8dh"]
+[gd_scene load_steps=27 format=3 uid="uid://djj7jeo07d8dh"]
 
 [ext_resource type="Script" uid="uid://bcex40y51jw6j" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://di7v6dqe8lrq4" path="res://money.gd" id="12_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://dpgpnnduforpx" path="res://pixil-frame-0(1).png" id="13_d2bti"]
 [ext_resource type="Script" uid="uid://c7vvagngiaod1" path="res://eggscript.gd" id="13_nr8wp"]
+[ext_resource type="Script" uid="uid://bnoi87p727gjk" path="res://button.gd" id="13_ta5nu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqns4"]
 
@@ -238,6 +239,7 @@ offset_bottom = 110.0
 scale = Vector2(0.195, 0.195)
 theme_override_font_sizes/font_size = 62
 text = "open"
+script = ExtResource("13_ta5nu")
 
 [node name="ChatGptImageNov8,2025,031547Pm2" type="Sprite2D" parent="."]
 position = Vector2(136, -168)
