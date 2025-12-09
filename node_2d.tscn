@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://djj7jeo07d8dh"]
+[gd_scene load_steps=23 format=3 uid="uid://djj7jeo07d8dh"]
 
 [ext_resource type="Script" uid="uid://bcex40y51jw6j" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
@@ -31,18 +31,6 @@ size = Vector2(631.216, 20.252)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
 size = Vector2(631.216, 50.0928)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
-size = Vector2(1662.5, 160)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
-size = Vector2(1003.5, 160)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
-size = Vector2(167.75, 431)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
-size = Vector2(167.75, 755)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
 size = Vector2(34.4444, 46.4226)
 
@@ -50,9 +38,9 @@ size = Vector2(34.4444, 46.4226)
 script = ExtResource("1_kdubu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -1934.0
+offset_left = -1921.0
 offset_top = -660.0
-offset_right = 1422.0
+offset_right = 1435.0
 offset_bottom = 864.0
 texture = SubResource("CompressedTexture2D_hqns4")
 stretch_mode = 1
@@ -115,6 +103,7 @@ metadata/_edit_use_anchors_ = true
 scale = Vector2(0.977825, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Camera2D"]
+process_mode = 3
 visible = false
 offset_left = -415.207
 offset_top = -266.0
@@ -141,6 +130,7 @@ text = "Coins"
 script = ExtResource("12_x0ka3")
 
 [node name="Button" type="Button" parent="Camera2D"]
+process_mode = 3
 visible = false
 offset_left = -571.677
 offset_top = -266.0
@@ -260,24 +250,6 @@ offset_right = -1158.0
 offset_bottom = 15.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Bushes" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bushes"]
-position = Vector2(-93.25, 322)
-shape = SubResource("RectangleShape2D_0h7mo")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bushes"]
-position = Vector2(-1531.75, 238)
-shape = SubResource("RectangleShape2D_nr8wp")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bushes"]
-position = Vector2(-1871.88, -496.5)
-shape = SubResource("RectangleShape2D_d2bti")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bushes"]
-position = Vector2(-620, -933.5)
-shape = SubResource("RectangleShape2D_ta5nu")
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -321,7 +293,7 @@ position = Vector2(1.83582e-05, -0.450652)
 shape = SubResource("RectangleShape2D_flf07")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(83, -171)
+position = Vector2(-2, -4.00002)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_0hol4")
 

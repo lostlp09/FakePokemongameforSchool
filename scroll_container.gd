@@ -3,8 +3,10 @@ extends ScrollContainer
 @export var is_on = false
 @onready var pokemonskizze =  $"../../Storage/pokemonbild"
 var isonpokemon = true
-@export var Gambling:Callable 
+var isgambling = false
 
+@export var Gambling:Callable 
+@onready var player =$"../../CharacterBody2D"
 
 
 
@@ -58,11 +60,13 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("tab"):
 
 		if is_on == false:
+			get_tree().paused = true
 			self.visible = true
 			is_on = true
 			ifis_on()
 			$"../Button".visible = true
 		else:
+			get_tree().paused = false
 			is_on = false
 			for i in self.get_node("VBoxContainer").get_children():
 				if i.name != "Inven":
@@ -73,11 +77,9 @@ func egg() ->void:
 	var anzahl = 0
 	var X_pos = 20
 	var Y_pos = 20
-	
 	var Startposplaced =  false
 	var oldpos = Vector2(20,20)
 	for i in Savestats.inventory:
-
 		anzahl += 1
 		if anzahl == 6:
 			anzahl = 1
@@ -98,26 +100,41 @@ func egg() ->void:
 		self.get_node("VBoxContainer").add_child(clone)
 
 func gambling():
-	var pokemon =  Character.allpokemons.pick_random()
-	Savestats.pokemons.append(pokemon)
-	var anzahl = -5
+	
+	$"../../Icon".visible = true
+	Savestats.inventory.remove_at(0)
+	for i in $VBoxContainer.get_children():
+		if i != $VBoxContainer/Inven:
+			i.queue_free()
+	$"../../Icon".position = player.position
+	var randomnumber = randi_range(0,Character.allpokemons.size() -1)
+	var pokemon =  Character.allpokemons[randomnumber]
+	var image =  Character.allpokimages[randomnumber]
+	print(pokemon.Name)
+	var anzahl = -5	
 	var schrittmenge = 0.6
 	for i in range(1,11):
+		var fakeimages = Character.allpokimages.pick_random()
 		var pokemonpicture = 0
-		if i != 100 :
-			pokemonpicture =  Character.allpokemons.pick_random()
-		else:
-			pokemonpicture = pokemon	
+		if i != 10 :
+
+			pokemonpicture = fakeimages
+		elif  i == 10:
+			Savestats.pokemons.append(pokemon)
+			pokemonpicture = image
+		print("SET:", pokemonpicture.resource_path)
+		await get_tree().process_frame
+		$"../../Icon".texture = pokemonpicture
 		while true:
+
 			var smooth = clamp(anzahl ,-3,3)
 			var y = clamp( -1 *smooth * smooth +  9  ,0,9 )
 
 			$"../../Icon".scale =Vector2(y,y) * 0.1
-	
-		
 			if y>8.9 and i == 10:
-				
-				
+				await get_tree().create_timer(1).timeout
+				egg()
+				$"../../Icon".visible = false
 				break
 			if smooth == 3:
 				anzahl = -6
