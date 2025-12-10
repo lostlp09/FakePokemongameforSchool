@@ -97,15 +97,16 @@ scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 1 area"]
 texture_filter = 1
-position = Vector2(-42, 2)
 sprite_frames = ExtResource("4_g6yn2")
 frame_progress = 0.318186
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 1 area"]
 
 [node name="enemy 1" type="VBoxContainer" parent="Kampf/enemy container/enemy 1 area"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 10.0
 
 [node name="HP 1" type="Label" parent="Kampf/enemy container/enemy 1 area/enemy 1"]
 layout_mode = 2
