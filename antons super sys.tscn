@@ -120,9 +120,10 @@ scale = Vector2(2, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 2 area"]
 
 [node name="enemy 2" type="VBoxContainer" parent="Kampf/enemy container/enemy 2 area"]
-offset_left = 75.0
-offset_right = 115.0
-offset_bottom = 40.0
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 10.0
 
 [node name="HP 2" type="Label" parent="Kampf/enemy container/enemy 2 area/enemy 2"]
 layout_mode = 2
@@ -136,9 +137,10 @@ scale = Vector2(2, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 3 area"]
 
 [node name="enemy 3" type="VBoxContainer" parent="Kampf/enemy container/enemy 3 area"]
-offset_left = -75.0
-offset_right = -35.0
-offset_bottom = 40.0
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 10.0
 
 [node name="HP 3" type="Label" parent="Kampf/enemy container/enemy 3 area/enemy 3"]
 layout_mode = 2

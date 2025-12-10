@@ -21,8 +21,8 @@ func _ready():
 	p1_sprites = [$"../player container/player 1".sprite_frames, $"../player container/player 2".sprite_frames, $"../player container/player 3".sprite_frames]
 	p2_sprites = [$"../enemy container/enemy 1 area/AnimatedSprite2D".sprite_frames, $"../enemy container/enemy 2 area/AnimatedSprite2D".sprite_frames, $"../enemy container/enemy 3 area/AnimatedSprite2D".sprite_frames]
 	for x in range(3):
-		print(get_node("../player container/player %d/AnimatedSprite2D" % (x+1)).sprite_frames, Character.p1[x].texture)
-		get_node("../player container/player %d/AnimatedSprite2D" % (x+1)).sprite_frames = Character.p1[x].texture
+		print(get_node("../player container/player %d" % (x+1)).sprite_frames, Character.p1[x].texture)
+		get_node("../player container/player %d" % (x+1)).sprite_frames = Character.p1[x].texture
 	for x in range(3):
 		print(get_node("../enemy container/enemy %d area/AnimatedSprite2D" % (x+1)).sprite_frames, Character.p2[x].texture)
 		get_node("../enemy container/enemy %d area/AnimatedSprite2D" % (x+1)).sprite_frames = Character.p2[x].texture
