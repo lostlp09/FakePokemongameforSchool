@@ -10,9 +10,12 @@ var fishing = false
 var isfishing = false
 var fishuiisactive= null
 var skipped = null
+var jumping = false
 signal  fishing1
 var fishui = preload("res://test.tscn")
 @onready var  skipbutton = $"../Pixil-frame-0/Button"
+var isonfloor = true
+var x = 0
 func textbotchanged() -> void:
 	if textbox.visible == true:
 		allowwalking = false
@@ -31,9 +34,34 @@ func _ready() -> void:
 	skipbutton.pressed.connect(skipbuttonreleased)
 	
 func _physics_process(delta: float) -> void:
+	if $"../Map/floor".has_overlapping_bodies():
+		jumping = false
+	
+
 	velocity.x = 0
 	velocity.y = 0
+	if Input.is_action_just_pressed("jump"):
+		isonfloor = false
+		jumping = true          
 	
+	if jumping == true:
+		print(x)
+		x += 10 * delta 
+		var y =  -1 * x*x +4*x +2.5 
+		
+			
+		y = clamp(y,0,6.5)
+		self.scale = Vector2(y,y)
+		if x >= 4.5:
+			jumping = false
+		if  x >= 4 and $"../Map/floor".has_overlapping_bodies():
+			print("your on floor")
+			self.scale =Vector2(2.5,2.5)
+			jumping = false
+			
+	else:
+		x = 0
+		
 	if Input.is_action_pressed("forward") && allowwalking:
 		self.velocity.y  = -20000 * delta
 	if Input.is_action_pressed("bachward") && allowwalking:
@@ -115,7 +143,7 @@ func whileisifishing()->void:
 	
 	
 	
-		
+
 		
 		
 		
