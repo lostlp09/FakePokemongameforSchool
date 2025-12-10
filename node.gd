@@ -2,6 +2,7 @@ extends Node
 signal attack
 signal attacked 
 signal button_1_pressed
+signal turn_switch
 
 #Variablen
 var p1: Array
@@ -47,7 +48,6 @@ func _input(event: InputEvent) -> void:
 
 func game_sequence()->void:
 	await get_tree().process_frame
-	print("game_sequence")
 	for char_dead in p1:
 		if char_dead.hp  <= 0:
 			char_dead.alive = false
@@ -63,17 +63,17 @@ func game_sequence()->void:
 		print("p1 won")
 	if fighting:
 		if turn == 1:
+			turn_switch.emit()
 			current_player = p1
 			passive_player = p2
 			p1_turn()
-			
 		if turn == 2:
+			turn_switch.emit()
 			current_player = p2
 			passive_player = p1
 			p2_turn()
 
-func p1_turn()->void:   
-	print("p1_turn")  
+func p1_turn()->void:     
 	for x in p1:
 		current_attacker = x
 		await attack 

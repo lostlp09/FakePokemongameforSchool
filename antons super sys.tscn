@@ -91,58 +91,55 @@ offset_bottom = 40.0
 
 [node name="enemy container" type="Node2D" parent="Kampf"]
 
-[node name="enemy 1" type="VBoxContainer" parent="Kampf/enemy container"]
-offset_left = 750.0
-offset_top = 550.0
-offset_right = 790.0
-offset_bottom = 590.0
-
-[node name="enemy 1 area" type="Area2D" parent="Kampf/enemy container/enemy 1"]
+[node name="enemy 1 area" type="Area2D" parent="Kampf/enemy container"]
+position = Vector2(750, 550)
 scale = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 1/enemy 1 area"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 1 area"]
 texture_filter = 1
 position = Vector2(-42, 2)
 sprite_frames = ExtResource("4_g6yn2")
 frame_progress = 0.318186
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 1/enemy 1 area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 1 area"]
 
-[node name="HP 1" type="Label" parent="Kampf/enemy container/enemy 1"]
+[node name="enemy 1" type="VBoxContainer" parent="Kampf/enemy container/enemy 1 area"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP 1" type="Label" parent="Kampf/enemy container/enemy 1 area/enemy 1"]
 layout_mode = 2
 
-[node name="enemy 2" type="VBoxContainer" parent="Kampf/enemy container"]
-offset_left = 1050.0
-offset_top = 550.0
-offset_right = 1090.0
-offset_bottom = 590.0
-
-[node name="enemy 2 area" type="Area2D" parent="Kampf/enemy container/enemy 2"]
-position = Vector2(-150, 0)
+[node name="enemy 2 area" type="Area2D" parent="Kampf/enemy container"]
+position = Vector2(900, 550)
 scale = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 2/enemy 2 area"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 2 area"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 2/enemy 2 area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 2 area"]
 
-[node name="HP 2" type="Label" parent="Kampf/enemy container/enemy 2"]
+[node name="enemy 2" type="VBoxContainer" parent="Kampf/enemy container/enemy 2 area"]
+offset_left = 75.0
+offset_right = 115.0
+offset_bottom = 40.0
+
+[node name="HP 2" type="Label" parent="Kampf/enemy container/enemy 2 area/enemy 2"]
 layout_mode = 2
 
-[node name="enemy 3" type="VBoxContainer" parent="Kampf/enemy container"]
-offset_left = 900.0
-offset_top = 550.0
-offset_right = 940.0
-offset_bottom = 590.0
-
-[node name="enemy 3 area" type="Area2D" parent="Kampf/enemy container/enemy 3"]
-position = Vector2(150, 0)
+[node name="enemy 3 area" type="Area2D" parent="Kampf/enemy container"]
+position = Vector2(1050, 550)
 scale = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 3/enemy 3 area"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Kampf/enemy container/enemy 3 area"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 3/enemy 3 area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kampf/enemy container/enemy 3 area"]
 
-[node name="HP 3" type="Label" parent="Kampf/enemy container/enemy 3"]
+[node name="enemy 3" type="VBoxContainer" parent="Kampf/enemy container/enemy 3 area"]
+offset_left = -75.0
+offset_right = -35.0
+offset_bottom = 40.0
+
+[node name="HP 3" type="Label" parent="Kampf/enemy container/enemy 3 area/enemy 3"]
 layout_mode = 2
 
 [node name="UI" type="CanvasLayer" parent="Kampf"]
@@ -266,6 +263,8 @@ position = Vector2(50, 25)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_mtcdw")
 
+[connection signal="turn_switch" from="Kampf" to="Kampf" method="_on_turn_switch"]
+[connection signal="turn_switch" from="Kampf" to="Kampf/UI" method="_on_kampf_turn_switch"]
 [connection signal="pressed" from="Kampf/UI/attack 1" to="Kampf" method="_on_attack_1_pressed"]
 [connection signal="pressed" from="Kampf/UI/attack 2" to="Kampf" method="_on_attack_2_pressed"]
 [connection signal="pressed" from="Kampf/UI/attack 3" to="Kampf" method="_on_attack_3_pressed"]
