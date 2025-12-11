@@ -91,6 +91,9 @@ func p1_turn()->void:
 	for x in p2:
 		if x.burned:
 			x.hp -= burn_damage
+	for x in p2:
+		if x.hp < 0:
+			x.hp = 0
 	turn = 2
 	game_sequence()
 	 
@@ -114,5 +117,8 @@ func p2_turn()->void:
 	for x in p1:
 		if x.burned:
 			x.hp -= burn_damage
+	for x in p1:
+		if x.hp < 0:
+			x.hp = 0
 	turn = 1
 	game_sequence()

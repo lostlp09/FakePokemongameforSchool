@@ -147,30 +147,31 @@ func neutral (target_element: String):
 
 
 func attack1(target: character)-> void:
-	if target == self:
+	if target == self or target.hp <= 0:
 		print("cannot attack yourself")
-	else:
-		self.actual_damage = self.damage1
-		if attack1_element.call(target.element):
-			self.actual_damage  *= 1.5
-			
-		if attack1_element.call(target.element) == false:
-			self.actual_damage *= 0.66
-			
-		if gamble1:
-			self.actual_damage *= randf()
-			
-		if shield1 != 0:
-			self.shield += self.shield1
-			print(self.Name, " gained a shield of ", self.shield1)
-			
-		if target.shield > 0:
-			if actual_damage >= target.shield:
-				self.actual_damage -= target.shield
-				target.shield = 0
-			else:
-				target.shield -= self.actual_damage
-				actual_damage = 0
+		await $"../..".attacked
+		
+	self.actual_damage = self.damage1
+	if attack1_element.call(target.element):
+		self.actual_damage  *= 1.5
+		
+	if attack1_element.call(target.element) == false:
+		self.actual_damage *= 0.66
+		
+	if gamble1:
+		self.actual_damage *= randf()
+		
+	if shield1 != 0:
+		self.shield += self.shield1
+		print(self.Name, " gained a shield of ", self.shield1)
+		
+	if target.shield > 0:
+		if actual_damage >= target.shield:
+			self.actual_damage -= target.shield
+			target.shield = 0
+		else:
+			target.shield -= self.actual_damage
+			actual_damage = 0
 			
 		target.hp -= self.actual_damage
 		
@@ -189,86 +190,86 @@ func attack1(target: character)-> void:
 		print(target.Name, " has ", target.hp, " hp left ")
 		
 func attack2(target: character)-> void:
-	if target == self:
+	if target == self or target.hp <= 0:
 		print("cannot attack yourself")
-	else:
-		self.actual_damage = self.damage2
-		if attack2_element.call(target.element):
-			self.actual_damage  *= 1.5
-			
-		if attack2_element.call(target.element) == false:
-			self.actual_damage *= 0.66
-			
-		if gamble2:
-			self.actual_damage *= randf()
-			
-		if shield2 != 0:
-			self.shield += self.shield2
-			print(self.Name, " gained a shield of ", self.shield1)
-			
-		if target.shield > 0:
-			if actual_damage >= target.shield:
-				self.actual_damage -= target.shield
-				target.shield = 0
-			else:
-				target.shield -= self.actual_damage
-				actual_damage = 0
-				
-		target.hp -= self.actual_damage
+		await $"../..".attacked
+	self.actual_damage = self.damage2
+	if attack2_element.call(target.element):
+		self.actual_damage  *= 1.5
 		
-		if lifesteal2 != 0:
-			self.hp += actual_damage * lifesteal2
+	if attack2_element.call(target.element) == false:
+		self.actual_damage *= 0.66
+		
+	if gamble2:
+		self.actual_damage *= randf()
+		
+	if shield2 != 0:
+		self.shield += self.shield2
+		print(self.Name, " gained a shield of ", self.shield1)
+		
+	if target.shield > 0:
+		if actual_damage >= target.shield:
+			self.actual_damage -= target.shield
+			target.shield = 0
+		else:
+			target.shield -= self.actual_damage
+			actual_damage = 0
 			
-		if poison2:
-			target.poisoned = true
-			print(target.name, " is now poisoned")
+	target.hp -= self.actual_damage
+	
+	if lifesteal2 != 0:
+		self.hp += actual_damage * lifesteal2
 			
-		if burn2:
-			target.burned = true
-			print(target.Name, "is now burned")
-			
-		print(self.Name, " is attacking ", target.name, " for ", self.actual_damage, " damage")
-		print(target.Name, " has ", target.hp, " hp left")
+	if poison2:
+		target.poisoned = true
+		print(target.name, " is now poisoned")
+		
+	if burn2:
+		target.burned = true
+		print(target.Name, "is now burned")
+		
+	print(self.Name, " is attacking ", target.name, " for ", self.actual_damage, " damage")
+	print(target.Name, " has ", target.hp, " hp left")
 		
 func attack3(target: character)-> void:
-	if target == self:
+	if target == self or target.hp <= 0:
 		print("cannot attack yourself")
-	else:
-		self.actual_damage = self.damage3
+		await $"..".attacked
+	self.actual_damage = self.damage3
+	
+	if attack3_element.call(target.element):
+		self.actual_damage  *= 1.5
 		
-		if attack3_element.call(target.element):
-			self.actual_damage  *= 1.5
-			
-		if attack3_element.call(target.element) == false:
-			self.actual_damage *= 0.66
-			
-		if gamble3:
-			self.actual_damage *= randf()
-			
-		if shield3 != 0:
-			self.shield += self.shield3
-			print(self.Name, " gained a shield of ", self.shield1)
-			
-		if target.shield > 0:
-			if actual_damage >= target.shield:
-				self.actual_damage -= target.shield
-				target.shield = 0
-			else:
-				target.shield -= self.actual_damage
-				actual_damage = 0
-				
-		target.hp -= self.actual_damage
+	if attack3_element.call(target.element) == false:
+		self.actual_damage *= 0.66
 		
-		if lifesteal3 != 0:
-			self.hp += actual_damage * lifesteal3
+	if gamble3:
+		self.actual_damage *= randf()
+		
+	if shield3 != 0:
+		self.shield += self.shield3
+		print(self.Name, " gained a shield of ", self.shield1)
+		
+	if target.shield > 0:
+		if actual_damage >= target.shield:
+			self.actual_damage -= target.shield
+			target.shield = 0
+		else:
+			target.shield -= self.actual_damage
+			actual_damage = 0
 			
-		if poison3:
-			target.poisoned = true
-			print(target.name, " is now poisoned")
-			
-		if burn1:
-			target.burned = true
-			print(target.Name, "is now burned")
-			
-		print(self.Name, " is attacking ", target.name, " for ", self.actual_damage, " damage")
-		print(target.Name, " has ", target.hp, " hp left")	
+	target.hp -= self.actual_damage
+	
+	if lifesteal3 != 0:
+		self.hp += actual_damage * lifesteal3
+		
+	if poison3:
+		target.poisoned = true
+		print(target.name, " is now poisoned")
+		
+	if burn1:
+		target.burned = true
+		print(target.Name, "is now burned")
+		
+	print(self.Name, " is attacking ", target.name, " for ", self.actual_damage, " damage")
+	print(target.Name, " has ", target.hp, " hp left")

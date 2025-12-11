@@ -49,5 +49,9 @@ func _process(delta)->void:
 			icon.frame = x
 	if $"../enemy container/enemy 1 area/enemy 1/HP 1" and $"../enemy container/enemy 2 area/enemy 2/HP 2" and $"../enemy container/enemy 3 area/enemy 3/HP 3":
 		$"../enemy container/enemy 1 area/enemy 1/HP 1".text = var_to_str(roundf(Character.p2[0].hp))
-		$"../enemy container/enemy 2 area/enemy 2/HP 2".text = var_to_str(round(Character.p2[1].hp))
-		$"../enemy container/enemy 3 area/enemy 3/HP 3".text = var_to_str(round(Character.p2[2].hp))
+		$"../enemy container/enemy 2 area/enemy 2/HP 2".text = var_to_str(roundf(Character.p2[1].hp))
+		$"../enemy container/enemy 3 area/enemy 3/HP 3".text = var_to_str(roundf(Character.p2[2].hp))
+	if $"../player container/player 1/VBoxContainer/HP 1" and $"../player container/player 2/VBoxContainer/HP 2" and $"../player container/player 3/VBoxContainer/HP 3":
+		$"../player container/player 1/VBoxContainer/HP 1".text = var_to_str(roundf(Character.p1[0].hp))
+		$"../player container/player 2/VBoxContainer/HP 2".text = var_to_str(roundf(Character.p1[1].hp))
+		$"../player container/player 3/VBoxContainer/HP 3".text = var_to_str(roundf(Character.p1[2].hp))
