@@ -97,7 +97,7 @@ func egg() ->void:
 			Startposplaced = true
 			clone.position = Vector2(X_pos,Y_pos)
 
-		self.get_node("VBoxContainer").add_child(clone)
+		self.get_node("VBoxContainer").add_child(clone) 
 
 func gambling():
 	
@@ -142,8 +142,6 @@ func gambling():
 			anzahl += 1 * schrittmenge
 			schrittmenge -=0.002
 			await get_tree().create_timer(0.001).timeout
-		
-		
 func _on_button_pressed() -> void:
 	if isonpokemon == true and is_on:
 		print(isonpokemon)
