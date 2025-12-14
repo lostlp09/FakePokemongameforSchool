@@ -1,25 +1,23 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=22 format=3 uid="uid://djj7jeo07d8dh"]
-=======
-[gd_scene load_steps=21 format=3 uid="uid://djj7jeo07d8dh"]
->>>>>>> Stashed changes
+
+[gd_scene load_steps=23 format=3 uid="uid://djj7jeo07d8dh"]
+
 
 [ext_resource type="Script" uid="uid://bcex40y51jw6j" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
 [ext_resource type="Texture2D" uid="uid://dc7xrtl0hlc4s" path="res://icon.svg" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dgaxlx1ghr8b1" path="res://villager.png" id="4_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://gr3i8xkga8rd" path="res://map.tscn" id="4_ta5nu"]
 [ext_resource type="Script" uid="uid://dyetfck7oyl7j" path="res://area_2d.gd" id="5_kdubu"]
 [ext_resource type="Texture2D" uid="uid://6h24wkjyrwmv" path="res://interact.png" id="7_d21ai"]
-<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dcc2aods856wu" path="res://scroll_container.gd" id="7_hqns4"]
-=======
->>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dpy45tpwchxla" path="res://dialog/pixil-frame-0.png" id="8_rj586"]
+[ext_resource type="Texture2D" uid="uid://v3lmdbvn4wsr" path="res://pixil-frame-0(2).png" id="9_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://dk3whpjhipa6r" path="res://dialog/sr5zebf7fe8ddaaws3.png" id="9_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://b1b3p6jui2oh3" path="res://1000_F_443693248_FFOUon01HIYUVLVPFIyhrzDlbmWN8XKq.jpg" id="10_ir8iy"]
-[ext_resource type="PackedScene" uid="uid://gr3i8xkga8rd" path="res://map.tscn" id="12_0h7mo"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqns4"]
+[ext_resource type="Script" uid="uid://di7v6dqe8lrq4" path="res://money.gd" id="12_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://dpgpnnduforpx" path="res://pixil-frame-0(1).png" id="13_d2bti"]
+[ext_resource type="Script" uid="uid://c7vvagngiaod1" path="res://eggscript.gd" id="13_nr8wp"]
+[ext_resource type="Script" uid="uid://bnoi87p727gjk" path="res://button.gd" id="13_ta5nu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 
@@ -34,37 +32,37 @@ size = Vector2(631.216, 20.252)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
 size = Vector2(631.216, 50.0928)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
-size = Vector2(1662.5, 160)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
-size = Vector2(1003.5, 160)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
-size = Vector2(167.75, 431)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
-size = Vector2(167.75, 755)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(34.4444, 46.4226)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kdubu")
 
-[node name="Map" parent="." instance=ExtResource("12_0h7mo")]
-position = Vector2(-2091, -799)
-scale = Vector2(2.61, 2.61)
+[node name="Map" parent="." instance=ExtResource("4_ta5nu")]
+z_index = -523
+position = Vector2(-472, -943)
+scale = Vector2(1.3, 1.3)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -1934.0
-offset_top = -660.0
-offset_right = 1422.0
-offset_bottom = 864.0
-texture = SubResource("CompressedTexture2D_hqns4")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+[node name="floor" type="Area2D" parent="Map"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/floor"]
+polygon = PackedVector2Array(-566.4, 1744.4, -568, 1848, -599.6, 1848, -599.6, 1920.4, -632.8, 1920.4, -632.4, 1711.6, -664, 1712, -663.6, 1680, -1032, 1680, -1032, 1648, -664, 1648, -664, 1616, -632.4, 1616.4, -632.4, 1327.2, -600, 1327.2, -600, 448, 48, 448.4, 48.8, 224.4, 80, 224.4, 80, 15.6, 72, 16.8, 72, -312, 560, -312.4, 560, -223.6, 656, -223.6, 656, -192, 696, -192, 696.4, -320, 823.6, -320, 823.6, -616, 2176.4, -616, 2176, -143.6, 1304, -144, 1304.4, -112, 1272, -112, 1272.8, 55.6, 1840.4, 56.8, 1840, 830.8, 1848.8, 831.6, 1851.2, 1739.2)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map/floor"]
+position = Vector2(-1342.31, 44.6155)
+scale = Vector2(0.376923, 0.376923)
+polygon = PackedVector2Array(1846.94, 900, 463.265, 1455.1, 1073.47, 1791.84, 1848.98, 1775.51)
+
+[node name="Map2" parent="." instance=ExtResource("4_ta5nu")]
+z_index = -523
+position = Vector2(-2217, -885)
+scale = Vector2(0.49, 0.49)
+
+[node name="floor" type="Area2D" parent="Map2"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-1, 1)
-scale = Vector2(2.2272, 2.50971)
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -94,6 +92,20 @@ position = Vector2(0, 0.132599)
 scale = Vector2(1.495, 1.495)
 shape = SubResource("RectangleShape2D_d21ai")
 
+[node name="Villager2" type="Sprite2D" parent="."]
+position = Vector2(79, -433)
+scale = Vector2(0.265464, 0.271236)
+texture = ExtResource("4_q6r6c")
+metadata/npctext = "yo whats up"
+
+[node name="GamblerNpc" type="Area2D" parent="Villager2" groups=["talkandinteractNpc"]]
+script = ExtResource("5_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Villager2/GamblerNpc"]
+position = Vector2(0, 0.132599)
+scale = Vector2(1.495, 1.495)
+shape = SubResource("RectangleShape2D_d21ai")
+
 [node name="Button" type="Button" parent="."]
 offset_left = 249.0
 offset_top = -44.0
@@ -105,6 +117,7 @@ metadata/_edit_use_anchors_ = true
 scale = Vector2(0.977825, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Camera2D"]
+process_mode = 3
 visible = false
 offset_left = -415.207
 offset_top = -266.0
@@ -112,10 +125,7 @@ offset_right = -107.207
 offset_bottom = -127.0
 scale = Vector2(2.84, 3.03698)
 horizontal_scroll_mode = 0
-<<<<<<< Updated upstream
 script = ExtResource("7_hqns4")
-=======
->>>>>>> Stashed changes
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/ScrollContainer"]
 layout_mode = 2
@@ -124,6 +134,27 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 texture = SubResource("CanvasTexture_ir8iy")
+
+[node name="Money" type="Label" parent="Camera2D"]
+offset_left = -567.586
+offset_top = -328.0
+offset_right = -524.586
+offset_bottom = -305.0
+text = "Coins"
+script = ExtResource("12_x0ka3")
+
+[node name="Button" type="Button" parent="Camera2D"]
+process_mode = 3
+visible = false
+offset_left = -571.677
+offset_top = -266.0
+offset_right = 440.323
+offset_bottom = 102.0
+scale = Vector2(0.155, 0.155)
+theme_override_font_sizes/font_size = 131
+text = "Switch to Eggs
+
+"
 
 [node name="interact" type="Sprite2D" parent="."]
 visible = false
@@ -159,11 +190,12 @@ theme_override_font_sizes/font_size = 116
 autowrap_mode = 1
 
 [node name="fishingarea" type="Sprite2D" parent="." groups=["fishing"]]
-position = Vector2(-7229, 4634)
+position = Vector2(-945, 1264)
 scale = Vector2(5.344, 1.508)
 texture = ExtResource("10_ir8iy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="fishingarea"]
+position = Vector2(-549.963, -234.085)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fishingarea/StaticBody2D"]
 position = Vector2(168.112, -257.115)
@@ -176,9 +208,9 @@ position = Vector2(168.112, -272.036)
 shape = SubResource("RectangleShape2D_hqns4")
 
 [node name="Storage" type="Node2D" parent="."]
-visible = false
 
 [node name="pokemonbild" type="Sprite2D" parent="Storage"]
+visible = false
 position = Vector2(-472, 126)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_0hol4")
@@ -198,6 +230,22 @@ offset_right = 10.0
 offset_bottom = 59.6667
 text = "hp:100"
 
+[node name="gachaegg" type="Sprite2D" parent="Storage"]
+visible = false
+position = Vector2(-472, 126)
+scale = Vector2(1.15625, 1.15625)
+texture = ExtResource("13_d2bti")
+
+[node name="Button" type="Button" parent="Storage/gachaegg"]
+offset_left = -16.0
+offset_top = 16.0
+offset_right = 150.0
+offset_bottom = 110.0
+scale = Vector2(0.195, 0.195)
+theme_override_font_sizes/font_size = 62
+text = "open"
+script = ExtResource("13_ta5nu")
+
 [node name="ChatGptImageNov8,2025,031547Pm2" type="Sprite2D" parent="."]
 position = Vector2(136, -168)
 scale = Vector2(0.175, 0.175)
@@ -215,28 +263,66 @@ offset_left = -1257.0
 offset_top = -169.0
 offset_right = -1158.0
 offset_bottom = 15.0
-<<<<<<< Updated upstream
 metadata/_edit_use_anchors_ = true
-=======
->>>>>>> Stashed changes
 
-[node name="Bushes" type="Area2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bushes"]
-position = Vector2(-93.25, 322)
-shape = SubResource("RectangleShape2D_0h7mo")
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(164, -157)
+scale = Vector2(2.32258, 2.21875)
+script = ExtResource("13_nr8wp")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bushes"]
-position = Vector2(-1531.75, 238)
-shape = SubResource("RectangleShape2D_nr8wp")
+[node name="egg" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("9_0h7mo")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bushes"]
-position = Vector2(-1871.88, -496.5)
-shape = SubResource("RectangleShape2D_d2bti")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.83582e-05, -0.450652)
+shape = SubResource("RectangleShape2D_flf07")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bushes"]
-position = Vector2(-620, -933.5)
-shape = SubResource("RectangleShape2D_ta5nu")
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(680, -288)
+scale = Vector2(2.32258, 2.21875)
+script = ExtResource("13_nr8wp")
+
+[node name="egg" type="Sprite2D" parent="Area2D2"]
+texture = ExtResource("9_0h7mo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1.83582e-05, -0.450652)
+shape = SubResource("RectangleShape2D_flf07")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(1105, 380)
+scale = Vector2(2.32258, 2.21875)
+script = ExtResource("13_nr8wp")
+
+[node name="egg" type="Sprite2D" parent="Area2D3"]
+texture = ExtResource("9_0h7mo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(1.83582e-05, -0.450652)
+shape = SubResource("RectangleShape2D_flf07")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-2, -4.00002)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_0hol4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-0.999996, 1)
+scale = Vector2(0.3875, 0.3875)
+texture = ExtResource("2_0hol4")
 
 [connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]
+[connection signal="pressed" from="Camera2D/Button" to="Camera2D/ScrollContainer" method="_on_button_pressed"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
+[connection signal="area_entered" from="Area2D2" to="Area2D2" method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D2" to="Area2D2" method="_on_area_exited"]
+[connection signal="area_entered" from="Area2D3" to="Area2D3" method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D3" to="Area2D3" method="_on_area_exited"]
