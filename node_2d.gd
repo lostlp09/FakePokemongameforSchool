@@ -32,8 +32,13 @@ func ongambling() -> void:
 	
 	
 func _ready() -> void:
-	pressforgambling.pressed.connect(ongambling)
 	
+	pressforgambling.pressed.connect(ongambling)
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("save"):
+		Savestats.save()
+		
 
 
 	

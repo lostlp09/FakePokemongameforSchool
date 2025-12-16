@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=23 format=3 uid="uid://djj7jeo07d8dh"]
-
 
 [ext_resource type="Script" uid="uid://bcex40y51jw6j" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ciwt4ujty6dfi" path="res://node_2d.gd" id="1_kdubu"]
