@@ -19,7 +19,6 @@
 [ext_resource type="Script" uid="uid://bnoi87p727gjk" path="res://button.gd" id="13_ta5nu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
-size = Vector2(14, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
 atlas = ExtResource("5_flf07")
@@ -430,7 +429,6 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("1_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -565,7 +563,7 @@ scale = Vector2(5.344, 1.508)
 texture = ExtResource("10_ir8iy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="fishingarea"]
-position = Vector2(-652.133, 456.896)
+position = Vector2(-549.963, -234.085)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fishingarea/StaticBody2D"]
 position = Vector2(772.128, 59.0187)
@@ -575,7 +573,7 @@ shape = SubResource("RectangleShape2D_ir8iy")
 [node name="Area2D" type="Area2D" parent="fishingarea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fishingarea/Area2D"]
-position = Vector2(-54.0793, 151.194)
+position = Vector2(168.112, -272.036)
 shape = SubResource("RectangleShape2D_hqns4")
 
 [node name="Storage" type="Node2D" parent="."]

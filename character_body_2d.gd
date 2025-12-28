@@ -43,6 +43,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_pressed("forward") && allowwalking:
 		self.velocity.y  = -20000 * delta
+
 	if Input.is_action_pressed("bachward") && allowwalking:
 		self.velocity.y =  20000 *  delta
 
@@ -50,9 +51,17 @@ func _physics_process(delta: float) -> void:
 		self.velocity.x = -20000 *delta
 
 	if Input.is_action_pressed("right") && allowwalking:
-	
 		self.velocity.x = 20000* delta
-		
+	if Input.is_action_pressed("forward") and not Input.is_action_pressed("bachward"):
+		$AnimatedSprite2D.play("forward")
+	elif  not Input.is_action_pressed("forward") and  Input.is_action_pressed("bachward"):
+		$AnimatedSprite2D.play("backwards")
+	elif Input.is_action_pressed("left"):
+		$AnimatedSprite2D.play("left")
+	elif Input.is_action_pressed("right"):
+		$AnimatedSprite2D.play("right")
+	else:
+		$AnimatedSprite2D.stop()
 	if Input.is_action_just_pressed("interact") :
 		if gamblernpc_interaction == true and (skipped== true or skipped == null):
 			skipped = false
@@ -105,7 +114,9 @@ func _physics_process(delta: float) -> void:
 			jumping = false
 			x = 0
 	elif not $"../Map/floor".has_overlapping_bodies():
+		print("hi")
 		if gameloaded:
+			
 			otherx += 10* delta
 			var y =  -1 * otherx*otherx +4*otherx +2.5 
 			y = clamp(y,0,6.5)
@@ -163,8 +174,4 @@ func whileisifishing()->void:
 	
 func wait():
 	await  get_tree().process_frame
-	gameloaded =   false
-		
-		
-		
-		
+	gameloaded =    false

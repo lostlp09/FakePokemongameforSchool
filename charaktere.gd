@@ -261,7 +261,7 @@ func attack3(target: character)-> void:
 	target.hp -= self.actual_damage
 	
 	if lifesteal3 != 0:
-		self.hp += actual_damage * lifesteal3
+		self.hp += actual_damage *lifesteal3
 		
 	if poison3:
 		target.poisoned = true
