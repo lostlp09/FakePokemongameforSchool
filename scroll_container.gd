@@ -14,6 +14,7 @@ var isgambling = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
 	Gambling = gambling
 	pass # Replace with function body.
 
@@ -43,6 +44,8 @@ func ifis_on() ->void:
 		var clone = pokemonskizze.duplicate()
 		clone.visible = true
 		clone.name = i.Name
+		clone.get_node("pokemonicon").sprite_frames = i.texture
+		clone.get_node("pokemonicon").play()
 		clone.get_child(0).text = i.Name
 		clone.get_child(1).text = "hp: "+ str(i.hp)
 		if Startposplaced:
@@ -57,7 +60,7 @@ func ifis_on() ->void:
 		self.get_node("VBoxContainer").add_child(clone)
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("tab"):
+	if Input.is_action_just_pressed("tab") and isgambling == false:
 
 		if is_on == false:
 			get_tree().paused = true
@@ -100,7 +103,7 @@ func egg() ->void:
 		self.get_node("VBoxContainer").add_child(clone) 
 
 func gambling():
-	
+	isgambling = true
 	$"../../Icon".visible = true
 	Savestats.inventory.remove_at(0)
 	for i in $VBoxContainer.get_children():
@@ -109,12 +112,12 @@ func gambling():
 	$"../../Icon".position = player.position
 	var randomnumber = randi_range(0,Character.allpokemons.size() -1)
 	var pokemon =  Character.allpokemons[randomnumber]
-	var image =  Character.allpokimages[randomnumber]
+	var image =  Character.allpokemons[randomnumber].texture
 	print(pokemon.Name)
 	var anzahl = -5	
 	var schrittmenge = 0.6
 	for i in range(1,11):
-		var fakeimages = Character.allpokimages.pick_random()
+		var fakeimages = Character.allpokemons.pick_random().texture
 		var pokemonpicture = 0
 		if i != 10 :
 
@@ -124,7 +127,7 @@ func gambling():
 			pokemonpicture = image
 		print("SET:", pokemonpicture.resource_path)
 		await get_tree().process_frame
-		$"../../Icon".texture = pokemonpicture
+		$"../../Icon/AnimatedSprite2D".sprite_frames = pokemonpicture
 		while true:
 
 			var smooth = clamp(anzahl ,-3,3)
@@ -135,6 +138,7 @@ func gambling():
 				await get_tree().create_timer(1).timeout
 				egg()
 				$"../../Icon".visible = false
+				isgambling = false
 				break
 			if smooth == 3:
 				anzahl = -6
@@ -143,6 +147,8 @@ func gambling():
 			schrittmenge -=0.002
 			await get_tree().create_timer(0.001).timeout
 func _on_button_pressed() -> void:
+	if isgambling == true:
+		return
 	if isonpokemon == true and is_on:
 		print(isonpokemon)
 		for i in $VBoxContainer.get_children():

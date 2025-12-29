@@ -430,7 +430,6 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("1_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -565,10 +564,10 @@ scale = Vector2(5.344, 1.508)
 texture = ExtResource("10_ir8iy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="fishingarea"]
-position = Vector2(-652.133, 456.896)
+position = Vector2(-1124.63, 374.005)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fishingarea/StaticBody2D"]
-position = Vector2(772.128, 59.0187)
+position = Vector2(8.89301e-05, -3.016e-05)
 scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_ir8iy")
 
@@ -584,7 +583,6 @@ shape = SubResource("RectangleShape2D_hqns4")
 visible = false
 position = Vector2(-472, 126)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_0hol4")
 
 [node name="Name" type="Label" parent="Storage/pokemonbild"]
 offset_left = -46.6667
@@ -599,7 +597,12 @@ offset_left = -30.0
 offset_top = 36.6667
 offset_right = 10.0
 offset_bottom = 59.6667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "hp:100"
+
+[node name="pokemonicon" type="AnimatedSprite2D" parent="Storage/pokemonbild"]
+position = Vector2(3.33333, 6.66667)
+scale = Vector2(2.265, 2.265)
 
 [node name="gachaegg" type="Sprite2D" parent="Storage"]
 visible = false
@@ -679,9 +682,11 @@ position = Vector2(1.83582e-05, -0.450652)
 shape = SubResource("RectangleShape2D_flf07")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-2, -4.00002)
+position = Vector2(-2, -4.00033)
 scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("2_0hol4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Icon"]
+scale = Vector2(4.755, 4.755)
 
 [connection signal="area_entered" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/player Area" to="CharacterBody2D" method="_on_player_area_area_exited"]

@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bq004p50tagcn"]
+
+[ext_resource type="Texture2D" uid="uid://r231j74p3g1e" path="res://sporal.png" id="1_snbiw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqn3a"]
+atlas = ExtResource("1_snbiw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a406r"]
+atlas = ExtResource("1_snbiw")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqn3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a406r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -43,13 +43,10 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_pressed("forward") && allowwalking:
 		self.velocity.y  = -20000 * delta
-
 	if Input.is_action_pressed("bachward") && allowwalking:
 		self.velocity.y =  20000 *  delta
-
 	if Input.is_action_pressed("left") && allowwalking:
 		self.velocity.x = -20000 *delta
-
 	if Input.is_action_pressed("right") && allowwalking:
 		self.velocity.x = 20000* delta
 	if Input.is_action_pressed("forward") and not Input.is_action_pressed("bachward"):
@@ -60,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("left")
 	elif Input.is_action_pressed("right"):
 		$AnimatedSprite2D.play("right")
-	else:
+	elif self.velocity == Vector2(0,0):
 		$AnimatedSprite2D.stop()
 	if Input.is_action_just_pressed("interact") :
 		if gamblernpc_interaction == true and (skipped== true or skipped == null):
@@ -168,10 +165,6 @@ func whileisifishing()->void:
 		
 		
 		await  get_tree().create_timer(0.1).timeout
-	
-	
-
-	
 func wait():
 	await  get_tree().process_frame
 	gameloaded =    false

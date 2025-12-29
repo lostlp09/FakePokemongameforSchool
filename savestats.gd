@@ -1,7 +1,7 @@
 extends Node
 var Coins = 0
 var inventory = []
-var pokemons = [Character.Monkey]
+var pokemons = [Character.basti]
 
 				
 
