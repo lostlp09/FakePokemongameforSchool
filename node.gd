@@ -16,6 +16,7 @@ var current_player: Array
 var passive_player : Array
 @export var  current_attacker: character
 var attacked_char: character
+var pvp: bool = false
 
 func _ready() ->void:
 	p1 = Character.p1
@@ -37,28 +38,37 @@ func _on_attack_3_pressed() -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("first enemy"):
-		attacked_char = passive_player[0]
+		if passive_player[0]:
+			attacked_char = passive_player[0]
 		attacked.emit()
 	if Input.is_action_just_pressed("second enemy"):
-		attacked_char = passive_player[1]
+		if passive_player[1]:
+			attacked_char = passive_player[1]
 		attacked.emit()
 	if Input.is_action_just_pressed("third enemy"):
-		attacked_char = passive_player[2]
+		if passive_player[2]:
+			attacked_char = passive_player[2]
 		attacked.emit()
 
 func game_sequence()->void:
 	await get_tree().process_frame
 	for char_dead in p1:
-		if char_dead.hp  <= 0:
-			char_dead.alive = false
+		if char_dead:
+			if char_dead.hp  <= 0:
+				char_dead.alive = false
+				char_dead.queue_free()
+				await get_tree().process_frame
 	for char_dead in p2:
-		if char_dead.hp <= 0:
-			char_dead.alive = false
+		if char_dead:
+			if char_dead.hp <= 0:
+				char_dead.alive = false
+				char_dead.queue_free()
+				await get_tree().process_frame
 
-	if p1[0].alive and p1[1].alive and p1[2].alive == false:
+	if not p1[0] and not p1[1] and not p1[2]:
 		fighting = false
 		print("p2 won")
-	if p2[0].alive and p2[1].alive and p2[2].alive == false:
+	if not p2[0] and not p2[1] and not p2[2]:
 		fighting = false
 		print("p1 won")
 	if fighting:
@@ -75,50 +85,68 @@ func game_sequence()->void:
 
 func p1_turn()->void:     
 	for x in p1:
-		current_attacker = x
-		await attack 
-		await attacked
-		match which_attack:
-			"first attack":
-				x.attack1(attacked_char)
-			"second attack":
-				x.attack2(attacked_char)
-			"third attack":
-				x.attack3(attacked_char)
+		if x:
+			current_attacker = x
+			await attack 
+			await attacked
+			while not attacked_char.hp > 0: 
+				await attacked
+			match which_attack:
+				"first attack":
+					x.attack1(attacked_char)
+				"second attack":
+					x.attack2(attacked_char)
+				"third attack":
+					x.attack3(attacked_char)
 	for x in p2:
-		if x.poisoned:
-			x.hp -= poison_damage * x.maxhp
+		if x:
+			if x.poisoned:
+				x.hp -= poison_damage * x.maxhp
 	for x in p2:
-		if x.burned:
-			x.hp -= burn_damage
+		if x:
+			if x.burned:
+				x.hp -= burn_damage
 	for x in p2:
-		if x.hp < 0:
+		if x and x.hp < 0:
 			x.hp = 0
 	turn = 2
 	game_sequence()
 	 
 func p2_turn()->void:
-	print("p2_turn")
-	for x in p2:
-		current_attacker = x
-		await attack 
-		await attacked
-		match which_attack:
-			"first attack":
-				x.attack1(attacked_char)
-			"second attack":
-				x.attack2(attacked_char)
-			"third attack":
-				x.attack3(attacked_char)
+	if pvp:
+		print("p2_turn")
+		for x in p2:
+			current_attacker = x
+			await attack 
+			await attacked
+			while not attacked_char: 
+				await attacked
+			match which_attack:
+				"first attack":
+					x.attack1(attacked_char)
+				"second attack":
+					x.attack2(attacked_char)
+				"third attack":
+					x.attack3(attacked_char)
+	else:
+		for x in p2:
+			current_attacker = x
+			var check = randi_range(0, 2)
+			while not p1[check]:
+				check = randi_range(0, 2)
+			match randi_range(1, 3):
+				1: x.attack1(p1[check])
+				2: x.attack2(p1[check])
+				3: x.attack3(p1[check])
+			
 	for x in p1:
-		if x.poisoned:
-			print(x)
+		if x and x.poisoned:
 			x.hp -= poison_damage * x.maxhp
 	for x in p1:
-		if x.burned:
+		if x and x.burned:
 			x.hp -= burn_damage
 	for x in p1:
-		if x.hp < 0:
+		if x and x.hp < 0:
 			x.hp = 0
 	turn = 1
 	game_sequence()

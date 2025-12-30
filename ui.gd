@@ -21,11 +21,10 @@ func _ready():
 	p1_sprites = [$"../player container/player 1".sprite_frames, $"../player container/player 2".sprite_frames, $"../player container/player 3".sprite_frames]
 	p2_sprites = [$"../enemy container/enemy 1 area/AnimatedSprite2D".sprite_frames, $"../enemy container/enemy 2 area/AnimatedSprite2D".sprite_frames, $"../enemy container/enemy 3 area/AnimatedSprite2D".sprite_frames]
 	for x in range(3):
-		print(get_node("../player container/player %d" % (x+1)).sprite_frames, Character.p1[x].texture)
 		get_node("../player container/player %d" % (x+1)).sprite_frames = Character.p1[x].texture
-	for x in range(3):
-		print(get_node("../enemy container/enemy %d area/AnimatedSprite2D" % (x+1)).sprite_frames, Character.p2[x].texture)
 		get_node("../enemy container/enemy %d area/AnimatedSprite2D" % (x+1)).sprite_frames = Character.p2[x].texture
+		get_node("../player container/player %d" % (x+1)).play()
+		get_node("../enemy container/enemy %d area/AnimatedSprite2D" % (x+1)).play()
 func _process(delta)->void:
 	text1.text = "attack 1"
 	text2.text = "attack 2"
@@ -47,11 +46,16 @@ func _process(delta)->void:
 				"wind" : x = 4
 				"plant" : x = 5
 			icon.frame = x
-	if $"../enemy container/enemy 1 area/enemy 1/HP 1" and $"../enemy container/enemy 2 area/enemy 2/HP 2" and $"../enemy container/enemy 3 area/enemy 3/HP 3":
-		$"../enemy container/enemy 1 area/enemy 1/HP 1".text = var_to_str(roundf(Character.p2[0].hp))
-		$"../enemy container/enemy 2 area/enemy 2/HP 2".text = var_to_str(roundf(Character.p2[1].hp))
-		$"../enemy container/enemy 3 area/enemy 3/HP 3".text = var_to_str(roundf(Character.p2[2].hp))
-	if $"../player container/player 1/VBoxContainer/HP 1" and $"../player container/player 2/VBoxContainer/HP 2" and $"../player container/player 3/VBoxContainer/HP 3":
-		$"../player container/player 1/VBoxContainer/HP 1".text = var_to_str(roundf(Character.p1[0].hp))
-		$"../player container/player 2/VBoxContainer/HP 2".text = var_to_str(roundf(Character.p1[1].hp))
-		$"../player container/player 3/VBoxContainer/HP 3".text = var_to_str(roundf(Character.p1[2].hp))
+
+		if $"..".p2[0] and $"../enemy container/enemy 1 area/enemy 1/HP 1":
+			$"../enemy container/enemy 1 area/enemy 1/HP 1".text = var_to_str(roundf(Character.p2[0].hp))
+		if $"..".p2[1] and $"../enemy container/enemy 2 area/enemy 2/HP 2":
+			$"../enemy container/enemy 2 area/enemy 2/HP 2".text = var_to_str(roundf(Character.p2[1].hp))
+		if $"..".p2[2] and $"../enemy container/enemy 3 area/enemy 3/HP 3":
+			$"../enemy container/enemy 3 area/enemy 3/HP 3".text = var_to_str(roundf(Character.p2[2].hp))
+		if $"..".p1[0] and $"../player container/player 1/VBoxContainer/HP 1":
+			$"../player container/player 1/VBoxContainer/HP 1".text = var_to_str(roundf(Character.p1[0].hp))
+		if $"..".p1[1] and $"../player container/player 2/VBoxContainer/HP 2":
+			$"../player container/player 2/VBoxContainer/HP 2".text = var_to_str(roundf(Character.p1[1].hp))
+		if $"..".p1[2] and $"../player container/player 3/VBoxContainer/HP 3":
+			$"../player container/player 3/VBoxContainer/HP 3".text = var_to_str(roundf(Character.p1[2].hp))

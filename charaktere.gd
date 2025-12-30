@@ -147,10 +147,6 @@ func neutral (target_element: String):
 
 
 func attack1(target: character)-> void:
-	if target == self or target.hp <= 0:
-		print("cannot attack yourself")
-		await $"../..".attacked
-		
 	self.actual_damage = self.damage1
 	if attack1_element.call(target.element):
 		self.actual_damage  *= 1.5
@@ -190,9 +186,6 @@ func attack1(target: character)-> void:
 		print(target.Name, " has ", target.hp, " hp left ")
 		
 func attack2(target: character)-> void:
-	if target == self or target.hp <= 0:
-		print("cannot attack yourself")
-		await $"../..".attacked
 	self.actual_damage = self.damage2
 	if attack2_element.call(target.element):
 		self.actual_damage  *= 1.5
@@ -232,9 +225,6 @@ func attack2(target: character)-> void:
 	print(target.Name, " has ", target.hp, " hp left")
 		
 func attack3(target: character)-> void:
-	if target == self or target.hp <= 0:
-		print("cannot attack yourself")
-		await $"..".attacked
 	self.actual_damage = self.damage3
 	
 	if attack3_element.call(target.element):
