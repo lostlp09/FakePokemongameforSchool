@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Character="*res://character.gd"
 Savestats="*res://savestats.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 talkandinteractNpc="for gambler"

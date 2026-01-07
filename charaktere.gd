@@ -147,6 +147,7 @@ func neutral (target_element: String):
 
 
 func attack1(target: character)-> void:
+	print("test")
 	self.actual_damage = self.damage1
 	if attack1_element.call(target.element):
 		self.actual_damage  *= 1.5
@@ -169,21 +170,21 @@ func attack1(target: character)-> void:
 			target.shield -= self.actual_damage
 			actual_damage = 0
 			
-		target.hp -= self.actual_damage
+	target.hp -= self.actual_damage
 		
-		if lifesteal1 != 0:
-			self.hp += actual_damage * lifesteal1	
+	if lifesteal1 != 0:
+		self.hp += actual_damage * lifesteal1	
 			
-		if poison1:
-			target.poisoned = true
-			print(target.Name, " is now poisoned")
+	if poison1:
+		target.poisoned = true
+		print(target.Name, " is now poisoned")
 			
-		if burn1:
-			target.burned = true
-			print(target.Name, "is now burned")
+	if burn1:
+		target.burned = true
+		print(target.Name, "is now burned")
 			
-		print(self.Name," is attacking ", target.Name, " for ", self.actual_damage, " damage")
-		print(target.Name, " has ", target.hp, " hp left ")
+	print(self.Name," is attacking ", target.Name, " for ", self.actual_damage, " damage")
+	print(target.Name, " has ", target.hp, " hp left ")
 		
 func attack2(target: character)-> void:
 	self.actual_damage = self.damage2

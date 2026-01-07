@@ -130,14 +130,15 @@ func p2_turn()->void:
 					x.attack3(attacked_char)
 	else:
 		for x in p2:
-			current_attacker = x
-			var check = randi_range(0, 2)
-			while not p1[check]:
-				check = randi_range(0, 2)
-			match randi_range(1, 3):
-				1: x.attack1(p1[check])
-				2: x.attack2(p1[check])
-				3: x.attack3(p1[check])
+			if x:
+				current_attacker = x
+				var check = randi_range(0, 2)
+				while not p1[check]:
+					check = randi_range(0, 2)
+				match randi_range(1, 3):
+					1: x.attack1(p1[check])
+					2: x.attack2(p1[check])
+					3: x.attack3(p1[check])
 			
 	for x in p1:
 		if x and x.poisoned:
